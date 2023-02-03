@@ -140,14 +140,14 @@ main {
   display: flex;
 }
 
-.card-one {
+.main-sign-in-card-one {
   background-color: #ffffff;
   padding: 60px 30px;
   width: 40%;
   border-radius: 15px 0px 0px 15px;
 }
 
-.card-one h1 {
+.main-sign-in-card-one h1 {
   text-transform: uppercase;
   color: #24262b;
   display: flex;
@@ -195,7 +195,7 @@ main {
   transform: translateY(-7px);
 }
 
-.card-two {
+.main-sign-in-card-two {
   width: 60%;
   height: 100%;
   background: url("/src/images/forum-img.jpg") no-repeat center;
@@ -207,11 +207,13 @@ main {
   border-radius: 0 15px 15px 0;
 }
 
-.card-two h1 {
+.main-sign-in-card-two h1 {
   color: #fff;
   font-size: 40px;
   text-shadow: 2px 2px black;
 }
+
+/* Join Page */
 
 /* footer */
 
