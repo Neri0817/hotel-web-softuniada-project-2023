@@ -144,7 +144,7 @@ main {
   background-color: #ffffff;
   padding: 60px 30px;
   width: 40%;
-  border-radius: 15px 0 0 15px;
+  border-radius: 15px 0px 0px 15px;
 }
 
 .card-one h1 {
@@ -204,6 +204,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 0 15px 15px 0;
 }
 
 .card-two h1 {
