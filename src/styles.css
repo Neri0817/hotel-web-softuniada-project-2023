@@ -156,3 +156,10 @@ main {
   color: #24262b;
   background-color: #ffffff;
 }
+
+.footer-container-row-p {
+  color: #ffffff;
+  text-align: center;
+  margin: 0;
+  margin-top: 50px;
+}
