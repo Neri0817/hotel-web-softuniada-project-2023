@@ -20,6 +20,7 @@ router.get('/auth/login', authController.getLogin);
  */
 //Register
 router.get('/users/register', userController.getRegister);
+router.post('/users/register', userController.postRegister);
 
 //HOTELS
 //Add
