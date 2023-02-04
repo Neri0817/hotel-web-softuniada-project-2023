@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
-    firstName: {
+    name: {
         type: String,
         required: true,
         minLength: 2,
@@ -26,6 +26,8 @@ const userSchema = new mongoose.Schema({
         required: true,
         minLength: 3
     }
+    //TO DO: relation to hotels - rooms that user has offered for hire
+    //TO DO: relation to bookings - rooms that user have hired in the past
 });
 
 const User = mongoose.model('User', userSchema);
