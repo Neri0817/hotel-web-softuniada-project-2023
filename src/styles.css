@@ -171,7 +171,7 @@ main {
 
 .main-sign-in-container-div-form-input,
 .main-join-container-div-form-input {
-  margin: 30px auto;
+  margin: 20px auto;
 }
 
 .main-sign-in-container-div-form input,
@@ -266,10 +266,12 @@ main {
 
 .main-join-container-div-icons {
   text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px 65px;
 }
 .main-join-container-div-icons i {
   font-size: 30px;
-  margin: 20px;
   color: rgba(255, 87, 87);
   transition: all 0.3s ease 0s;
 }
