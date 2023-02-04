@@ -128,26 +128,35 @@ main {
 
 /* Sign In Page */
 
-.main-sign-in {
+.main-sign-in,
+.main-join {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.main-sign-in-container {
+.main-sign-in-container,
+.main-join-container {
   width: 50vw;
   height: 60vh;
   display: flex;
 }
 
 .main-sign-in-card-one {
-  background-color: #ffffff;
+  border-radius: 15px 0px 0px 15px;
   padding: 60px 30px;
   width: 40%;
-  border-radius: 15px 0px 0px 15px;
+  position: relative;
 }
 
-.main-sign-in-card-one h1 {
+.main-sign-in-card-one,
+.main-join-card-two {
+  background-color: #ffffff;
+  height: 100%;
+}
+
+.main-sign-in-card-one h1,
+.main-join-card-two h1 {
   text-transform: uppercase;
   color: #24262b;
   display: flex;
@@ -155,15 +164,18 @@ main {
   justify-content: center;
 }
 
-.main-sign-in-container-div-form {
+.main-sign-in-container-div-form,
+.main-join-container-div-form {
   text-align: center;
 }
 
-.main-sign-in-container-div-form-input {
+.main-sign-in-container-div-form-input,
+.main-join-container-div-form-input {
   margin: 30px auto;
 }
 
-.main-sign-in-container-div-form input {
+.main-sign-in-container-div-form input,
+.main-join-container-div-form input {
   border-top: none;
   border-right: none;
   border-left: none;
@@ -172,8 +184,13 @@ main {
 }
 
 .main-sign-in-container-div-btn {
+  bottom: 100px;
+  left: 25%;
+}
+
+.main-sign-in-container-div-btn,
+.main-join-container-div-btn {
   padding: 10px 35px;
-  margin: 40px 35px;
   background-color: rgba(255, 87, 87);
   border-radius: 5px;
   text-transform: uppercase;
@@ -185,9 +202,11 @@ main {
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease 0s;
   outline: none;
+  position: absolute;
 }
 
-.main-sign-in-container-div-btn:hover {
+.main-sign-in-container-div-btn:hover,
+.main-join-container-div-btn:hover {
   cursor: pointer;
   background-color: rgba(255, 87, 87);
   box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.425);
@@ -214,6 +233,50 @@ main {
 }
 
 /* Join Page */
+
+.main-join-card-one {
+  width: 40%;
+  background: url("/src/images/join-img.jpg") no-repeat center;
+  background-size: cover;
+  box-shadow: 0px 0px 0px 1200px rgba(255, 87, 87, 0.603) inset;
+  border-radius: 15px 0 0 15px;
+}
+
+.main-join-card-two {
+  padding: 20px;
+  width: 60%;
+  border-radius: 0 15px 15px 0;
+  position: relative;
+}
+
+.main-join-card-two h1 {
+  font-size: 28px;
+}
+
+.main-join-card-two p {
+  color: rgb(80, 80, 80);
+  text-align: center;
+}
+
+.main-join-container-div-btn {
+  position: absolute;
+  bottom: 10%;
+  left: 35%;
+}
+
+.main-join-container-div-icons {
+  text-align: center;
+}
+.main-join-container-div-icons i {
+  font-size: 30px;
+  margin: 20px;
+  color: rgba(255, 87, 87);
+  transition: all 0.3s ease 0s;
+}
+
+.main-join-container-div-icons i:hover {
+  transform: translateY(-7px);
+}
 
 /* footer */
 
