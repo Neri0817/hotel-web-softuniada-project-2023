@@ -3,11 +3,12 @@ const Router = express.Router;
 const router = Router();
 
 //TO DO: import controllers
-
+const homeController = require('../controllers/homeController');
 //TO DO: Endpoints and actions 
 //Home and Search
-/*Example
+
 router.get('/', homeController.getHomePage);
+/*Example
 router.get('/search', homeController.getSearch);
  */
 
