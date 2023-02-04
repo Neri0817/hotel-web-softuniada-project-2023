@@ -1,0 +1,28 @@
+{
+  "name": "hotel-web-softuniada-project-2023",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Neri0817/hotel-web-softuniada-project-2023.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Neri0817/hotel-web-softuniada-project-2023/issues"
+  },
+  "homepage": "https://github.com/Neri0817/hotel-web-softuniada-project-2023#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "express": "^4.18.2",
+    "express-handlebars": "^6.0.7",
+    "express-session": "^1.17.3",
+    "mongoose": "^6.9.0",
+    "nodemon": "^2.0.20"
+  }
+}
