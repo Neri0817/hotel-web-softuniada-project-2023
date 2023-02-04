@@ -13,8 +13,15 @@ router.get('/', homeController.getHomePage);
 router.get('/search', homeController.getSearch);
  */
 
+
+router.get('/about', homeController.getAboutPage);
+
+router.get('/contacts', homeController.getContactPage);
 //AUTH
 //Login
+
+router.get('/users/login', userController.getLogin);
+
 /*Example
 router.get('/auth/login', authController.getLogin);
  */

@@ -6,3 +6,5 @@ exports.register = async(name, email, password) => {
     
     return await User.create({ name, email, password: hash });
 };
+
+exports.checkUserExistence = (username) => User.findOne({username});
