@@ -5,7 +5,7 @@ const config = {
     },
     development: {
         PORT: 3000,
-        DB_URI: 'mongodb://localhost:27017/hotel'
+        DB_URI: 'mongodb://localhost:27017/hotelApp'
     }
 }
 
