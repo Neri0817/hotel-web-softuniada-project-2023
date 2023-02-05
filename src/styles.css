@@ -553,7 +553,10 @@ main {
   border-radius: 30px;
 
 }
+.responsive-tab-button:hover {
 
+ background-color: #be1414;
+}
 .responsive-tab-button:focus {
 
   background: #e5e5e5;
