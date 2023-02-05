@@ -620,6 +620,7 @@ main {
   height: 200px;
   overflow: hidden;
   border-radius: 50px !important;
+    display:block;
 }
 
 .link {
