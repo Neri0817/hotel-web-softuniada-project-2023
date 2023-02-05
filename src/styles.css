@@ -650,7 +650,22 @@ main {
   background-color: #c03c28;
   color: rgb(231, 219, 219);
 }
+.view-btn{
+    background-color: #ddd;
+    border: none;
+    color: black;
+    padding: 4px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition: 0.3s;
+    border-radius: 30px;
+}
 
+.view-btn:hover {
+  background-color: #c03c28;
+  color: rgb(231, 219, 219);
+}
 .bold-text {
 
   font: bold;
