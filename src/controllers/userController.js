@@ -17,14 +17,12 @@ exports.getRegister = (req, res) => {
 };
 
 exports.postRegister = async(req, res) => {
-    const { name, email, password, repeatPassword } = req.body;
+    const { username, email, password, repeatPassword } = req.body;
    
     if(password !== repeatPassword) {
         //TODO: Error handling
         return res.redirect('/404')
     }
-
-    //Dobri - I added repeatPassword and I added a function to check if the user exists already
 
     //TO DO: think of validator function to validate the data in each field
 
@@ -36,11 +34,11 @@ exports.postRegister = async(req, res) => {
     }
 
    try {
-        await userService.register(name, email, password);
+        await userService.register(username, email, password);
    } catch (error) {
         console.log(`Error trying to POST register: ${error}`);
    }
     
     
-    //res.redirect('users/login');
+    res.redirect('/users/login');
 };
