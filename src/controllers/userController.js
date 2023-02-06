@@ -24,6 +24,7 @@ exports.postRegister = async(req, res) => {
         return res.redirect('/404')
     }
 
+
     //TO DO: think of validator function to validate the data in each field
 
     const existingUser = await userService.checkUserExistence(username);
@@ -38,7 +39,5 @@ exports.postRegister = async(req, res) => {
    } catch (error) {
         console.log(`Error trying to POST register: ${error}`);
    }
-    
-    
     res.redirect('/users/login');
 };
