@@ -1,24 +1,15 @@
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
-    name: {
+    username: {
         type: String,
         required: true,
-        minLength: 2,
+        minLength: 4
     },
-    // lastName: {
-    //     type: String,
-    //     required: true,
-    //     minLength: 2,
-    // },
-    // username: {
-    //     type: String,
-    //     required: true,
-    //     minLength: 5
-    // },
     email: {
         type: String,
         required: true,
+        //email validation
         match: [/[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g, 'Invalid email or password!']
     },
     password: {
