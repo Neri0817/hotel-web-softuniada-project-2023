@@ -1,7 +1,6 @@
 
 exports.getHomePage = async(req, res) => {
     res.render('home');
-
 };
 
 exports.getAboutPage = (req, res) => {

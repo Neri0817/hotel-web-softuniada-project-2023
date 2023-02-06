@@ -52,3 +52,11 @@ exports.postRegister = async (req, res) => {
     }
     res.redirect('/users/login');
 };
+
+exports.logout = async(req, res) => {
+    req.session.destroy((error) => {if(error) {
+        console.log(`Error destroying session: ${error}`);
+    }
+        res.redirect('/');
+    });
+};

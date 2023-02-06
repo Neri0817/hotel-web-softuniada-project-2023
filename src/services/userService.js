@@ -13,13 +13,9 @@ exports.validateUser = async (username, password) => {
     const user = await User.findOne({ username });
     if (!user) return null;
 
-    console.log(`user: ${user}`)
-
     const isPasswordValid = await bcrypt.compare(password, user.password);
-    
-    console.log(`isValid: ${isPasswordValid}`)
-    
-    if (!isValid) return null;
+
+    if (!isPasswordValid) return null;
 
     return user;
 };
