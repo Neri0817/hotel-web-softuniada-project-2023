@@ -21,6 +21,7 @@ router.get('/contacts', homeController.getContactPage);
 //Login
 
 router.get('/users/login', userController.getLogin);
+router.post('/users/login', userController.postLogin);
 
 /*Example
 router.get('/auth/login', authController.getLogin);
