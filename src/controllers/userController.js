@@ -7,19 +7,30 @@ exports.getLogin = (req, res) => {
 exports.postLogin = async (req, res) => {
     const { username, password } = req.body;
 
-    //TODO: Express-session validation
+    // Validate user credentials
+    try {
+        const user = await userService.validateUser(username, password);
+        if (!user) {
+            return res.redirect('/404');
+        }
+        req.session.user = user;
 
-    res.redirect('/');
+        res.redirect('/');
+
+    } catch (error) {
+        console.log(`Error validating user: ${error}`);
+        return res.redirect('/404');
+    }
 }
 
 exports.getRegister = (req, res) => {
     res.render('join');
 };
 
-exports.postRegister = async(req, res) => {
+exports.postRegister = async (req, res) => {
     const { username, email, password, repeatPassword } = req.body;
-   
-    if(password !== repeatPassword) {
+
+    if (password !== repeatPassword) {
         //TODO: Error handling
         return res.redirect('/404')
     }
@@ -34,10 +45,10 @@ exports.postRegister = async(req, res) => {
         return res.redirect('/404')
     }
 
-   try {
+    try {
         await userService.register(username, email, password);
-   } catch (error) {
+    } catch (error) {
         console.log(`Error trying to POST register: ${error}`);
-   }
+    }
     res.redirect('/users/login');
 };
