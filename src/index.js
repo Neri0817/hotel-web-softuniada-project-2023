@@ -2,7 +2,6 @@ const express = require('express');
 const viewEngineSetup = require('./config/viewEngine');
 const routes = require('./config/routes');
 const config = require('./config/config');
-const intitDB = require('./config/database');
 const initDB = require('./config/database');
 
 const app = express();
