@@ -3,6 +3,7 @@ const viewEngineSetup = require('./config/viewEngine');
 const routes = require('./config/routes');
 const config = require('./config/config');
 const initDB = require('./config/database');
+const session = require('express-session');
 
 const app = express();
 viewEngineSetup(app);
@@ -10,6 +11,11 @@ viewEngineSetup(app);
 app.use(express.static('src/static'));
 app.use(express.urlencoded({
     extended: false
+}));
+app.use(session({
+    secret: config.SECRET,
+    resave: false,
+    saveUninitialized: true
 }));
 app.use(routes);
 
