@@ -6,29 +6,21 @@ const router = Router();
 const homeController = require('../controllers/homeController');
 const userController = require('../controllers/userController');
 //TO DO: Endpoints and actions 
+
 //Home and Search
-
 router.get('/', homeController.getHomePage);
-/*Example
-router.get('/search', homeController.getSearch);
- */
-
-
 router.get('/about', homeController.getAboutPage);
-
 router.get('/contacts', homeController.getContactPage);
+
 //AUTH
 //Login
-
 router.get('/users/login', userController.getLogin);
 router.post('/users/login', userController.postLogin);
-
-/*Example
-router.get('/auth/login', authController.getLogin);
- */
 //Register
 router.get('/users/register', userController.getRegister);
 router.post('/users/register', userController.postRegister);
+//Logout
+router.get('/users/logout', userController.logout);
 
 //HOTELS
 //Add
