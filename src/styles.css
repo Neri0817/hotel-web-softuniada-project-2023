@@ -748,7 +748,8 @@ header {
 }
 
 .main-rh-div-container-form-btn,
-.main-rh-section-container-btn {
+.main-rh-section-container-btn,
+.main-rh-third-section-container-destination-learn-more-btn {
   cursor: pointer;
   padding: 10px 35px;
   background-color: rgba(255, 87, 87);
@@ -896,6 +897,7 @@ header {
   justify-content: space-between;
   margin-bottom: 45px;
   border-bottom: 2px solid gray;
+  flex-wrap: wrap;
 }
 
 .destination-card {
@@ -913,7 +915,14 @@ header {
   height: 100%;
 }
 
-.main-rh-second-section-container-destination-info-price {
+.main-rh-third-section-container-destination-learn-more {
+  padding: 20px;
+}
+
+.main-rh-third-section-container-destination-learn-more-btn {
+  padding: 5px 10px;
+  font-size: 15px;
+  margin: 20px;
 }
 
 /* Footer */
