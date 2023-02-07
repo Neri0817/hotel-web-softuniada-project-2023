@@ -10,5 +10,5 @@ exports.getAvailableRooms = async(req, res) => {
     } catch (error) {
         
     }
-    res.render('/hotels/book', {  })
+    res.render('/rooms/book', {  })
 };

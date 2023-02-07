@@ -1,17 +1,18 @@
 const mongoose = require('mongoose')
 
 const reservationSchema = new mongoose.Schema({
-    from: {
+    startDate: {
         type: Date,
         required: true,
     },
-    to: {
+    endDate: {
         type: Date,
         required: true,
     },
     status: {
         type: String,
         required: true,
+        enum: ['approved', 'requested', 'cancelled']
     },
     roomId: {
         type: mongoose.Types.ObjectId,
