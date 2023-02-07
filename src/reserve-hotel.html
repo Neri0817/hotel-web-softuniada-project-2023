@@ -54,7 +54,10 @@
                             <label for="guest">Guests</label> <br>
                             <input type="text" id="guest" name="destinations" placeholder="The count of the guests">
                         </section>
-
+                        <!-- INFO FOR THE BACKEND -->
+                        <!-- When public user click book now button, redirect it to register page -->
+                        <!-- When loget user click book now button, show him the confirm reservation section and other sections-->
+                        <!-- delete those comments after :D -->
                         <button type="submit" class="main-rh-div-container-form-btn">Book now</button>
                     </div>
                 </form>
@@ -88,6 +91,55 @@
 
                     <button type="submit" class="main-rh-section-container-btn">Confirm</button>
                 </form>
+            </div>
+        </section>
+
+        <section class="main-rh-second-section">
+            <h1 class="main-rh-second-section-title">Your booking overview</h1>
+            <div class="main-rh-second-section-container">
+<!-- the room card template, when user confirm reservation, here will be added the room -->
+                <div class="main-rh-second-section-container-room">
+                    <div class="main-rh-second-section-container-room-img">
+                        <img src="./images/room1-img.jpg" alt="Room">
+                    </div>
+                    <h1 class="main-rh-second-section-container-room-title">Classic Room</h1>
+                    <div class="main-rh-second-section-container-room-info">
+                        <div class="main-rh-second-section-container-room-info-stuff">
+                            <p>Includes: Breakfast</p>
+                            <p>Rooms: 1</p>
+                            <p>Payment: At hotel</p>
+                            <p>Passengers: 2</p>
+                        </div>
+                        <div class="main-rh-second-section-container-room-info-price">
+                            <h1>199$</h1>
+                            <h3>Price</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="main-rh-second-section-container-room">
+                    <div class="main-rh-second-section-container-room-img">
+                        <img src="./images/room3-img.jpg" alt="Room">
+                    </div>
+                    <h1 class="main-rh-second-section-container-room-title">Classic Room</h1>
+                    <div class="main-rh-second-section-container-room-info">
+                        <div class="main-rh-second-section-container-room-info-stuff">
+                            <p>Includes: Breakfast</p>
+                            <p>Rooms: 1</p>
+                            <p>Payment: Online</p>
+                            <p>Passengers: 1</p>
+                        </div>
+                        <div class="main-rh-second-section-container-room-info-price">
+                            <h1>100$</h1>
+                            <h3>Price</h1>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="main-rh-second-section-total-price">
+                <h3>Total Price:</h3>
+                <h1>299$</h1>
             </div>
         </section>
     </main>

@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,500&display=swap");
 
 body,
 html {
@@ -8,7 +9,8 @@ html {
 }
 
 main {
-  height: 85vh;
+  width: 100%;
+  height: 100%;
 }
 
 * {
@@ -295,8 +297,7 @@ header {
 
 /* Home page */
 
-.main-home,
-.main-rh {
+.main-home {
   height: 1000vh;
   width: 100%;
 }
@@ -742,6 +743,10 @@ header {
   width: 300px;
 }
 
+.main-rh {
+  width: 100%;
+}
+
 .main-rh-div-container-form-btn,
 .main-rh-section-container-btn {
   cursor: pointer;
@@ -761,22 +766,27 @@ header {
 
 .main-rh-section {
   width: 100%;
-  height: 85vh;
+  height: 100vh;
   padding-top: 50px;
   text-align: center;
 }
 
-.main-rh-section-title {
+.main-rh-section-title,
+.main-rh-second-section-title {
   font-size: 40px;
   color: rgb(0, 0, 0);
   margin-bottom: 50px;
 }
 
-.main-rh-section-container {
+.main-rh-section-container,
+.main-rh-second-section-container,
+.main-rh-second-section-total-price {
   margin: 0 auto;
   width: 60%;
   background-color: white;
   padding: 50px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px gray;
 }
 
 .main-rh-section-container-div {
@@ -800,6 +810,71 @@ header {
   border-right: none;
   border-bottom: 1px solid rgb(255, 87, 87);
   font-size: 16px;
+}
+
+.main-rh-second-section {
+  width: 100%;
+  height: 100%;
+}
+
+.main-rh-second-section-title {
+  text-align: center;
+}
+
+.main-rh-second-section-container-room {
+  border-bottom: 2px solid gray;
+  padding: 30px;
+}
+
+.main-rh-second-section-container-room-img {
+  width: 50vw;
+  height: 50vh;
+}
+
+.main-rh-second-section-container-room-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.main-rh-second-section-container-room-title {
+  margin: 10px 0;
+}
+
+.main-rh-second-section-container-room-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-rh-second-section-container-room-info-stuff {
+  display: grid;
+  column-gap: 50px;
+  grid-template-columns: auto auto;
+}
+
+.main-rh-second-section-container-room-info-price h1,
+.main-rh-second-section-total-price h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 35px;
+  color: rgb(255, 87, 87);
+  text-shadow: black 1px 2px;
+  margin-bottom: 10px;
+}
+
+.main-rh-second-section-container-room-info-stuff {
+  font-size: 18px;
+}
+
+.main-rh-second-section-total-price {
+  margin: 50px auto;
+  text-align: center;
+}
+
+.main-rh-second-section-total-price h3 {
+  font-size: 24px;
+}
+
+.main-rh-second-section-total-price h1 {
+  font-size: 50px;
 }
 
 /* Footer */
