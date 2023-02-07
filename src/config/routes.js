@@ -36,5 +36,7 @@ router.get('/hotels/addHotel', hotelController.getAdd);
 router.get('/hotels/:id/details', hotelController.getDetails);
  */
 //...more
+router.get('/hotels/book', bookingController.getBookingPage);
+router.post('/hotels/book', bookingController.postBookingPage);
 
 module.exports = router;

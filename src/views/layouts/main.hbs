@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link rel="stylesheet" href="/css/styles.css">
     <title>Home</title>
+    <script src="/src/assets/preloader.js"></script>
+    <script src="/src/assets/slideShow.js"></script>
 </head>
 
 <body>
@@ -17,12 +19,16 @@
                 <img src="/images/logo.jpg" alt="Logo" />
             </div>
             <ul class="header-nav-list">
+                <!-- All users -->
                 <li><a href="/">Home</a></li>
                 <li><a href="/about">About us</a></li>
                 <li><a href="/rooms/book">Reserve a Hotel</a></li>
                 <li><a href="/contacts">Contact us</a></li>
+                 <!-- Not logged in users -->
                 <li><a href="/users/login">Sign in</a></li>
                 <li><a href="/users/register">Join</a></li>
+                <li><a href="/hotels/book">Reserve a Hotel</a></li>
+                <!-- Logged in users -->
                 <li><a href="/users/logout">Sign out</a></li>
             </ul>
         </nav>
@@ -76,8 +82,7 @@
             </p>
         </div>
     </footer>
-    <script src="/src/assets/preloader.js"></script>
-    <script src="/src/assets/slideShow.js"></script>
+    
 </body>
 
 </html>
