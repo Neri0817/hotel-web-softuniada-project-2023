@@ -1,0 +1,64 @@
+    <main class="main-rh">
+        <div class="main-rh-div">
+            <h1 class="main-rh-div-title">Reservation</h1>
+            <div class="main-rh-div-container">
+                <h2 class="main-rh-div-container-title">Make your reservation now</h2>
+                <form action="/hotels/book" method="POST">
+                    <div class="main-rh-div-container-form">
+                        <section>
+                            <label for="destinations">Destinations</label> <br>
+                            <input type="text" id="destinations" name="destinations"
+                                placeholder="Country, city, airport...">
+                        </section>
+
+                        <section>
+                            <label for="checkIn">Check in date</label> <br>
+                            <input type="text" id="checkIn" name="destinations" placeholder="Check in">
+                        </section>
+
+                        <section>
+                            <label for="checkOut">Check out date</label> <br>
+                            <input type="text" id="checkOut" name="destinations" placeholder="Check out">
+                        </section>
+
+                        <section>
+                            <label for="guest">Guests</label> <br>
+                            <input type="text" id="guest" name="destinations" placeholder="The count of the guests">
+                        </section>
+
+                        <button type="submit" class="main-rh-div-container-form-btn">Book now</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+       <!-- <section class="main-rh-section">
+            <h1 class="main-rh-section-title">Confirm your reservation</h1>
+            <div class="main-rh-section-container">
+                <form action="" method="">
+
+                    <div class="main-rh-section-container-div">
+                        <input type="text" placeholder="First Name" name="fname" required>
+                        <input type="text" placeholder="Last Name" name="lname" required>
+                        <input type="text" placeholder="Email Address" name="email" required>
+                    </div>
+
+                    <div class="main-rh-section-container-div">
+                        <input type="text" placeholder="Phone Number" name="phone" required>
+                        <input type="text" placeholder="Country" name="country" required>
+                        <input type="text" placeholder="Zip Code" name="zip" required>
+                    </div>
+
+                    <div class="main-rh-section-container-div rh-div-checkbox">
+                        <label>
+                            <input type="checkbox" name="check" onclick="onlyOne(this)">Payment directly at
+                            hotel</label>
+                        <label>
+                            <input type="checkbox" name="check" onclick="onlyOne(this)">Payment online</label>
+                    </div>
+
+                    <button type="submit" class="main-rh-section-container-btn">Confirm</button>
+                </form>
+            </div>
+        </section> -->
+    </main>

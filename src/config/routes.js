@@ -5,6 +5,7 @@ const router = Router();
 //TO DO: import controllers
 const homeController = require('../controllers/homeController');
 const userController = require('../controllers/userController');
+const bookingController = require('../controllers/bookingcontroller');
 //TO DO: Endpoints and actions 
 
 //Home and Search
@@ -32,5 +33,7 @@ router.get('/hotels/addHotel', hotelController.getAdd);
 router.get('/hotels/:id/details', hotelController.getDetails);
  */
 //...more
+router.get('/hotels/book', bookingController.getBookingPage);
+router.post('/hotels/book', bookingController.postBookingPage);
 
 module.exports = router;
