@@ -5,7 +5,7 @@ const router = Router();
 //TO DO: import controllers
 const homeController = require('../controllers/homeController');
 const userController = require('../controllers/userController');
-const roomController = require('../controllers/hotelController');
+const roomController = require('../controllers/roomController');
 //TO DO: Endpoints and actions 
 
 //Home and Search
