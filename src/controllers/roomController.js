@@ -1,9 +1,14 @@
+const availabilityService = require('../services/availabilityService');
+
+
 exports.getRooms = (req, res) => {
     res.render('reserve');
 };
 
-exports.postBookingPage = async(req, res) => {
+exports.postSearchRooms = async (req, res) => {
     const { startDate, endDate } = req.body;
+
+
     console.log(`startDate: ${startDate}`);
     console.log(`endDate: ${endDate}`);
     try {

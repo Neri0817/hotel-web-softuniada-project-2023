@@ -3,7 +3,7 @@
             <h1 class="main-rh-div-title">Reservation</h1>
             <div class="main-rh-div-container">
                 <h2 class="main-rh-div-container-title">Make your reservation now</h2>
-                <form action="" method="">
+                <form action="" method="POST">
                     <div class="main-rh-div-container-form">
                         <section>
                             <label for="destinations">Destinations</label> <br>
@@ -13,22 +13,25 @@
 
                         <section>
                             <label for="checkIn">Check in date</label> <br>
-                            <input type="text" id="checkIn" name="destinations" placeholder="Check in">
+                            <input type="text" id="checkIn" name="startDate" placeholder="Check in">
                         </section>
 
                         <section>
                             <label for="checkOut">Check out date</label> <br>
-                            <input type="text" id="checkOut" name="destinations" placeholder="Check out">
+                            <input type="text" id="checkOut" name="endDate" placeholder="Check out">
                         </section>
 
                         <section>
                             <label for="guest">Guests</label> <br>
-                            <input type="text" id="guest" name="destinations" placeholder="The count of the guests">
+                            <input type="text" id="guest" name="guests" placeholder="Guest count">
                         </section>
                         <!-- INFO FOR THE BACKEND -->
                         <!-- When public user click book now button, redirect it to register page -->
                         <!-- When loget user click book now button, show him the confirm reservation section and other sections-->
                         <!-- delete those comments after :D -->
+                        {{!-- Orlin: Should we just redirect ro register page before selecting 'Book now'? 
+                        This way the user won't have to enter the information twice. 
+                        User clicks on Reserve a Hotel and if not logged in we send him/her to Register page --}}
                         <button type="submit" class="main-rh-div-container-form-btn">Book now</button>
                     </div>
                 </form>

@@ -12,7 +12,8 @@ const reservationSchema = new mongoose.Schema({
     status: {
         type: String,
         required: true,
-        enum: ['approved', 'requested', 'cancelled']
+        default: 'available',
+        enum: ['available', 'approved', 'requested', 'cancelled']
     },
     roomId: {
         type: mongoose.Types.ObjectId,

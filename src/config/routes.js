@@ -24,6 +24,7 @@ router.post('/users/register', userController.postRegister);
 router.get('/users/logout', userController.logout);
 
 router.get('/rooms/book', roomController.getRooms);
+router.post('/rooms/book', roomController.postSearchRooms);
 
 
 //HOTELS
@@ -36,6 +37,5 @@ router.get('/hotels/addHotel', hotelController.getAdd);
 router.get('/hotels/:id/details', hotelController.getDetails);
  */
 //...more
-router.post('/rooms/book', roomController.postBookingPage);
 
 module.exports = router;
