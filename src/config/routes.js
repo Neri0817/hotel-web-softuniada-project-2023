@@ -5,7 +5,7 @@ const router = Router();
 //TO DO: import controllers
 const homeController = require('../controllers/homeController');
 const userController = require('../controllers/userController');
-const bookingController = require('../controllers/bookingcontroller');
+const roomController = require('../controllers/hotelController');
 //TO DO: Endpoints and actions 
 
 //Home and Search
@@ -22,6 +22,9 @@ router.get('/users/register', userController.getRegister);
 router.post('/users/register', userController.postRegister);
 //Logout
 router.get('/users/logout', userController.logout);
+
+router.get('/rooms/book', roomController.getRooms);
+
 
 //HOTELS
 //Add
