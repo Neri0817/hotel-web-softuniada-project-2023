@@ -78,7 +78,7 @@
                     <div class="main-rh-section-container-div">
                         <input type="text" placeholder="Phone Number" name="phone" required>
                         <input type="text" placeholder="Country" name="country" required>
-                        <input type="text" placeholder="Zip Code" name="zip" required>
+                        <input type="text" placeholder="Rooms" name="rooms" required>
                     </div>
 
                     <div class="main-rh-section-container-div rh-div-checkbox">
@@ -97,39 +97,40 @@
         <section class="main-rh-second-section">
             <h1 class="main-rh-second-section-title">Your booking overview</h1>
             <div class="main-rh-second-section-container">
-<!-- the room card template, when user confirm reservation, here will be added the room -->
-                <div class="main-rh-second-section-container-room">
-                    <div class="main-rh-second-section-container-room-img">
-                        <img src="./images/room1-img.jpg" alt="Room">
+
+                <!-- the room card template, when user confirm reservation, here will be added the room -->
+                <div class="main-rh-second-section-container-destination">
+                    <div class="main-rh-second-section-container-destination-img">
+                        <img src="./images/thailand.jpg" alt="destination">
                     </div>
-                    <h1 class="main-rh-second-section-container-room-title">Classic Room</h1>
-                    <div class="main-rh-second-section-container-room-info">
-                        <div class="main-rh-second-section-container-room-info-stuff">
+                    <h1 class="main-rh-second-section-container-destination-title">Thailand</h1>
+                    <div class="main-rh-second-section-container-destination-info">
+                        <div class="main-rh-second-section-container-destination-info-stuff">
                             <p>Includes: Breakfast</p>
                             <p>Rooms: 1</p>
                             <p>Payment: At hotel</p>
-                            <p>Passengers: 2</p>
+                            <p>Guests: 2</p>
                         </div>
-                        <div class="main-rh-second-section-container-room-info-price">
+                        <div class="main-rh-second-section-container-destination-info-price">
                             <h1>199$</h1>
                             <h3>Price</h1>
                         </div>
                     </div>
                 </div>
 
-                <div class="main-rh-second-section-container-room">
-                    <div class="main-rh-second-section-container-room-img">
-                        <img src="./images/room3-img.jpg" alt="Room">
+                <div class="main-rh-second-section-container-destination">
+                    <div class="main-rh-second-section-container-destination-img">
+                        <img src="./images/france.jpg" alt="destination">
                     </div>
-                    <h1 class="main-rh-second-section-container-room-title">Classic Room</h1>
-                    <div class="main-rh-second-section-container-room-info">
-                        <div class="main-rh-second-section-container-room-info-stuff">
+                    <h1 class="main-rh-second-section-container-destination-title">France</h1>
+                    <div class="main-rh-second-section-container-destination-info">
+                        <div class="main-rh-second-section-container-destination-info-stuff">
                             <p>Includes: Breakfast</p>
                             <p>Rooms: 1</p>
                             <p>Payment: Online</p>
-                            <p>Passengers: 1</p>
+                            <p>Guests: 1</p>
                         </div>
-                        <div class="main-rh-second-section-container-room-info-price">
+                        <div class="main-rh-second-section-container-destination-info-price">
                             <h1>100$</h1>
                             <h3>Price</h1>
                         </div>
@@ -140,6 +141,65 @@
             <div class="main-rh-second-section-total-price">
                 <h3>Total Price:</h3>
                 <h1>299$</h1>
+            </div>
+        </section>
+
+        <section class="main-rh-third-section">
+            <h1 class="main-rh-third-secton-title">Destinations available for you</h1>
+            <div class="main-rh-third-section-container">
+                <!-- the room card template, when there more rooms from DB, here will be added the rooms -->
+                <div class="main-rh-third-section-container-destination">
+                    <div class="main-rh-third-section-container-destination-img">
+                        <img src="./images/carribean.jpg" alt="destination">
+                    </div>
+                    <div class="main-rh-third-section-container-destination-info destination-card">
+                        <h1>Carribean</h1>
+                        <div class="main-rh-third-section-container-destination-info-stuff">
+                            <p>Includes: Breakfast, Lunch</p>
+                            <p>Payment: Online / At hotel</p>
+                        </div>
+                    </div>
+                    <div class="main-rh-third-section-container-destination-info-price">
+                        <h1>119$</h1>
+                        <h3>Price</h1>
+                    </div>
+                </div>
+
+                <div class="main-rh-third-section-container-destination">
+                    <div class="main-rh-third-section-container-destination-img">
+                        <img src="./images/japan.jpg" alt="destination">
+                    </div>
+                    <div class="main-rh-third-section-container-destination-info destination-card">
+                        <h1>Japan</h1>
+                        <div class="main-rh-third-section-container-destination-info-stuff">
+                            <p>Includes: Breakfast, Lunch, Diner</p>
+                            <p>Payment: Online / At hotel</p>
+                        </div>
+                    </div>
+                    <div class="main-rh-third-section-container-destination-info-price">
+                        <h1>229$</h1>
+                        <h3>Price</h1>
+                    </div>
+                </div>
+
+                <div class="main-rh-third-section-container-destination">
+                    <div class="main-rh-third-section-container-destination-img">
+                        <img src="./images/madrid.jpg" alt="destination">
+                    </div>
+                    <div class="main-rh-third-section-container-destination-info destination-card">
+                        <h1>Madrid</h1>
+                        <div class="main-rh-third-section-container-destination-info-stuff">
+                            <p>Includes: Breakfast, Diner</p>
+                            <p>Payment: Online / At hotel</p>
+                        </div>
+                    </div>
+                    <div class="main-rh-third-section-container-destination-info-price">
+                        <h1>159$</h1>
+                        <h3>Price</h1>
+                    </div>
+                </div>
+
+
             </div>
         </section>
     </main>

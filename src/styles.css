@@ -772,7 +772,8 @@ header {
 }
 
 .main-rh-section-title,
-.main-rh-second-section-title {
+.main-rh-second-section-title,
+.main-rh-third-secton-title {
   font-size: 40px;
   color: rgb(0, 0, 0);
   margin-bottom: 50px;
@@ -780,6 +781,7 @@ header {
 
 .main-rh-section-container,
 .main-rh-second-section-container,
+.main-rh-third-section-container,
 .main-rh-second-section-total-price {
   margin: 0 auto;
   width: 60%;
@@ -821,38 +823,40 @@ header {
   text-align: center;
 }
 
-.main-rh-second-section-container-room {
+.main-rh-second-section-container-destination,
+.main-rh-third-section-container {
   border-bottom: 2px solid gray;
   padding: 30px;
 }
 
-.main-rh-second-section-container-room-img {
+.main-rh-second-section-container-destination-img {
   width: 50vw;
   height: 50vh;
 }
 
-.main-rh-second-section-container-room-img img {
+.main-rh-second-section-container-destination-img img {
   width: 100%;
   height: 100%;
 }
 
-.main-rh-second-section-container-room-title {
+.main-rh-second-section-container-destination-title {
   margin: 10px 0;
 }
 
-.main-rh-second-section-container-room-info {
+.main-rh-second-section-container-destination-info {
   display: flex;
   justify-content: space-between;
 }
 
-.main-rh-second-section-container-room-info-stuff {
+.main-rh-second-section-container-destination-info-stuff {
   display: grid;
   column-gap: 50px;
   grid-template-columns: auto auto;
 }
 
-.main-rh-second-section-container-room-info-price h1,
-.main-rh-second-section-total-price h1 {
+.main-rh-second-section-container-destination-info-price h1,
+.main-rh-second-section-total-price h1,
+.main-rh-third-section-container-destination-info-price h1 {
   font-family: "Montserrat", sans-serif;
   font-size: 35px;
   color: rgb(255, 87, 87);
@@ -860,7 +864,7 @@ header {
   margin-bottom: 10px;
 }
 
-.main-rh-second-section-container-room-info-stuff {
+.main-rh-second-section-container-destination-info-stuff {
   font-size: 18px;
 }
 
@@ -875,6 +879,41 @@ header {
 
 .main-rh-second-section-total-price h1 {
   font-size: 50px;
+}
+
+.main-rh-third-section {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 100px;
+}
+
+.main-rh-third-secton-title {
+  text-align: center;
+}
+
+.main-rh-third-section-container-destination {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 45px;
+  border-bottom: 2px solid gray;
+}
+
+.destination-card {
+  flex: 1;
+  margin-left: 15px;
+}
+
+.main-rh-third-section-container-destination-img {
+  width: 20vw;
+  height: 20vh;
+}
+
+.main-rh-third-section-container-destination-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.main-rh-second-section-container-destination-info-price {
 }
 
 /* Footer */
