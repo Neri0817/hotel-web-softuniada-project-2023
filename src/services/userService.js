@@ -11,11 +11,15 @@ exports.checkUserExistence = (username) => User.findOne({ username });
 
 exports.validateUser = async (username, password) => {
     const user = await User.findOne({ username });
-    if (!user) return null;
+    if (!user) {
+        return null;
+    }
 
     const isPasswordValid = await bcrypt.compare(password, user.password);
 
-    if (!isPasswordValid) return null;
+    if (!isPasswordValid) {
+        return null;
+    } 
 
     return user;
 };
