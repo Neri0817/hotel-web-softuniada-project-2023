@@ -1,40 +1,41 @@
 const userService = require('../services/userService');
+const session = require('../util/session');
 
 exports.getLogin = (req, res) => {
-    const session = req.session;
-    console.log('GET login')
-    console.log('session');
-    console.log(session);
-    if (session.username) {
-        res.send(`Welcome ${session.username} <a href=\'/users/logout'>click to logout</a>`);
-    } else {
-        res.render('sign-in');
-    }
-    
+    // const session = req.session;
+    // console.log('GET login')
+    // console.log('session');
+    // console.log(session);
+    // if (session.username) {
+    //     res.send(`Welcome ${session.username} <a href=\'/users/logout'>click to logout</a>`);
+    // } else {
+    //     res.render('sign-in');
+    // }
+    res.render('sign-in');
 }
 
 exports.postLogin = async (req, res) => {
     const { username, password } = req.body;
 
-    // Validate user credentials
     try {
-        const user = await userService.validateUser(username, password);
-        if (!user) {
-            return res.redirect('/404');
-        }
-        const session = req.session;
-        session.username = username;
-        
-        console.log('POST login')
-        console.log('session');
-        console.log(session);
+        const user = await userService.login(username, password);
+        session.setSession(req, username, user);
 
-        res.send(`Hey ${session.username}, welcome <a href=\'/users/logout'>click to logout</a>`);
-        //res.redirect('/');
+        res.locals.username = username;
+        res.locals.isAuthenticated = true;
+        res.redirect('/');
+
+        console.log('Log at postLogin');
+        console.log('user');
+        console.log(user);
+        console.log('session'); 
+        console.log(req.session);
+        
 
     } catch (error) {
-        console.log(`Error validating user: ${error}`);
-        return res.redirect('/404');
+        console.log(`Error: ${error}`)
+        //not sure if we need to destroy the session
+        //req.session.destroy();
     }
 }
 

@@ -4,6 +4,7 @@ const routes = require('./config/routes');
 const config = require('./config/config');
 const initDB = require('./config/database');
 const userSessionMiddleware = require('./middleware/userSession');
+const authMiddleware = require('./middleware/authMiddleware');
 const cookieParser = require("cookie-parser");
 
 const app = express();
@@ -19,6 +20,8 @@ app.use(express.urlencoded({
 
 //cookie-parser middleware
 app.use(cookieParser());
+//global auth middleware
+app.use(authMiddleware.autentication);
 
 app.use(routes);
 

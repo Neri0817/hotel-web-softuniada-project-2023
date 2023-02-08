@@ -1,5 +1,6 @@
-const bcrypt = require('bcrypt');
 const User = require('../models/User');
+const bcrypt = require('bcrypt');
+const authService = require('../services/authService');
 
 exports.register = async (username, email, password) => {
     const hash = await bcrypt.hash(password, 10);
@@ -9,17 +10,17 @@ exports.register = async (username, email, password) => {
 
 exports.checkUserExistence = (username) => User.findOne({ username });
 
-exports.validateUser = async (username, password) => {
-    const user = await User.findOne({ username });
-    if (!user) {
-        return null;
+exports.login = async(username, password) => {
+    try {
+        const user = await authService.validateUser(username, password);
+        if (!user) {
+            throw 'Invalid username or password!';
+        }
+        
+        return user;
+
+    } catch (error) {
+        console.log(`Error validating user: ${error}`);
+        return
     }
-
-    const isPasswordValid = await bcrypt.compare(password, user.password);
-
-    if (!isPasswordValid) {
-        return null;
-    } 
-
-    return user;
 };
