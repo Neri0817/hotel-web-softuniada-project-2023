@@ -157,7 +157,8 @@ header {
 }
 
 .main-about-us-section-div h1,
-.main-about-us-div h1 {
+.main-about-us-div h1,
+.main-about-section h1 {
   font-size: 40px;
   color: rgb(255, 87, 87);
   font-weight: bold;
@@ -197,6 +198,54 @@ header {
   padding: 5px 350px;
   text-align: center;
   text-shadow: 2px 2px black;
+}
+
+.main-about-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 50px auto;
+}
+
+.main-about-section-title {
+  margin-bottom: 80px;
+}
+
+.main-about-section-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-top: 35px;
+}
+
+.main-about-section-container-div {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.main-section-container-div-img {
+  width: 150px;
+}
+
+.main-about-section-container-div img {
+  width: 100%;
+  border-radius: 100%;
+  transition: all 0.3s ease 0s;
+}
+
+.main-about-section-container-div img:hover {
+  transform: translateY(-7px);
+  box-shadow: 0px 10px 15px rgba(255, 87, 87, 0.471);
+}
+
+.main-section-div-info h1 {
+  font-size: 22px;
+  text-shadow: 3px 1px black;
+  letter-spacing: 4px;
 }
 /* Sign In Page */
 
