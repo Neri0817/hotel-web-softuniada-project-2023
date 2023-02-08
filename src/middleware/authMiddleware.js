@@ -1,6 +1,6 @@
 
 
-exports.autentication = async (req, res, next) => {
+exports.authentication = async (req, res, next) => {
     const session  = req.session;
 
     if(session.user){
