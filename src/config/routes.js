@@ -26,6 +26,10 @@ router.get('/users/logout', userController.logout);
 router.get('/rooms/book', roomController.getRooms);
 router.post('/rooms/book', roomController.postSearchRooms);
 
+router.get('/test', roomController.getBookRoom);
+
+router.post('/test', roomController.postBookRoom);
+
 
 //HOTELS
 //Add

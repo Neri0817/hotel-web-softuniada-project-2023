@@ -1,3 +1,6 @@
+//This has been moved to the roomController JS file
+
+
 // const availabilityService = require('../services/availabilityService');
 
 // exports.getBookingPage = (req, res) => {

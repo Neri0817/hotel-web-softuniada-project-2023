@@ -8,7 +8,7 @@ exports.getAvailableRooms = async(req, res) => {
         const availableRoomsArray = await availabilityService.checkAvailability(startDate, endDate);
         console.log(`availableRoomsArray: ${availableRoomsArray}`);
     } catch (error) {
-        
+        console.log(error);
     }
     res.render('/rooms/book', {  })
 };

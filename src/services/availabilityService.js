@@ -8,13 +8,13 @@ exports.checkAvailability = async(startDate, endDate) => {
         // const resultArray = Reservation.find({date: { $gte: startDate, $lte: endDate} }, { status: { $ne: "requested" }}, (error, results))
 
 
-        let resultArray = Reservation.find({ status: { $ne: "approved" }, status: { $ne: "requested" } }, (error, results) => {
+        let resultArray = Reservation.find({date: { $gte: startDate, $lte: endDate} }, { status: { $ne: "approved" }, status: { $ne: "requested" } }, (error, results) => {
             if (error) {
              console.log(`This is the ${error}`);
             } else {
-                results = results.toArray();
+                // results = results.toArray();
                 console.log(results);
-                console.log('I print here-------------------------');
+                console.log('Print here-------------------------');
              console.log(resultArray); //this returns a query
             }
           });
