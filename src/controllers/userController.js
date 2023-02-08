@@ -1,7 +1,16 @@
 const userService = require('../services/userService');
 
 exports.getLogin = (req, res) => {
-    res.render('sign-in');
+    const session = req.session;
+    console.log('GET login')
+    console.log('session');
+    console.log(session);
+    if (session.username) {
+        res.send(`Welcome ${session.username} <a href=\'/users/logout'>click to logout</a>`);
+    } else {
+        res.render('sign-in');
+    }
+    
 }
 
 exports.postLogin = async (req, res) => {
@@ -13,9 +22,15 @@ exports.postLogin = async (req, res) => {
         if (!user) {
             return res.redirect('/404');
         }
-        req.session.user = user;
+        const session = req.session;
+        session.username = username;
+        
+        console.log('POST login')
+        console.log('session');
+        console.log(session);
 
-        res.redirect('/');
+        res.send(`Hey ${session.username}, welcome <a href=\'/users/logout'>click to logout</a>`);
+        //res.redirect('/');
 
     } catch (error) {
         console.log(`Error validating user: ${error}`);

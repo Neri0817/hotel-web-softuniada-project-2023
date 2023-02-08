@@ -3,21 +3,14 @@ const viewEngineSetup = require('./config/viewEngine');
 const routes = require('./config/routes');
 const config = require('./config/config');
 const initDB = require('./config/database');
-const session = require('express-session');
+const userSessionMiddleware = require('./middleware/userSession');
 const cookieParser = require("cookie-parser");
 
 const app = express();
 viewEngineSetup(app);
 
 //session middleware
-// creating 24 hours from milliseconds
-const oneDay = 1000 * 60 * 60 * 24;
-app.use(session({
-    secret: config.SECRET,
-    resave: false,
-    saveUninitialized: true,
-    cookie: { maxAge: oneDay }
-}));
+app.use(userSessionMiddleware);
 
 app.use(express.static('src/static'));
 app.use(express.urlencoded({
