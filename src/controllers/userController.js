@@ -2,15 +2,14 @@ const userService = require('../services/userService');
 const session = require('../util/session');
 
 exports.getLogin = (req, res) => {
-    // const session = req.session;
-    // console.log('GET login')
-    // console.log('session');
-    // console.log(session);
-    // if (session.username) {
-    //     res.send(`Welcome ${session.username} <a href=\'/users/logout'>click to logout</a>`);
-    // } else {
-    //     res.render('sign-in');
-    // }
+    const sessionBeforeLogin = req.session;
+    console.log('GET login')
+    console.log('sessionBeforeLogin');
+    console.log(sessionBeforeLogin);
+    console.log('res.locals.isAuthenticated')
+    console.log(res.locals.isAuthenticated)
+    console.log('req.isAuthenticated')
+    console.log(req.isAuthenticated)
     res.render('sign-in');
 }
 
@@ -19,24 +18,29 @@ exports.postLogin = async (req, res) => {
 
     try {
         const user = await userService.login(username, password);
-        session.setSession(req, username, user);
+        session.setSession(req, res, username, user);
 
-        res.locals.username = username;
-        res.locals.isAuthenticated = true;
-        res.redirect('/');
+        // res.locals.username = username;
+        // res.locals.isAuthenticated = true;
+        
 
         console.log('Log at postLogin');
         console.log('user');
         console.log(user);
-        console.log('session'); 
+        console.log('session');
         console.log(req.session);
-        
+        console.log('res.locals.isAuthenticated')
+        console.log(res.locals.isAuthenticated)
+        console.log('req.isAuthenticated')
+        console.log(req.isAuthenticated)
+
 
     } catch (error) {
         console.log(`Error: ${error}`)
         //not sure if we need to destroy the session
         //req.session.destroy();
     }
+    res.redirect('/');
 }
 
 exports.getRegister = (req, res) => {
@@ -69,10 +73,11 @@ exports.postRegister = async (req, res) => {
     res.redirect('/users/login');
 };
 
-exports.logout = async(req, res) => {
-    req.session.destroy((error) => {if(error) {
-        console.log(`Error destroying session: ${error}`);
-    }
+exports.logout = async (req, res) => {
+    req.session.destroy((error) => {
+        if (error) {
+            console.log(`Error destroying session: ${error}`);
+        }
         res.redirect('/');
     });
 };

@@ -28,4 +28,3 @@ app.use(routes);
 initDB()
     .then(() => app.listen(config.PORT, () => console.log(`Server is running on PORT: ${config.PORT}...`)))
     .catch((err) => console.log(err));
-
