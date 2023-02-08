@@ -8,7 +8,7 @@ exports.checkAvailability = async(startDate, endDate) => {
         // const resultArray = Reservation.find({date: { $gte: startDate, $lte: endDate} }, { status: { $ne: "requested" }}, (error, results))
 
 
-        let resultArray = Reservation.find({date: { $gte: startDate, $lte: endDate} }, { status: { $ne: "approved" }, status: { $ne: "requested" } }, (error, results) => {
+        let resultArray = Reservation.find({ status: { $ne: "approved" }, status: { $ne: "requested" } }, (error, results) => {
             if (error) {
              console.log(`This is the ${error}`);
             } else {

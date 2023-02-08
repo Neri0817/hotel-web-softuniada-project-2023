@@ -15,6 +15,16 @@ const roomSchema = new mongoose.Schema({
         min: 1,
         max: 8,
     },
+    guestCapacity: {
+        type: Number,
+        required: true,
+    },
+    beds: {
+        type: Number,
+        required: true,
+        min: 1,
+        max: 8,
+    },
     imageUrl: {
         type: String,
         required: true,
