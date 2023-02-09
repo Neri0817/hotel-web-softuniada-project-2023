@@ -326,7 +326,8 @@ header {
 
 .main-sign-in-container-div-btn,
 .main-join-container-div-btn,
-.main-pf-section-div-file button {
+.main-pf-section-div-file button,
+.main-contact-us-section-div-btn {
   padding: 10px 35px;
   background-color: rgba(255, 87, 87);
   border-radius: 5px;
@@ -347,7 +348,8 @@ header {
 .main-home-section-article-btn:hover,
 .main-rh-div-container-form-btn:hover,
 .main-rh-section-container-btn:hover,
-.main-pf-section-div-file button:hover {
+.main-pf-section-div-file button:hover,
+.main-contact-us-section-div-btn:hover {
   cursor: pointer;
   background-color: rgba(255, 87, 87);
   box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.425);
@@ -1212,6 +1214,115 @@ header {
 .main-pf-div-info-card {
   margin-bottom: 50px;
   border-bottom: 2px solid rgb(255, 87, 87);
+}
+
+/* Contact Us Page */
+.main-contact {
+  width: 100%;
+  height: 100%;
+}
+.main-contact-section {
+  width: 100%;
+  height: 85vh;
+  background: url("/src/images/contact-us-img.jpg") no-repeat center;
+  background-size: cover;
+  box-shadow: 0px 0px 0px 1200px rgba(0, 0, 0, 0.718) inset;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.main-contact-section h1 {
+  font-size: 100px;
+  text-shadow: 8px 4px black;
+}
+
+.main-contact-section h3 {
+  padding: 50px 200px;
+  font-size: 21px;
+  text-shadow: 4px 2px black;
+}
+
+.main-contact-article {
+  width: 100%;
+  height: 55vh;
+  background-color: rgb(255, 87, 87);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 50px 0;
+}
+
+.main-contact-article-info {
+  background-color: white;
+  width: 20%;
+  height: 60%;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255, 87, 87);
+  box-shadow: 0 10px 25px black;
+}
+
+.main-contact-article-info h1 {
+  font-size: 30px;
+  text-shadow: 2px 1px black;
+  margin-bottom: 10px;
+}
+
+.main-contact-article-info p {
+  color: black;
+  font-size: 18px;
+}
+
+.main-contact-us-section {
+  display: flex;
+  justify-content: center;
+  padding: 100px 0;
+  height: 95vh;
+}
+
+.main-contact-us-section-div {
+  width: 40%;
+  box-shadow: 0 10px 25px black;
+}
+
+.main-contact-us-section-div img {
+  width: 100%;
+  height: 100%;
+}
+
+.contact-us-div-second {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 60px 20px 100px;
+  position: relative;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.contact-us-div-second label {
+  font-size: 20px;
+  color: rgb(255, 87, 87);
+  text-shadow: 1px 1px black;
+}
+
+.main-contact-us-section-div-info input,
+.main-contact-us-section-div-info textarea {
+  width: 90%;
+  border: 1px solid rgb(255, 87, 87);
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.main-contact-us-section-div-btn {
+  bottom: 30px;
+  left: 185px;
 }
 
 /* Footer */
