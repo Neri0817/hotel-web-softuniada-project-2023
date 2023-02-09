@@ -1,6 +1,7 @@
 const express = require('express');
 const Router = express.Router;
 const router = Router();
+const upload = require('../util/uploadFile');
 
 //TO DO: import controllers
 const homeController = require('../controllers/homeController');
@@ -34,6 +35,7 @@ router.post('/test', roomController.postBookRoom);
 //Rooms
 //Add
 router.get('/rooms/add', roomController.getCreateRoom);
+router.post('/rooms/add', upload.single('image') , roomController.postCreateRoom);
 //Details
 /*Example
 router.get('/hotels/:id/details', hotelController.getDetails);

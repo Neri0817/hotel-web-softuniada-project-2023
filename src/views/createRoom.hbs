@@ -6,17 +6,17 @@
 
                 <div class="main-join-container-div-form-input">
                     <label for="name">Name</label>
-                    <input name="name" type="text" >
+                    <input name="name" required>
                 </div>
 
                 <div class="main-join-container-div-form-input">
                     <label for="destination">Destination</label>
-                    <input name="destination" type="text"></input>
+                    <input name="destination" required></input>
                 </div>
 
                 <div class="main-join-container-div-form-input">
                     <label for="rooms">How many rooms</label>
-                    <select name="rooms">
+                    <select name="rooms" required>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -30,12 +30,12 @@
 
                 <div class="main-join-container-div-form-input">
                     <label for="guestCapacity">How many guests</label>
-                    <input name="guestCapacity" ></input>
+                    <input name="guestCapacity" required></input>
                 </div>
 
                 <div class="main-join-container-div-form-input">
                     <label for="beds">How many beds</label>
-                    <select name="beds">
+                    <select name="beds" required>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -49,7 +49,7 @@
 
                 <div class="main-join-container-div-form-input">
                     <h4 for="amenities">Amenities</h4>
-                    <select name="amenities" id="amenities" multiple>
+                    <select name="amenities" id="amenities" multiple required>
                         <option value="Coffee Kit ">Coffee Kit </option>
                         <option value="Bathrobes and slippers">Bathrobes and slippers</option>
                         <option value="Toiletries">Toiletries</option>
@@ -63,12 +63,12 @@
 
                 <div class="main-join-container-div-form-input">
                     <label for="price">Price per nigth</label>
-                    <input name="price" ></input>
+                    <input name="price" required></input>
                 </div>
 
                 <div class="main-join-container-div-form-input">
                     <label for="image">Image</label>
-                    <input name="upload" type="file">
+                    <input name="image" type="file" required>
                 </div>
                 <button type="submit" class="main-join-container-div-btn">Add Accommodation</button>
             </form>

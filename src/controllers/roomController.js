@@ -64,3 +64,31 @@ exports.postBookRoom = async (req, res) => {
 exports.getCreateRoom = (req, res) => {
      res.render('createRoom');
 };
+
+exports.postCreateRoom = async(req, res) => {
+    const { name, destination, rooms, guestCapacity, beds, amenities, price, image } = req.body;
+  
+    const imageUrl = '/images/' + image; 
+
+    const room = new Room({
+        name,
+        destination,
+        rooms, 
+        guestCapacity, 
+        beds, 
+        amenities: amenities.toString(), 
+        price, 
+        imageUrl 
+    });
+
+    try {
+        await room.save();
+        res.redirect('/');
+    } catch (error) {
+        throw new Error(error);
+    }
+
+    // console.log('Log at POST createRoom:');
+    // console.log(req.body);
+
+};
