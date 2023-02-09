@@ -325,7 +325,8 @@ header {
 }
 
 .main-sign-in-container-div-btn,
-.main-join-container-div-btn {
+.main-join-container-div-btn,
+.main-pf-section-div-file button {
   padding: 10px 35px;
   background-color: rgba(255, 87, 87);
   border-radius: 5px;
@@ -345,7 +346,8 @@ header {
 .main-join-container-div-btn:hover,
 .main-home-section-article-btn:hover,
 .main-rh-div-container-form-btn:hover,
-.main-rh-section-container-btn:hover {
+.main-rh-section-container-btn:hover,
+.main-pf-section-div-file button:hover {
   cursor: pointer;
   background-color: rgba(255, 87, 87);
   box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.425);
@@ -1101,6 +1103,115 @@ header {
   padding: 5px 10px;
   font-size: 15px;
   margin: 20px;
+}
+
+/* Profile Page */
+.header-nav-list-pf i {
+  font-size: 20px;
+}
+
+.main-pf {
+  width: 100%;
+  height: 100%;
+}
+
+.main-pf-section {
+  width: 100%;
+  height: 100%;
+  padding: 20px 100px 100px 100px;
+}
+
+.main-pf-section-div {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  box-shadow: 0px 0px 46px 10px black;
+}
+
+.main-pf-section-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  color: rgb(255, 87, 87);
+  font-size: 24px;
+  margin: 20px 0 50px 0;
+  text-shadow: 3px 1px black;
+  letter-spacing: 0.2rem;
+}
+
+.main-pf-section-div form {
+  width: 40%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 50px 100px;
+}
+
+.main-pf-section-div form input {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid rgb(255, 87, 87);
+  background-color: transparent;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.main-pf-section-div-img {
+  width: 60%;
+  background: url("/src/images/pf-img.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.main-pf-div {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 87, 87);
+  padding: 50px 0 100px 0;
+  position: relative;
+}
+
+.main-pf-div-icon-second,
+.main-pf-div-icon-one {
+  position: absolute;
+}
+
+.main-pf-div-icon-one {
+  width: 350px;
+  height: 350px;
+  background: url(../src/images/plane-pf-png.png) no-repeat;
+  background-size: cover;
+  left: 25px;
+}
+
+.main-pf-div-icon-second {
+  width: 250px;
+  height: 250px;
+  background: url(../src/images/pf-summer-img.png) no-repeat;
+  background-size: cover;
+  right: 50px;
+  bottom: 50px;
+  transform: rotate(45deg);
+}
+
+.main-pf-div-title {
+  color: white;
+  padding: 50px 0;
+  text-align: center;
+  font-size: 40px;
+  text-shadow: 3px 2px black;
+}
+
+.main-pf-div-info {
+  background-color: white;
+  width: 50%;
+  padding: 20px;
+  border-radius: 5px;
+  margin: 20px auto;
+}
+
+.main-pf-div-info-card {
+  margin-bottom: 50px;
+  border-bottom: 2px solid rgb(255, 87, 87);
 }
 
 /* Footer */
