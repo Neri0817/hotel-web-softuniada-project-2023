@@ -19,17 +19,6 @@ exports.postLogin = async (req, res) => {
     try {
         const user = await userService.login(username, password);
         session.setSession(req, res, username, user);
-
-        console.log('Log at postLogin');
-        console.log('user');
-        console.log(user);
-        console.log('session');
-        console.log(req.session);
-        console.log('res.locals.isAuthenticated')
-        console.log(res.locals.isAuthenticated)
-        console.log('req.isAuthenticated')
-        console.log(req.isAuthenticated)
-
         res.redirect('/');
     } catch (error) {
         console.log(`Error: ${error}`)
@@ -49,7 +38,6 @@ exports.postRegister = async (req, res) => {
         //TODO: Error handling
         return res.redirect('/404')
     }
-
 
     //TO DO: think of validator function to validate the data in each field
 

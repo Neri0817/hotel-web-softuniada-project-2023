@@ -1,5 +1,4 @@
 
-
 exports.authentication = async (req, res, next) => {
     const session  = req.session;
 
