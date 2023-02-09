@@ -1,0 +1,77 @@
+<main class="main-join">
+    <div class="main-join-container">
+        <div class="main-join-container-div main-join-card-two">
+            <form action="/rooms/add" method="POST" class="main-join-container-div-form">
+                <h1>Add Accommodation</h1>
+
+                <div class="main-join-container-div-form-input">
+                    <label for="name">Name</label>
+                    <input name="name" type="text" >
+                </div>
+
+                <div class="main-join-container-div-form-input">
+                    <label for="destination">Destination</label>
+                    <input name="destination" type="text"></input>
+                </div>
+
+                <div class="main-join-container-div-form-input">
+                    <label for="rooms">How many rooms</label>
+                    <select name="rooms">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                    </select>
+                </div>
+
+                <div class="main-join-container-div-form-input">
+                    <label for="guestCapacity">How many guests</label>
+                    <input name="guestCapacity" ></input>
+                </div>
+
+                <div class="main-join-container-div-form-input">
+                    <label for="beds">How many beds</label>
+                    <select name="beds">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                    </select>
+                </div>
+
+                <div class="main-join-container-div-form-input">
+                    <h4 for="amenities">Amenities</h4>
+                    <select name="amenities" id="amenities" multiple>
+                        <option value="Coffee Kit ">Coffee Kit </option>
+                        <option value="Bathrobes and slippers">Bathrobes and slippers</option>
+                        <option value="Toiletries">Toiletries</option>
+                        <option value="Free breakfast">Free breakfast</option>
+                        <option value="Free WiFi">Free WiFi</option>
+                        <option value="Free parking">Free parking</option>
+                        <option value="Gym">Gym</option>
+                        <option value="Air conditioning">Air conditioning</option>
+                    </select>
+                </div>
+
+                <div class="main-join-container-div-form-input">
+                    <label for="price">Price per nigth</label>
+                    <input name="price" ></input>
+                </div>
+
+                <div class="main-join-container-div-form-input">
+                    <label for="image">Image</label>
+                    <input name="upload" type="file">
+                </div>
+                <button type="submit" class="main-join-container-div-btn">Add Accommodation</button>
+            </form>
+        </div>
+    </div>
+</main>
