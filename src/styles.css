@@ -15,7 +15,7 @@
 
 body,
 html {
-    scrollbar-color: linear-gradient(#270101, #d64a09);
+  scrollbar-color: linear-gradient(#270101, #d64a09);
   scrollbar-width: thin;
   margin: 0;
   font-family: "Catamaran", sans-serif;
@@ -795,6 +795,100 @@ header {
   text-decoration: none;
   background-color: gray;
 }
+
+.counter-h2 {
+  margin-left: 0;
+  margin-right: 0;
+  font-size: 3.4375rem;
+  margin: 60px 90px 0;
+
+  color: #ec6c39 !important;
+  word-wrap: break-word;
+  position: relative;
+  font-family: Montserrat, sans-serif;
+  line-height: 1.1;
+
+  font-weight: 700;
+}
+.counter-p {
+  text-align: center;
+  font-size: 1.125rem;
+  margin: 24px auto 0;
+  padding-bottom: 17px;
+}
+
+.counter-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  padding: 25px 20px;
+  margin-bottom: 30px;
+  background: rgb(255, 255, 255);
+  text-align: center;
+  flex: 1 1 auto;
+  gap: 16px;
+}
+
+.counter-Frepeat-cells {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: auto;
+  grid-template-columns: repeat(2, calc(50% - 16px));
+  min-height: 590px;
+  grid-gap: 32px;
+  display: grid;
+}
+
+.counter-single-cell {
+  padding: 50px 20px 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  position: relative;
+  flex: 1 1 0%;
+  background-image: none;
+  box-shadow: 5px 5px 23px 0 rgb(0 0 0 / 20%);
+  border-radius: 50px !important;
+  color: #cbabab;
+  background-color: #ec6c39;
+}
+
+.counter-cell {
+  border-radius: 20px !important;
+  padding: 20px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 1;
+  max-width: 100%;
+  transition-duration: inherit;
+}
+.counter-description {
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1rem;
+  margin: 0 auto;
+  word-wrap: break-word;
+  position: relative;
+  display: table;
+  align-self: flex-start;
+}
+.counter-number {
+  font-size: 6rem;
+  font-size: 4.5rem;
+  font-weight: 700;
+  margin: 20px auto 0;
+  font-family: "Montserrat", sans-serif;
+  word-wrap: break-word;
+  position: relative;
+  display: table;
+  align-self: flex-start;
+  width: fit-content;
+  color: inherit;
+}
+
 /* preloader*/
 #preloader {
   background: #ffffff url(./images/Preloader.gif) no-repeat center center;
@@ -1048,105 +1142,6 @@ header {
   padding: 5px 10px;
   font-size: 15px;
   margin: 20px;
-}
-
-
-.counter-h2{
-  margin-left: 0;
-  margin-right: 0;
-  font-size: 3.4375rem;
-  margin: 60px 90px 0;
-
-  color: #ec6c39 !important;
-  word-wrap: break-word;
-  position: relative; 
-  font-family: Montserrat,sans-serif;
-  line-height: 1.1;
-
-  font-weight: 700;
-}
-.counter-p{
-  text-align: center;
-  font-size: 1.125rem;
-  margin: 24px auto 0;
-  padding-bottom: 17px;
-}
-
-.counter-container {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-evenly;
-  padding: 25px 20px;
-  margin-bottom: 30px;
-  background: rgb(255, 255, 255);
-  text-align: center;
-  flex: 1 1 auto;
-  gap: 16px;
-}
-
-.counter-Frepeat-cells {
-  flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: auto;
-  grid-template-columns: repeat(2, calc(50% - 16px));
-  min-height: 590px;
-  grid-gap: 32px;
-  display: grid;
-
-
-}
-
-.counter-single-cell {
-
-  padding: 50px 20px 30px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  position: relative;
-  flex: 1 1 0%;
-  background-image: none;
-  box-shadow: 5px 5px 23px 0 rgb(0 0 0 / 20%);
-  border-radius: 50px !important;
-  color: #cbabab;
-  background-color: #ec6c39;
-}
-
-.counter-cell {
-  border-radius: 20px !important;
-  padding: 20px;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  flex: 1;
-  max-width: 100%;
-  transition-duration: inherit;
-}
-.counter-description{
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 1rem;
-  margin: 0 auto;
-  word-wrap: break-word;
-    position: relative;
-    display: table;
-    align-self: flex-start; 
-}
-.counter-number{
-  font-size: 6rem;
-  font-size: 4.5rem;
-  font-weight: 700;
-  margin: 20px auto 0;
-  font-family: Montserrat, sans-serif !important;
-  word-wrap: break-word;
-  position: relative;
-  display: table;
-    align-self: flex-start;
-    width: fit-content;
-    color: inherit;
-
-
 }
 
 /* Footer */
