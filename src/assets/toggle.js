@@ -1,14 +1,14 @@
-let btn = document.getElementById("btn");
-console.log(btn);
+function toggle(btn) {
 
-function toggle() {
-  if (btn.textContent == "Show details") {
-    btn.textContent = "Hide details";
-    document.getElementById("extra").style.display = "flex";
-  } else {
-    btn.textContent = "Show details";
-    document.getElementById("extra").style.display = "none";
-  }
+
+
+
+    if (btn.target.innerText == 'SHOW DETAILS') {
+        btn.target.innerText = 'Hide details'
+        btn.target.parentElement.childNodes[3].style.display = 'block'
+    }
+    else {
+        btn.target.innerText = 'SHOW DETAILS'
+        btn.target.parentElement.childNodes[3].style.display = 'none'
+    }
 }
-
-btn.addEventListener("click", toggle);
