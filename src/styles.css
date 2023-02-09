@@ -2,21 +2,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,500&display=swap");
 
 ::-webkit-scrollbar {
-  width: 15px;
+  width: 7px;
 }
 
 ::-webkit-scrollbar-track {
-  background: rgb(221, 221, 221);
+  background: rgb(255, 255, 255);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(#270101, #d64a09);
+  border-radius: 50px;
+  background: linear-gradient(#270101, rgba(255, 87, 87));
 }
 
 body,
 html {
-  scrollbar-color: linear-gradient(#270101, #d64a09);
-  scrollbar-width: thin;
   margin: 0;
   font-family: "Catamaran", sans-serif;
   background-color: rgb(221, 221, 221);
