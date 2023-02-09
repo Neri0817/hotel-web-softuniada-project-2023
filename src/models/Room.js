@@ -28,15 +28,16 @@ const roomSchema = new mongoose.Schema({
     imageUrl: {
         type: String,
         required: true,
-        validate: {
-            validator: function(value) {
-                return value.startsWith('http://') || value.startsWith('https://')
-            },
-            message: 'URL is invalid, please try again'
-        }
+        //no need of validation, we are uploading files not giving URLs
+        // validate: {
+        //     validator: function(value) {
+        //         return value.startsWith('http://') || value.startsWith('https://')
+        //     },
+        //     message: 'URL is invalid, please try again'
+        // }
     },
     amenities: {
-        type: String,
+        type: String,  //we need to think if this should be an array 
         required: true,
     },
     price: {
