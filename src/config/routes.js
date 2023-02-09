@@ -24,7 +24,7 @@ router.post('/users/register', userController.postRegister);
 //Logout
 router.get('/users/logout', userController.logout);
 
-router.get('/rooms/book', roomController.getRooms);
+router.get('/rooms/book', roomController.getReservePage);
 router.post('/rooms/book', roomController.postSearchRooms);
 
 router.get('/test', roomController.getBookRoom);

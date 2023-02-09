@@ -13,9 +13,9 @@ exports.validateUser = async (username, password) => {
         return null;
     } 
     
-    console.log('validateUser');
-    console.log('user:');
-    console.log(user);
+    // console.log('validateUser');
+    // console.log('user:');
+    // console.log(user);
 
     //const isValidUser = true;
 

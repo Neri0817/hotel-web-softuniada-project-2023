@@ -3,23 +3,52 @@ const availabilityService = require('../services/availabilityService');
 const Reservation = require('../models/Reservation');
 const Room = require('../models/Room');
 
-exports.getRooms = (req, res) => {
+exports.getReservePage = (req, res) => {
     res.render('reserve');
 };
 
 exports.postSearchRooms = async (req, res) => {
-    const { startDate, endDate } = req.body;
-
+    const { destination, startDate, endDate, guests } = req.body;
+    console.log('Log at POST SEARCH:')
+    console.log('destination:');
+    console.log(destination);
 
     console.log(`startDate: ${startDate}`);
     console.log(`endDate: ${endDate}`);
+
+    console.log('guests');
+    console.log(guests);
+
+    //we need to check wich are the search criterias and 
+
+    //serch ONLY by destination
+    const searchResultDestination = await Room.find({ destination }).lean();
+    console.log('searchResultDestination:');
+    console.log(searchResultDestination);
+
+    //search ONLY by guests
+    const searchResultGuests = await Room.find({ guestCapacity: { $gte: guests } }).lean();
+    console.log('searchResultGuests:');
+    console.log(searchResultGuests);
+
+
     try {
-        const availableRoomsArray = await availabilityService.checkAvailability(startDate, endDate);
-        console.log(`availableRoomsArray: ${availableRoomsArray}`);
-        console.log('roomController');
+        const bookings = await availabilityService.checkAvailability(startDate, endDate);
+        console.log('bookings:');
+        console.log(bookings);
+        let availableRooms;
+        if (bookings.length === 0) {
+            //there are no bookings for these dates, so we show all the rooms
+            availableRooms = await Room.find().lean();
+            console.log('availableRooms:');
+            console.log(availableRooms);
+            
+        } else {
+            //if there are some rooms we need to find all the rest in rooms 
+        }
         // add check in the template if there are rooms available - show each room, if no rooms available show message 'Unfortunately we are fully booked for your dates!' or similar
-        res.render('/hotels/book', { availableRoomsArray });
-      
+
+        res.render('reserve', { bookings, availableRooms });
     } catch (error) {
         console.log(error);
     }
@@ -52,33 +81,38 @@ exports.postBookRoom = async (req, res) => {
 
 
     //get roomId from req.params.roomId;
-    //const roomId = req.params.roomId;
+    //const roomId = req.body.roomId;
+    console.log('Log at POST bookRoom')
+    console.log('req.body:')
+    console.log(req.body)
+    console.log('req.session.username:')
+    console.log(req.session.username)
     //const room = await Room.findById(roomId);
+    //const userId = 
+
+    //await Reservation.create( {startDate, endDate, status})
 
 
-    await Reservation.create( {startDate, endDate, status})
-
-    
 };
 
 exports.getCreateRoom = (req, res) => {
-     res.render('createRoom');
+    res.render('createRoom');
 };
 
-exports.postCreateRoom = async(req, res) => {
+exports.postCreateRoom = async (req, res) => {
     const { name, destination, rooms, guestCapacity, beds, amenities, price, image } = req.body;
-  
-    const imageUrl = '/images/' + image; 
+
+    const imageUrl = '/images/' + image;
 
     const room = new Room({
         name,
         destination,
-        rooms, 
-        guestCapacity, 
-        beds, 
-        amenities: amenities.toString(), 
-        price, 
-        imageUrl 
+        rooms,
+        guestCapacity,
+        beds,
+        amenities: amenities.toString(),
+        price,
+        imageUrl
     });
 
     try {
@@ -87,8 +121,4 @@ exports.postCreateRoom = async(req, res) => {
     } catch (error) {
         throw new Error(error);
     }
-
-    // console.log('Log at POST createRoom:');
-    // console.log(req.body);
-
 };

@@ -3,13 +3,13 @@ const session = require('../util/session');
 
 exports.getLogin = (req, res) => {
     const sessionBeforeLogin = req.session;
-    console.log('GET login')
-    console.log('sessionBeforeLogin');
-    console.log(sessionBeforeLogin);
-    console.log('res.locals.isAuthenticated')
-    console.log(res.locals.isAuthenticated)
-    console.log('req.isAuthenticated')
-    console.log(req.isAuthenticated)
+    // console.log('GET login')
+    // console.log('sessionBeforeLogin');
+    // console.log(sessionBeforeLogin);
+    // console.log('res.locals.isAuthenticated')
+    // console.log(res.locals.isAuthenticated)
+    // console.log('req.isAuthenticated')
+    // console.log(req.isAuthenticated)
     res.render('sign-in');
 }
 

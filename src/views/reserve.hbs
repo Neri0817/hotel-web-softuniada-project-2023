@@ -1,179 +1,75 @@
 <main class="main-rh">
-        <div class="main-rh-div">
-            <h1 class="main-rh-div-title">Reservation</h1>
-            <div class="main-rh-div-container">
-                <h2 class="main-rh-div-container-title">Make your reservation now</h2>
-                <form action="" method="POST">
-                    <div class="main-rh-div-container-form">
-                        <section>
-                            <label for="destinations">Destinations</label> <br>
-                            <input type="text" id="destinations" name="destinations"
-                                placeholder="Country, city, airport...">
-                        </section>
+    <div class="main-rh-div">
+        <h1 class="main-rh-div-title">Reservation</h1>
+        <div class="main-rh-div-container">
+            <h2 class="main-rh-div-container-title">Make your reservation now</h2>
+            <form action="" method="POST">
+                <div class="main-rh-div-container-form">
+                    <section>
+                        <label for="destinations">Destinations</label> <br>
+                        <input type="text" id="destination" name="destination"
+                            placeholder="Country, city, airport...">
+                    </section>
 
-                        <section>
-                            <label for="checkIn">Check in date</label> <br>
-                            <input type="text" id="checkIn" name="startDate" placeholder="Check in">
-                        </section>
+                    <section>
+                        <label for="checkIn">Check in date</label> <br>
+                        <input type="date" id="checkIn" name="startDate" placeholder="Check in">
+                    </section>
 
-                        <section>
-                            <label for="checkOut">Check out date</label> <br>
-                            <input type="text" id="checkOut" name="endDate" placeholder="Check out">
-                        </section>
+                    <section>
+                        <label for="checkOut">Check out date</label> <br>
+                        <input type="date" id="checkOut" name="endDate" placeholder="Check out">
+                    </section>
 
-                        <section>
-                            <label for="guest">Guests</label> <br>
-                            <input type="text" id="guest" name="guests" placeholder="Guest count">
-                        </section>
-                        <!-- INFO FOR THE BACKEND -->
-                        <!-- When public user click book now button, redirect it to register page -->
-                        <!-- When loget user click book now button, show him the confirm reservation section and other sections-->
-                        <!-- delete those comments after :D -->
-                        {{!-- Orlin: Should we just redirect ro register page before selecting 'Book now'? 
-                        This way the user won't have to enter the information twice. 
-                        User clicks on Reserve a Hotel and if not logged in we send him/her to Register page --}}
-                        <button type="submit" class="main-rh-div-container-form-btn">Find now</button>
-                    </div>
-                </form>
-            </div>
+                    <section>
+                        <label for="guest">Guests</label> <br>
+                        <input type="text" id="guest" name="guests" placeholder="Guest count">
+                    </section>
+                    <!-- INFO FOR THE BACKEND -->
+                    <!-- When public user click book now button, redirect it to register page -->
+                    <!-- When loget user click book now button, show him the confirm reservation section and other sections-->
+                    <!-- delete those comments after :D -->
+                    {{!-- Orlin: Should we just redirect ro register page before selecting 'Book now'?
+                    This way the user won't have to enter the information twice.
+                    User clicks on Reserve a Hotel and if not logged in we send him/her to Register page --}}
+                    <button type="submit" class="main-rh-div-container-form-btn">Find now</button>
+                </div>
+            </form>
         </div>
+    </div>
 
-        <section class="main-rh-section">
-            <h1 class="main-rh-section-title">Confirm your reservation</h1>
-            <div class="main-rh-section-container">
-                <form action="" method="">
+    <!--confirmation section comes here -->
 
-                    <div class="main-rh-section-container-div">
-                        <input type="text" placeholder="First Name" name="fname" required>
-                        <input type="text" placeholder="Last Name" name="lname" required>
-                        <input type="text" placeholder="Email Address" name="email" required>
-                    </div>
+    <section class="main-rh-second-section">
+        <h1 class="main-rh-second-section-title">Your booking overview</h1>
+        <div class="main-rh-second-section-container">
 
-                    <div class="main-rh-section-container-div">
-                        <input type="text" placeholder="Phone Number" name="phone" required>
-                        <input type="text" placeholder="Country" name="country" required>
-                        <input type="text" placeholder="Rooms" name="rooms" required>
-                    </div>
+            <!-- the room card template, when user confirm reservation, here will be added the room -->
 
-                    <div class="main-rh-section-container-div rh-div-checkbox">
-                        <label>
-                            <input type="checkbox" name="check" onclick="onlyOne(this)">Payment directly at
-                            hotel</label>
-                        <label>
-                            <input type="checkbox" name="check" onclick="onlyOne(this)">Payment online</label>
-                    </div>
-
-                    <button type="submit" class="main-rh-section-container-btn">Confirm</button>
-                </form>
-            </div>
-        </section>
-
-        <section class="main-rh-second-section">
-            <h1 class="main-rh-second-section-title">Your booking overview</h1>
-            <div class="main-rh-second-section-container">
-
-                <!-- the room card template, when user confirm reservation, here will be added the room -->
-                <div class="main-rh-second-section-container-destination">
-                    <div class="main-rh-second-section-container-destination-img">
-                        <img src="./images/thailand.jpg" alt="destination">
-                    </div>
-                    <h1 class="main-rh-second-section-container-destination-title">Thailand</h1>
-                    <div class="main-rh-second-section-container-destination-info">
-                        <div class="main-rh-second-section-container-destination-info-stuff">
-                            <p>Includes: Breakfast</p>
-                            <p>Rooms: 1</p>
-                            <p>Payment: At hotel</p>
-                            <p>Guests: 2</p>
-                        </div>
-                        <div class="main-rh-second-section-container-destination-info-price">
-                            <h1>199$</h1>
-                            <h3>Price</h1>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="main-rh-second-section-container-destination">
-                    <div class="main-rh-second-section-container-destination-img">
-                        <img src="./images/france.jpg" alt="destination">
-                    </div>
-                    <h1 class="main-rh-second-section-container-destination-title">France</h1>
-                    <div class="main-rh-second-section-container-destination-info">
-                        <div class="main-rh-second-section-container-destination-info-stuff">
-                            <p>Includes: Breakfast</p>
-                            <p>Rooms: 1</p>
-                            <p>Payment: Online</p>
-                            <p>Guests: 1</p>
-                        </div>
-                        <div class="main-rh-second-section-container-destination-info-price">
-                            <h1>100$</h1>
-                            <h3>Price</h1>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+            {{#if bookings}}
+            {{#each bookings}}
+            {{>booking}}
+            {{/each}}
             <div class="main-rh-second-section-total-price">
                 <h3>Total Price:</h3>
                 <h1>299$</h1>
             </div>
-        </section>
-
-        <section class="main-rh-third-section">
-            <h1 class="main-rh-third-secton-title">Destinations available for you</h1>
-            <div class="main-rh-third-section-container">
-                <!-- the room card template, when there more rooms from DB, here will be added the rooms -->
-                <div class="main-rh-third-section-container-destination">
-                    <div class="main-rh-third-section-container-destination-img">
-                        <img src="./images/carribean.jpg" alt="destination">
-                    </div>
-                    <div class="main-rh-third-section-container-destination-info destination-card">
-                        <h1>Carribean</h1>
-                        <div class="main-rh-third-section-container-destination-info-stuff">
-                            <p>Includes: Breakfast, Lunch</p>
-                            <p>Payment: Online / At hotel</p>
-                        </div>
-                    </div>
-                    <div class="main-rh-third-section-container-destination-info-price">
-                        <h1>119$</h1>
-                        <h3>Price</h1>
-                    </div>
-                </div>
-
-                <div class="main-rh-third-section-container-destination">
-                    <div class="main-rh-third-section-container-destination-img">
-                        <img src="./images/japan.jpg" alt="destination">
-                    </div>
-                    <div class="main-rh-third-section-container-destination-info destination-card">
-                        <h1>Japan</h1>
-                        <div class="main-rh-third-section-container-destination-info-stuff">
-                            <p>Includes: Breakfast, Lunch, Diner</p>
-                            <p>Payment: Online / At hotel</p>
-                        </div>
-                    </div>
-                    <div class="main-rh-third-section-container-destination-info-price">
-                        <h1>229$</h1>
-                        <h3>Price</h1>
-                    </div>
-                </div>
-
-                <div class="main-rh-third-section-container-destination">
-                    <div class="main-rh-third-section-container-destination-img">
-                        <img src="./images/madrid.jpg" alt="destination">
-                    </div>
-                    <div class="main-rh-third-section-container-destination-info destination-card">
-                        <h1>Madrid</h1>
-                        <div class="main-rh-third-section-container-destination-info-stuff">
-                            <p>Includes: Breakfast, Diner</p>
-                            <p>Payment: Online / At hotel</p>
-                        </div>
-                    </div>
-                    <div class="main-rh-third-section-container-destination-info-price">
-                        <h1>159$</h1>
-                        <h3>Price</h1>
-                    </div>
-                </div>
-
-
+            {{else}}
+            <div class="main-rh-second-section-total-price">
+                <h1>You dont have any bookings yet!</h1>
             </div>
-        </section>
-    </main>
+            {{/if}}
+        </div>
+
+    </section>
+
+    <section class="main-rh-third-section">
+        <h1 class="main-rh-third-secton-title">Destinations available for you</h1>
+        <div class="main-rh-third-section-container">
+            <!-- the room card template, when there more rooms from DB, here will be added the rooms -->
+            {{#each availableRooms}}
+            {{>room}}
+            {{/each}}
+        </div>
+    </section>
+</main>
