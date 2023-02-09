@@ -33,22 +33,22 @@ exports.postSearchRooms = async (req, res) => {
 
 
     try {
-        const bookings = await availabilityService.checkAvailability(startDate, endDate);
+        const availableRooms = await availabilityService.checkAvailability(startDate, endDate);
         console.log('bookings:');
-        console.log(bookings);
-        let availableRooms;
-        if (bookings.length === 0) {
+        console.log(availableRooms);
+        let bookedRooms;
+        if (availableRooms.length === 0) {
             //there are no bookings for these dates, so we show all the rooms
-            availableRooms = await Room.find().lean();
-            console.log('availableRooms:');
-            console.log(availableRooms);
+            bookedRooms = await Room.find().lean();
+            console.log('bookedRooms');
+            console.log(bookedRooms);
             
         } else {
             //if there are some rooms we need to find all the rest in rooms 
         }
         // add check in the template if there are rooms available - show each room, if no rooms available show message 'Unfortunately we are fully booked for your dates!' or similar
 
-        res.render('reserve', { bookings, availableRooms });
+        res.render('reserve', { availableRooms, bookedRooms });
     } catch (error) {
         console.log(error);
     }

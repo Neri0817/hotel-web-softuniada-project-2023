@@ -6,6 +6,7 @@ exports.checkAvailability = async (startDate, endDate) => {
         date: { $gte: startDate, $lte: endDate },
         status: { $ne: "approved" }
       });
+      console.log(results);
       return results;
 
     } catch (error) {

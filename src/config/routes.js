@@ -7,6 +7,7 @@ const upload = require('../util/uploadFile');
 const homeController = require('../controllers/homeController');
 const userController = require('../controllers/userController');
 const roomController = require('../controllers/roomController');
+const adminController = require('../controllers/adminController');
 //TO DO: Endpoints and actions 
 
 //Home and Search
@@ -30,6 +31,8 @@ router.post('/rooms/book', roomController.postSearchRooms);
 router.get('/test', roomController.getBookRoom);
 
 router.post('/test', roomController.postBookRoom);
+
+router.get('/auth/admin', adminController.getAdminPage);
 
 
 //Rooms
