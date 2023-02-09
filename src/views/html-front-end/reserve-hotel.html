@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Reserve a hotel</title>
+</head>
+
+<body>
+    <header>
+        <nav class="header-nav">
+            <div class="header-nav-logo">
+                <img src="images/logo.jpg" alt="Logo" />
+            </div>
+            <ul class="header-nav-list">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Reserve a Hotel</a></li>
+                <li><a href="#">Contact us</a></li>
+                <li><a href="#">Sign in</a></li>
+                <li><a href="#">Join</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-rh">
+        <div class="main-rh-div">
+            <h1 class="main-rh-div-title">Reservation</h1>
+            <div class="main-rh-div-container">
+                <h2 class="main-rh-div-container-title">Make your reservation now</h2>
+                <form action="" method="">
+                    <div class="main-rh-div-container-form">
+                        <section>
+                            <label for="destinations">Destinations</label> <br>
+                            <input type="text" id="destinations" name="destinations"
+                                placeholder="Country, city, airport...">
+                        </section>
+
+                        <section>
+                            <label for="checkIn">Check in date</label> <br>
+                            <input type="text" id="checkIn" name="destinations" placeholder="Check in">
+                        </section>
+
+                        <section>
+                            <label for="checkOut">Check out date</label> <br>
+                            <input type="text" id="checkOut" name="destinations" placeholder="Check out">
+                        </section>
+
+                        <section>
+                            <label for="guest">Guests</label> <br>
+                            <input type="text" id="guest" name="destinations" placeholder="The count of the guests">
+                        </section>
+                        <!-- INFO FOR THE BACKEND -->
+                        <!-- When public user click book now button, redirect it to register page -->
+                        <!-- When loget user click book now button, show him the confirm reservation section and other sections-->
+                        <!-- delete those comments after :D -->
+                        <button type="submit" class="main-rh-div-container-form-btn">Book now</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <section class="main-rh-section">
+            <h1 class="main-rh-section-title">Confirm your reservation</h1>
+            <div class="main-rh-section-container">
+                <form action="" method="">
+
+                    <div class="main-rh-section-container-div">
+                        <input type="text" placeholder="First Name" name="fname" required>
+                        <input type="text" placeholder="Last Name" name="lname" required>
+                        <input type="text" placeholder="Email Address" name="email" required>
+                    </div>
+
+                    <div class="main-rh-section-container-div">
+                        <input type="text" placeholder="Phone Number" name="phone" required>
+                        <input type="text" placeholder="Country" name="country" required>
+                        <input type="text" placeholder="Rooms" name="rooms" required>
+                    </div>
+
+                    <div class="main-rh-section-container-div rh-div-checkbox">
+                        <label>
+                            <input type="checkbox" name="check" onclick="onlyOne(this)">Payment directly at
+                            hotel</label>
+                        <label>
+                            <input type="checkbox" name="check" onclick="onlyOne(this)">Payment online</label>
+                    </div>
+
+                    <button type="submit" class="main-rh-section-container-btn">Confirm</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="main-rh-second-section">
+            <h1 class="main-rh-second-section-title">Your booking overview</h1>
+            <div class="main-rh-second-section-container">
+
+                <!-- the room card template, when user confirm reservation, here will be added the room -->
+                <div class="main-rh-second-section-container-destination">
+                    <div class="main-rh-second-section-container-destination-img">
+                        <img src="./images/thailand.jpg" alt="destination">
+                    </div>
+                    <h1 class="main-rh-second-section-container-destination-title">Thailand</h1>
+                    <div class="main-rh-second-section-container-destination-info">
+                        <div class="main-rh-second-section-container-destination-info-stuff">
+                            <p>Includes: Breakfast</p>
+                            <p>Rooms: 1</p>
+                            <p>Payment: At hotel</p>
+                            <p>Guests: 2</p>
+                        </div>
+                        <div class="main-rh-second-section-container-destination-info-price">
+                            <h1>199$</h1>
+                            <h3>Price</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="main-rh-second-section-container-destination">
+                    <div class="main-rh-second-section-container-destination-img">
+                        <img src="./images/france.jpg" alt="destination">
+                    </div>
+                    <h1 class="main-rh-second-section-container-destination-title">France</h1>
+                    <div class="main-rh-second-section-container-destination-info">
+                        <div class="main-rh-second-section-container-destination-info-stuff">
+                            <p>Includes: Breakfast</p>
+                            <p>Rooms: 1</p>
+                            <p>Payment: Online</p>
+                            <p>Guests: 1</p>
+                        </div>
+                        <div class="main-rh-second-section-container-destination-info-price">
+                            <h1>100$</h1>
+                            <h3>Price</h1>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="main-rh-second-section-total-price">
+                <h3>Total Price:</h3>
+                <h1>299$</h1>
+            </div>
+        </section>
+
+        <section class="main-rh-third-section">
+            <h1 class="main-rh-third-secton-title">Destinations available for you</h1>
+            <div class="main-rh-third-section-container">
+                <!-- the room card template, when there more rooms from DB, here will be added the rooms -->
+                <div class="main-rh-third-section-container-destination">
+                    <div class="main-rh-third-section-container-destination-img">
+                        <img src="./images/carribean.jpg" alt="destination">
+                    </div>
+                    <div class="main-rh-third-section-container-destination-info destination-card">
+                        <h1>Carribean</h1>
+                        <div class="main-rh-third-section-container-destination-info-stuff">
+                            <p>Includes: Breakfast, Lunch</p>
+                            <p>Payment: Online / At hotel</p>
+                        </div>
+                    </div>
+                    <div class="main-rh-third-section-container-destination-info-price">
+                        <h1>119$</h1>
+                        <h3>Price</h1>
+                    </div>
+                    <div class="main-rh-third-section-container-destination-learn-more">
+                        <button id="btn" class="main-rh-third-section-container-destination-learn-more-btn"
+                            onclick="toggle()">Show
+                            details</button>
+                        <p id="extra" style="display:none;">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                            Obcaecati, beatae,
+                            natus ad omnis
+                            numquam quod unde ullam cumque quos adipisci earum sed molestias temporibus doloremque
+                            porro! Soluta aliquam praesentium commodi!</p>
+                    </div>
+                </div>
+
+                <div class="main-rh-third-section-container-destination">
+                    <div class="main-rh-third-section-container-destination-img">
+                        <img src="./images/japan.jpg" alt="destination">
+                    </div>
+                    <div class="main-rh-third-section-container-destination-info destination-card">
+                        <h1>Japan</h1>
+                        <div class="main-rh-third-section-container-destination-info-stuff">
+                            <p>Includes: Breakfast, Lunch, Diner</p>
+                            <p>Payment: Online / At hotel</p>
+                        </div>
+                    </div>
+                    <div class="main-rh-third-section-container-destination-info-price">
+                        <h1>229$</h1>
+                        <h3>Price</h1>
+                    </div>
+                    <div class="main-rh-third-section-container-destination-learn-more">
+                        <button id="btn" class="main-rh-third-section-container-destination-learn-more-btn"
+                            onclick="toggle()">Show
+                            details</button>
+                        <p id="extra" style="display:none;">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                            Obcaecati, beatae,
+                            natus ad omnis
+                            numquam quod unde ullam cumque quos adipisci earum sed molestias temporibus doloremque
+                            porro! Soluta aliquam praesentium commodi!</p>
+                    </div>
+                </div>
+
+                <div class="main-rh-third-section-container-destination">
+                    <div class="main-rh-third-section-container-destination-img">
+                        <img src="./images/madrid.jpg" alt="destination">
+                    </div>
+                    <div class="main-rh-third-section-container-destination-info destination-card">
+                        <h1>Madrid</h1>
+                        <div class="main-rh-third-section-container-destination-info-stuff">
+                            <p>Includes: Breakfast, Diner</p>
+                            <p>Payment: Online / At hotel</p>
+                        </div>
+                    </div>
+                    <div class="main-rh-third-section-container-destination-info-price">
+                        <h1>159$</h1>
+                        <h3>Price</h1>
+                    </div>
+                    <div class="main-rh-third-section-container-destination-learn-more">
+                        <button id="btn" class="main-rh-third-section-container-destination-learn-more-btn"
+                            onclick="toggle()">Show
+                            details</button>
+                        <p id="extra" style="display:none;">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                            Obcaecati, beatae,
+                            natus ad omnis
+                            numquam quod unde ullam cumque quos adipisci earum sed molestias temporibus doloremque
+                            porro! Soluta aliquam praesentium commodi!</p>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-container-row">
+                <div class="footer-col">
+                    <h4>company</h4>
+                    <ul>
+                        <li><a href="#">about us</a></li>
+                        <li><a href="#">our services</a></li>
+                        <li><a href="#">privacy policy</a></li>
+                        <li><a href="#">affiliate program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>get help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">shipping</a></li>
+                        <li><a href="#">returns</a></li>
+                        <li><a href="#">order status</a></li>
+                        <li><a href="#">payment options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>online shop</h4>
+                    <ul>
+                        <li><a href="#">watch</a></li>
+                        <li><a href="#">bag</a></li>
+                        <li><a href="#">shoes</a></li>
+                        <li><a href="#">dress</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <p class="footer-container-row-p">
+                © 2023 All Rights Reserved
+            </p>
+        </div>
+    </footer>
+</body>
+<script src="./assets/checkboxInputs.js"></script>
+<script src="./assets/toggle.js"></script>
+
+</html>
