@@ -423,7 +423,7 @@ header {
 /* Home page */
 
 .main-home {
-  height: 339vh;
+  height: 100%;
   width: 100%;
 }
 
@@ -628,12 +628,12 @@ header {
 
 .subheading {
   line-height: 1.15789;
-  font-size: 38px;
+  font-size: 40px;
   margin-top: 6px;
   margin-bottom: 0;
   font-family: "Merriweather", "Times New Roman", Times, serif;
   font-weight: 700;
-  color: #45484d;
+  color: rgb(255, 87, 87);
   box-sizing: border-box;
   padding: 50px;
   text-shadow: 1px 1px black;
@@ -669,18 +669,18 @@ header {
 .responsive-tab-button {
   cursor: pointer;
   border: none;
-  color: black;
+  color: white;
   padding: 16px 32px;
   text-align: center;
   font-size: 18px;
   margin: 4px 2px;
   transition: all 0.3s ease 0s;
   border-radius: 30px;
-  background-color: gray;
+  background-color: rgb(255, 87, 87);
 }
 .responsive-tab-button:hover {
-  background-color: #be1414;
-  color: white;
+  background-color: gray;
+  color: black;
 }
 .responsive-tab-button:focus {
   background: #e5e5e5;
@@ -692,46 +692,29 @@ header {
 }
 
 .catalogHome {
-  flex-grow: 1;
   display: flex;
-  /* -webkit-flex-direction: column; */
-
   flex-direction: row;
-  /* -webkit-flex-wrap: nowrap; */
-  -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
-  /* -webkit-align-items: center; */
-
-  /* -webkit-justify-content: space-between; */
-  -ms-flex-pack: justify;
   justify-content: space-evenly;
-  padding: 25px 20px 25px;
   margin-bottom: 30px;
-  background: #fff;
+  background: rgb(255, 87, 87);
   text-align: center;
-  flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: auto;
   grid-gap: 16px;
+  padding: 100px 20px;
 }
 
 .catalogHome-cards-container {
-  border-radius: 50px !important;
-  padding-top: 30px;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding: 50px 20px 30px;
+  width: 30%;
+  border-radius: 50px;
+  padding: 50px 0;
   display: flex;
-
+  background-color: white;
+  box-shadow: 0px 10px 25px -2px black;
   flex-direction: row;
   justify-content: space-around;
   position: relative;
-  flex: 1;
   max-width: 100%;
   transition-duration: inherit;
-  box-shadow: 5px 5px 20px 0 rgb(0 0 0 / 10%);
-
-  border-color: #4bbfd8;
   will-change: transform, opacity;
   animation-duration: 1750ms;
   border-width: 9px;
@@ -740,84 +723,72 @@ header {
 .product-image {
   height: 200px;
   overflow: hidden;
-  border-radius: 50px !important;
+  border-radius: 50px;
   display: block;
 }
 
 .link {
+  color: rgb(255, 87, 87);
   display: inline;
   background-color: transparent;
   text-decoration: none;
   transition: 0.33s all ease-out;
 }
 .link:focus {
-  color: #f36561;
+  color: #ffffff;
 }
 .link:active {
-  color: #943c3c;
+  color: #000000;
 }
 
-.btn {
-  background-color: #ddd;
-  border: none;
-  color: black;
-  padding: 16px 32px;
-  text-align: center;
-  font-size: 16px;
-  margin: 4px 2px;
-  transition: 0.3s;
-  border-radius: 30px;
+.price {
+  font-family: "Montserrat", sans-serif;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
 }
 
-.btn:hover {
-  background-color: #c03c28;
-  color: rgb(231, 219, 219);
-}
 .view-btn {
-  background-color: #ddd;
+  background-color: rgb(255, 87, 87);
   border: none;
-  color: black;
+  color: rgb(255, 255, 255);
   padding: 4px 32px;
   text-align: center;
-  font-size: 16px;
-  margin: 4px 2px;
   transition: 0.3s;
   border-radius: 30px;
 }
 
 .view-btn:hover {
-  background-color: #c03c28;
-  color: rgb(231, 219, 219);
+  background-color: grey;
+  color: rgb(0, 0, 0);
 }
 .bold-text {
-  color: white;
   font-size: 17px;
   text-decoration: none;
-  background-color: gray;
 }
 
 .counter-h2 {
-  margin-left: 0;
-  margin-right: 0;
   font-size: 3.4375rem;
   margin: 60px 90px 0;
-
-  color: #ec6c39 !important;
+  padding: 0 50px;
+  color: rgb(255, 87, 87);
   word-wrap: break-word;
   position: relative;
-  font-family: Montserrat, sans-serif;
   line-height: 1.1;
-
   font-weight: 700;
+  text-shadow: 2px 1px black;
 }
 .counter-p {
   text-align: center;
-  font-size: 1.125rem;
-  margin: 24px auto 0;
-  padding-bottom: 17px;
+  font-size: 24px;
+  margin: 60px auto;
+  font-family: "Montserrat", sans-serif;
+  color: rgb(0, 0, 0);
 }
 
 .counter-container {
+  width: 100%;
+  height: 40vh;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-evenly;
@@ -825,43 +796,32 @@ header {
   margin-bottom: 30px;
   background: rgb(255, 255, 255);
   text-align: center;
-  flex: 1 1 auto;
-  gap: 16px;
-}
-
-.counter-Frepeat-cells {
-  flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: auto;
-  grid-template-columns: repeat(2, calc(50% - 16px));
-  min-height: 590px;
-  grid-gap: 32px;
-  display: grid;
+  background-color: inherit;
 }
 
 .counter-single-cell {
-  padding: 50px 20px 30px;
+  width: 20%;
+  height: 90%;
+  padding: 50px 20px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   position: relative;
-  flex: 1 1 0%;
   background-image: none;
-  box-shadow: 5px 5px 23px 0 rgb(0 0 0 / 20%);
-  border-radius: 50px !important;
-  color: #cbabab;
-  background-color: #ec6c39;
+  box-shadow: 0px 10px 25px -2px black;
+  border-radius: 50px;
+  color: #ffffff;
+  text-shadow: 1px 1px black;
+  background-color: rgb(255, 87, 87);
 }
 
 .counter-cell {
-  border-radius: 20px !important;
+  border-radius: 20px t;
   padding: 20px;
   justify-content: center;
   display: flex;
   flex-direction: column;
   position: relative;
-  flex: 1;
-  max-width: 100%;
   transition-duration: inherit;
 }
 .counter-description {
