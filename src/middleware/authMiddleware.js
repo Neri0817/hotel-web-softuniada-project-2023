@@ -4,15 +4,8 @@ exports.authentication = async (req, res, next) => {
     const session  = req.session;
 
     if(session.user){
-        try {
-            req.user = session.user;
-            req.isAutenticated  = true;
-            res.locals.username = session.username
-            res.locals.isAutenticated = true;
-        } catch (error) {
-            console.log(error.message);
-            return;
-        }
+        req.isAuthenticated = true;
+        res.locals.isAuthenticated = true;
     }
 
     next();

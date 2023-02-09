@@ -20,10 +20,6 @@ exports.postLogin = async (req, res) => {
         const user = await userService.login(username, password);
         session.setSession(req, res, username, user);
 
-        // res.locals.username = username;
-        // res.locals.isAuthenticated = true;
-        
-
         console.log('Log at postLogin');
         console.log('user');
         console.log(user);
@@ -34,13 +30,12 @@ exports.postLogin = async (req, res) => {
         console.log('req.isAuthenticated')
         console.log(req.isAuthenticated)
 
-
+        res.redirect('/');
     } catch (error) {
         console.log(`Error: ${error}`)
         //not sure if we need to destroy the session
         //req.session.destroy();
     }
-    res.redirect('/');
 }
 
 exports.getRegister = (req, res) => {
