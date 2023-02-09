@@ -60,3 +60,7 @@ exports.postBookRoom = async (req, res) => {
 
     
 };
+
+exports.getCreateRoom = (req, res) => {
+     res.render('createRoom');
+};

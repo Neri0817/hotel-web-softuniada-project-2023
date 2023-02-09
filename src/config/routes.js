@@ -31,11 +31,9 @@ router.get('/test', roomController.getBookRoom);
 router.post('/test', roomController.postBookRoom);
 
 
-//HOTELS
+//Rooms
 //Add
-/*Example
-router.get('/hotels/addHotel', hotelController.getAdd);
- */
+router.get('/rooms/add', roomController.getCreateRoom);
 //Details
 /*Example
 router.get('/hotels/:id/details', hotelController.getDetails);
