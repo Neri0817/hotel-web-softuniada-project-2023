@@ -5,7 +5,8 @@ const config = require('./config/config');
 const initDB = require('./config/database');
 const userSessionMiddleware = require('./middleware/userSession');
 const authMiddleware = require('./middleware/authMiddleware');
-const cookieParser = require("cookie-parser");
+//cookie-parser not needed, it is included in express-session
+//const cookieParser = require("cookie-parser");
 
 const app = express();
 viewEngineSetup(app);
