@@ -1,11 +1,9 @@
+//this is the room Schema
+
 const mongoose = require('mongoose');
 
-const roomSchema = new mongoose.Schema({
+const destinationSchema = new mongoose.Schema({
     name: {
-        type: String,
-        required: true,
-    },
-    destination: {
         type: String,
         required: true,
     },
@@ -28,22 +26,23 @@ const roomSchema = new mongoose.Schema({
     imageUrl: {
         type: String,
         required: true,
-        //no need of validation, we are uploading files not giving URLs
-        // validate: {
-        //     validator: function(value) {
-        //         return value.startsWith('http://') || value.startsWith('https://')
-        //     },
-        //     message: 'URL is invalid, please try again'
-        // }
-    },
-    amenities: {
-        type: String,  //we need to think if this should be an array 
-        required: true,
     },
     price: {
         type: Number,
         required: true,
     },
+      // amenities: {
+    //     type: String,  //we need to think if this should be an array 
+    //     required: true,
+    // },
+      // destination: {
+    //     type: String,
+    //     required: true,
+    // },
+    // guestCapacity: {
+    //     type: Number,
+    //     required: true,
+    // },
 
     //reference to User database
     //we have to think about the architecture here, perhaps different DB for users and owners?
@@ -60,6 +59,6 @@ const roomSchema = new mongoose.Schema({
 });
 
 
-const Room = mongoose.model('Room', roomSchema);
+const Destination = mongoose.model('Destination', destinationSchema);
 
-module.exports = Room;
+module.exports = Destination;

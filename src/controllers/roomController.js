@@ -1,14 +1,14 @@
 const availabilityService = require('../services/availabilityService');
 
 const Reservation = require('../models/Reservation');
-const Room = require('../models/Room');
+const Destination = require('../models/Destination');
 
 
 exports.getReservePage = (req, res) => {
     res.render('reserve');
 };
 
-exports.postSearchRooms = async (req, res) => {
+exports.postSearchDestinations = async (req, res) => {
 
     console.log('Try post---------');
   
@@ -23,39 +23,39 @@ exports.postSearchRooms = async (req, res) => {
     //we need to check wich are the search criterias and 
 
     //serch ONLY by destination
-    const searchResultDestination = await Room.find({ destination }).lean();
+    const searchResultDestination = await Destination.find({ destination }).lean();
     console.log('searchResultDestination:');
     console.log(searchResultDestination);
 
     //search ONLY by guests
-    const searchResultGuests = await Room.find({ guestCapacity: { $gte: guests } }).lean();
+    const searchResultGuests = await Destination.find({ guestCapacity: { $gte: guests } }).lean();
     console.log('searchResultGuests:');
     console.log(searchResultGuests);
 
     //search ONLY by start and end date
     try {
-        const availableRooms = await availabilityService.checkAvailability(startDate, endDate);
+        const availableDestinations = await availabilityService.checkAvailability(startDate, endDate);
         console.log('availableRooms:');
         console.log(availableRooms);
-        let bookedRooms;
+        let bookedDestinations;
         if (availableRooms.length === 0) {
             //there are no bookings for these dates, so we show all the rooms
-            bookedRooms = await Room.find().lean();
-            console.log('bookedRooms');
-            console.log(bookedRooms);
+            bookedDestinations = await Destination.find().lean();
+            console.log('bookedDestinations');
+            console.log(bookedDestinations);
             
         } else {
             //if there are some rooms we need to find all the rest in rooms 
         }
         // add check in the template if there are rooms available - show each room, if no rooms available show message 'Unfortunately we are fully booked for your dates!' or similar
 
-        res.render('reserve', { availableRooms, bookedRooms });
+        res.render('reserve', { availableDestinations, bookedRooms });
     } catch (error) {
         console.log(error);
     }
 }
 
-exports.getBookRoom = (req, res) => {
+exports.getBookDestination= (req, res) => {
     res.send(`
     <h2>Login</h2>
     <form action="" method="POST">
@@ -73,7 +73,7 @@ exports.getBookRoom = (req, res) => {
     `)
 };
 
-exports.postBookRoom = async (req, res) => {
+exports.postBookDestination = async (req, res) => {
     const { startDate, endDate, status } = req.body;
 
     console.log(startDate);
@@ -96,12 +96,12 @@ exports.postBookRoom = async (req, res) => {
 
 };
 
-exports.getCreateRoom = (req, res) => {
+exports.getCreateDestination = (req, res) => {
     res.render('createRoom');
 };
 
-exports.postCreateRoom = async (req, res) => {
-    const { name, destination, rooms, guestCapacity, beds, amenities, price } = req.body;
+exports.postCreateDestination = async (req, res) => {
+    const { name, rooms, guestCapacity, beds, price } = req.body;
 
     let imageUrl = '/static/images/' + req.body.imageUrl;
     console.log(req.body);
@@ -111,20 +111,18 @@ exports.postCreateRoom = async (req, res) => {
     // const imageUrl = req.file;
 
 
-    const room = new Room({
+    const destination = new Destination({
         name,
-        destination,
         rooms,
         guestCapacity,
         beds,
-        amenities: amenities.toString(),
-        price,
-        imageUrl
+        imageUrl,
+        price
     });
 
 
     try {
-        await room.save();
+        await destination.save();
         res.redirect('/');
     } catch (error) {
         throw new Error(error);

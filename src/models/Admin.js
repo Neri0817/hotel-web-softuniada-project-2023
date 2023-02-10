@@ -1,20 +1,22 @@
-const mongoose = require('mongoose');
+//this model is no longer needed
 
-const adminSchema = new mongoose.Schema({
-    username: {
-        type: String,
-        default: 'Ivan'
-    },
-    email: {
-        type: String,
-        default: 'admin@abv.bg',
-    },
-    password: {
-        type: String,
-        default: 'room',
-    },
-});
+// const mongoose = require('mongoose');
 
-const Admin = mongoose.model('Admin', adminSchema);
+// const adminSchema = new mongoose.Schema({
+//     username: {
+//         type: String,
+//         default: 'Ivan'
+//     },
+//     email: {
+//         type: String,
+//         default: 'admin@abv.bg',
+//     },
+//     password: {
+//         type: String,
+//         default: 'room',
+//     },
+// });
 
-module.exports = Admin;
+// const Admin = mongoose.model('Admin', adminSchema);
+
+// module.exports = Admin;

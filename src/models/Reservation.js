@@ -17,7 +17,7 @@ const reservationSchema = new mongoose.Schema({
     },
     roomId: {
         type: mongoose.Types.ObjectId,
-        ref: 'Room'
+        ref: 'Destination'
     },
     reservationOwner: {
         type: mongoose.Types.ObjectId,
