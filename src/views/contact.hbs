@@ -22,13 +22,18 @@
                 <p>exampleInfo@gmail.com</p>
             </div>
         </article>
+    {{#if info}}
+    <div style="font-weight: bold; font-size: 20px">
+         {{info}}
+    </div>
+        {{else}}
 
         <section class="main-contact-us-section">
             <div class="main-contact-us-section-div">
                 <img src="../src/images/contact-img.jpg" alt="Image">
             </div>
             <div class="main-contact-us-section-div contact-us-div-second">
-                <form action="" method="">
+                <form action="" method="POST">
 
                     <div class="main-contact-us-section-div-info">
                         <label for="name">Name</label> <br>
@@ -47,7 +52,7 @@
 
                     <div class="main-contact-us-section-div-info">
                         <label for="message">Your message</label> <br>
-                        <textarea id="w3review" name="w3review" rows="4" cols="50"
+                        <textarea id="w3review" name="message" rows="4" cols="50"
                             placeholder="Your message here"></textarea>
                     </div>
 
@@ -56,5 +61,6 @@
                 </form>
             </div>
         </section>
+        {{/if}}
 
     </main>

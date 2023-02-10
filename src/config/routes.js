@@ -14,6 +14,7 @@ const adminController = require('../controllers/adminController');
 router.get('/', homeController.getHomePage);
 router.get('/about', homeController.getAboutPage);
 router.get('/contacts', homeController.getContactPage);
+router.post('/contacts', homeController.postContactPage);
 
 //AUTH
 //Login
