@@ -1,5 +1,7 @@
-const Admin = require('../models/Admin');
+//this is no longer needed
 
-exports.getAdminPage = (req, res) => {
-    res.render('admin');
-};
+// const Admin = require('../models/Admin');
+
+// exports.getAdminPage = (req, res) => {
+//     res.render('admin');
+// };
