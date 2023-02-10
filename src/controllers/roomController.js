@@ -14,7 +14,7 @@ exports.postSearchRooms = async (req, res) => {
   
     // user gets redirected to log in page if not logged in
     if(!req.session.username) {
-        const message = 'Please sign in to proceed!!'
+        const message = 'Please sign in to proceed!'
         return res.render('sign-in', { message });
     }
 
