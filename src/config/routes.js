@@ -38,7 +38,7 @@ router.get('/auth/admin', adminController.getAdminPage);
 //Rooms
 //Add
 router.get('/rooms/add', roomController.getCreateRoom);
-router.post('/rooms/add', upload.single('image') , roomController.postCreateRoom);
+router.post('/rooms/add', upload.single('imageUrl') , roomController.postCreateRoom);
 //Details
 /*Example
 router.get('/hotels/:id/details', hotelController.getDetails);

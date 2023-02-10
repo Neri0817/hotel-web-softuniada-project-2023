@@ -3,6 +3,7 @@ const availabilityService = require('../services/availabilityService');
 const Reservation = require('../models/Reservation');
 const Room = require('../models/Room');
 
+
 exports.getReservePage = (req, res) => {
     res.render('reserve');
 };
@@ -108,9 +109,15 @@ exports.getCreateRoom = (req, res) => {
 };
 
 exports.postCreateRoom = async (req, res) => {
-    const { name, destination, rooms, guestCapacity, beds, amenities, price, image } = req.body;
+    const { name, destination, rooms, guestCapacity, beds, amenities, price } = req.body;
 
-    const imageUrl = '/images/' + image;
+    let imageUrl = '/static/images/' + req.body.imageUrl;
+    console.log(req.body);
+    console.log(req.file); //returns undefinied
+
+    // console.log(req.file.path); //returns undefinied
+    // const imageUrl = req.file;
+
 
     const room = new Room({
         name,
@@ -122,6 +129,7 @@ exports.postCreateRoom = async (req, res) => {
         price,
         imageUrl
     });
+
 
     try {
         await room.save();
