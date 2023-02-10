@@ -1500,6 +1500,24 @@ header {
   .main-sign-in-container {
     width: 75vw;
   }
+
+  /* Profile page */
+
+  .main-pf-section-div form {
+    width: 50%;
+    padding: 50px;
+  }
+
+  .main-pf-section-div-file button {
+    font-size: 14px;
+    left: 180px;
+  }
+
+  .main-pf-div-icon-one,
+  .main-pf-div-icon-second {
+    width: 150px;
+    height: 150px;
+  }
 }
 
 @media screen and (max-width: 800px) {
@@ -1579,6 +1597,35 @@ header {
   .main-sign-in-card-one,
   .main-join-card-two {
     width: 50%;
+  }
+
+  /* Profile */
+  .main-pf-section {
+    padding: 20px 50px 50px 50px;
+  }
+  .main-pf-section-div form {
+    width: 100%;
+  }
+  .main-pf-div-icon-one {
+    top: 180px;
+  }
+  .main-pf-div-icon-second {
+    right: 15px;
+    bottom: 80px;
+  }
+  .main-rh-third-section-container-destination {
+    flex-direction: column;
+    align-content: center;
+  }
+  .main-rh-third-section-container-destination-img {
+    width: 40vw;
+    height: 25vh;
+  }
+  .destination-card h1 {
+    font-size: 22px;
+  }
+  .main-rh-third-section-container-destination-info-price {
+    text-align: end;
   }
 }
 
@@ -1677,6 +1724,33 @@ header {
     font-size: 28px;
   }
 
+  /* Profile */
+  .main-pf-section-div-img {
+    display: none;
+  }
+  .main-pf-section-div-file button {
+    left: 235px;
+  }
+
+  .main-pf-div-icon-one,
+  .main-pf-div-icon-second {
+    display: none;
+  }
+
+  .main-pf-div-title {
+    font-size: 35px;
+  }
+
+  .main-pf-div-info {
+    margin: 10px auto;
+    width: 85%;
+  }
+
+  .main-rh-third-section-container-destination-img {
+    width: inherit;
+    height: inherit;
+  }
+
   /* Footer */
 
   .footer-container-row {
@@ -1756,6 +1830,19 @@ header {
 
   .main-sign-in-container-div-btn {
     left: 32%;
+  }
+  /* Profile */
+  .main-pf-section-title {
+    font-size: 18px;
+  }
+  .main-pf-section-div-file button {
+    left: 195px;
+  }
+  .main-pf-section-div-file button {
+    left: 143px;
+  }
+  .main-pf-div-title {
+    font-size: 28px;
   }
 }
 
