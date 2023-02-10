@@ -8,6 +8,14 @@ exports.getReservePage = (req, res) => {
 };
 
 exports.postSearchRooms = async (req, res) => {
+
+    console.log('Try post---------');
+  
+    // user gets redirected to log in page if not logged in
+    if(!req.session.username) {
+        return res.redirect('/users/login');
+    }
+
     const { destination, startDate, endDate, guests } = req.body;
     console.log('Log at POST SEARCH:')
     console.log('destination:');
