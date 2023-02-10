@@ -1,6 +1,43 @@
 @import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,500&display=swap");
 
+.error-box {
+  position: fixed;
+  display: block;
+  z-index: 11111;
+  left: 2%;
+  top: 15%;
+  margin-top: 1em;
+  text-align: center;
+  border-radius: 0.5rem;
+  color: white;
+  height: auto;
+  width: 340px;
+  font-style: italic;
+  background-color: #c7171a;
+  box-shadow: 0px 0px 8px 7px white;
+}
+
+.error-box {
+  -moz-animation: cssAnimation 0s ease-in 2s forwards;
+  /* Firefox */
+  -webkit-animation: cssAnimation 0s ease-in 2s forwards;
+  /* Safari and Chrome */
+  -o-animation: cssAnimation 0s ease-in 2s forwards;
+  /* Opera */
+  animation: cssAnimation 0s ease-in 2s forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.error-box>p {
+  font-size: 24px;
+  font-weight: bold;
+  font-family: 'Barlow', sans-serif;
+  padding: 14px;
+  height: auto;
+}
+
 ::-webkit-scrollbar {
   width: 7px;
 }
