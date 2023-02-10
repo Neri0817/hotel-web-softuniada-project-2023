@@ -1496,7 +1496,8 @@ header {
     width: 25%;
   }
   /* Join Page */
-  .main-join-container {
+  .main-join-container,
+  .main-sign-in-container {
     width: 75vw;
   }
 }
@@ -1572,6 +1573,12 @@ header {
     width: 35%;
     height: 45%;
     margin-bottom: 30px;
+  }
+
+  /* Sign-in Page */
+  .main-sign-in-card-one,
+  .main-join-card-two {
+    width: 50%;
   }
 }
 
@@ -1665,6 +1672,11 @@ header {
     left: 25%;
   }
 
+  /* Sign-in Page */
+  .main-sign-in-card-two h1 {
+    font-size: 28px;
+  }
+
   /* Footer */
 
   .footer-container-row {
@@ -1723,6 +1735,28 @@ header {
   .main-join-container-div-btn {
     left: 33%;
   }
+
+  /* Sign-in Page */
+  .main-sign-in-card-two {
+    display: none;
+  }
+
+  .main-sign-in-card-one {
+    width: 100%;
+    border-radius: 15px;
+  }
+
+  .main-sign-in-container-div-form-input {
+    margin: 40px auto;
+  }
+
+  .main-sign-in-container-div-form input {
+    width: 70%;
+  }
+
+  .main-sign-in-container-div-btn {
+    left: 32%;
+  }
 }
 
 @media screen and (max-width: 500px) {
@@ -1768,5 +1802,11 @@ header {
 
   .counter-single-cell {
     height: 40%;
+  }
+
+  /* Sign-in Page */
+
+  .main-sign-in-container-div-btn {
+    left: 27%;
   }
 }
