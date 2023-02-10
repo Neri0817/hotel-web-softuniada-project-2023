@@ -1518,6 +1518,52 @@ header {
     width: 150px;
     height: 150px;
   }
+  /* Reserve-hotel Page */
+  .main-rh-div {
+    height: 100vh;
+  }
+  .main-rh-div-title {
+    font-size: 70px;
+    height: 18%;
+  }
+  .main-rh-div-container-title {
+    font-size: 20px;
+    height: 25%;
+  }
+
+  .main-rh-div-container-form {
+    width: 76.5%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: auto;
+    padding: 35px;
+  }
+
+  #destinations {
+    width: inherit;
+  }
+
+  .main-rh-div-container-form section,
+  .main-rh-div-container-form input {
+    width: 100%;
+  }
+
+  .main-rh-div-container-form section {
+    margin-bottom: 20px;
+  }
+  .main-rh-section-container {
+    width: 90%;
+  }
+  .main-rh-section {
+    height: 85vh;
+  }
+
+  .main-rh-second-section-container {
+    width: 85%;
+  }
+  .main-rh-second-section-container-destination-img {
+    width: inherit;
+  }
 }
 
 @media screen and (max-width: 800px) {
@@ -1626,6 +1672,23 @@ header {
   }
   .main-rh-third-section-container-destination-info-price {
     text-align: end;
+  }
+  /* Reserve-hotel page */
+  .main-rh-div-title {
+    height: 14%;
+  }
+
+  .main-rh-section-title {
+    font-size: 35px;
+  }
+
+  .main-rh-section-container-div {
+    flex-direction: column;
+    margin: 0;
+  }
+
+  .main-rh-section-container-div input {
+    margin-bottom: 15px;
   }
 }
 
@@ -1750,6 +1813,19 @@ header {
     width: inherit;
     height: inherit;
   }
+  /* Reserve Page */
+
+  .main-rh-div-title {
+    font-size: 50px;
+  }
+
+  .main-rh-third-secton-title {
+    font-size: 35px;
+  }
+
+  .main-rh-third-section-container {
+    width: 75%;
+  }
 
   /* Footer */
 
@@ -1844,6 +1920,19 @@ header {
   .main-pf-div-title {
     font-size: 28px;
   }
+
+  /* Reserve Page */
+  .main-rh-second-section-container-destination-img img {
+    height: auto;
+  }
+
+  .main-rh-second-section-container-destination-img {
+    height: auto;
+  }
+
+  .main-rh-second-section-container-destination-info-stuff {
+    grid-template-columns: auto;
+  }
 }
 
 @media screen and (max-width: 500px) {
@@ -1895,5 +1984,23 @@ header {
 
   .main-sign-in-container-div-btn {
     left: 27%;
+  }
+
+  /* Reserve Page */
+
+  .main-rh-second-section-container-destination-info {
+    flex-direction: column;
+  }
+
+  .main-rh-second-section-container-destination-info-price {
+    text-align: right;
+  }
+
+  .main-rh-second-section-title {
+    font-size: 30px;
+  }
+
+  .main-rh-third-secton-title {
+    font-size: 25px;
   }
 }
