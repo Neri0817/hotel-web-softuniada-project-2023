@@ -14,6 +14,10 @@ exports.postSearchRooms = async (req, res) => {
   
     // user gets redirected to log in page if not logged in
     if(!req.session.username) {
+        // req.session.error = 'Please login';
+        // console.log(req.session.error);
+        // const error = 'Please login user'
+        // res.locals.error = true;
         return res.redirect('/users/login');
     }
 
