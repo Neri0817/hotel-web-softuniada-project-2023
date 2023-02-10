@@ -5,7 +5,7 @@ const userSessionMiddleware = session({
     secret: config.SECRET,
     resave: false,
     saveUninitialized: true,
-    cookie: { maxAge: config.ONE_DAY }
+    cookie: { maxAge: config.ONE_DAY, secure: "auto"}
 });
 
 module.exports = userSessionMiddleware;
