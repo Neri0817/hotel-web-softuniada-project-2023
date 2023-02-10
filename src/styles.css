@@ -1473,6 +1473,28 @@ header {
     left: 128px;
     font-size: 10px;
   }
+
+  /* Home Page */
+  .section-article-one h1 {
+    font-size: 50px;
+  }
+
+  .section-article-one h3 {
+    font-size: 20px;
+    padding: 0 20px;
+  }
+
+  .section-article-one p {
+    font-size: 16px;
+  }
+
+  .section-article-two {
+    width: 50%;
+  }
+
+  .catalogHome-cards-container {
+    width: 25%;
+  }
 }
 
 @media screen and (max-width: 800px) {
@@ -1489,6 +1511,63 @@ header {
 
   .main-contact-us-section-div-btn {
     left: 75px;
+  }
+
+  /* Home Page */
+  .fade-text {
+    bottom: 160px;
+  }
+
+  .fade-text p {
+    margin: 20px 100px 0 100px;
+  }
+
+  .section-article-one h1 {
+    font-size: 37px;
+  }
+
+  .section-article-one p {
+    font-size: 14px;
+  }
+
+  .main-home-section {
+    height: 60vh;
+  }
+
+  .main-home-section-article-div-icons i {
+    font-size: 20px;
+  }
+
+  .main-home-section-article-div-icons h1 {
+    font-size: 15px;
+  }
+
+  .main-home-section-article-div-icons p {
+    font-size: 12px;
+  }
+
+  .catalogHome {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .catalogHome-cards-container {
+    width: 70%;
+  }
+
+  .counter-h2 {
+    font-size: 2.438rem;
+  }
+
+  .counter-container {
+    flex-wrap: wrap;
+    height: 70vh;
+  }
+
+  .counter-single-cell {
+    width: 35%;
+    height: 45%;
+    margin-bottom: 30px;
   }
 }
 
@@ -1556,6 +1635,27 @@ header {
     left: 196px;
   }
 
+  /* Home Page */
+  .main-home-section {
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  .section-article-one,
+  .section-article-two {
+    width: auto;
+  }
+
+  .catalogHome-cards-container {
+    width: 65%;
+    margin-bottom: 30px;
+  }
+
+  .counter-h2 {
+    font-size: 2rem;
+    padding: 0 25px;
+  }
+
   /* Footer */
 
   .footer-container-row {
@@ -1587,6 +1687,19 @@ header {
   .main-about-us-section-div p {
     font-size: 10px;
   }
+
+  /* Home Page */
+
+  .fade-text h1 {
+    font-size: 55px;
+  }
+  .fade-text h2 {
+    font-size: 27px;
+  }
+  .fade-text p {
+    margin: 20px 50px 0 50px;
+    font-size: 18px;
+  }
 }
 
 @media screen and (max-width: 500px) {
@@ -1609,5 +1722,28 @@ header {
 
   .main-contact-us-section-div-btn {
     left: 100px;
+  }
+
+  /* Home Page */
+  .counter-h2 {
+    font-size: 24px;
+    padding: 0;
+    margin: 20px 10px;
+  }
+
+  .counter-p {
+    font-size: 16px;
+  }
+
+  .counter-container {
+    height: 45vh;
+  }
+
+  .counter-number {
+    font-size: 1.5rem;
+  }
+
+  .counter-single-cell {
+    height: 40%;
   }
 }
