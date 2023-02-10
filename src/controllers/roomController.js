@@ -14,23 +14,11 @@ exports.postSearchRooms = async (req, res) => {
   
     // user gets redirected to log in page if not logged in
     if(!req.session.username) {
-        // req.session.error = 'Please login';
-        // console.log(req.session.error);
-        // const error = 'Please login user'
-        // res.locals.error = true;
-        return res.redirect('/users/login');
+        const message = 'Please sign in to proceed!!'
+        return res.render('sign-in', { message });
     }
 
     const { destination, startDate, endDate, guests } = req.body;
-    console.log('Log at POST SEARCH:')
-    console.log('destination:');
-    console.log(destination);
-
-    console.log(`startDate: ${startDate}`);
-    console.log(`endDate: ${endDate}`);
-
-    console.log('guests');
-    console.log(guests);
 
     //we need to check wich are the search criterias and 
 
@@ -44,10 +32,10 @@ exports.postSearchRooms = async (req, res) => {
     console.log('searchResultGuests:');
     console.log(searchResultGuests);
 
-
+    //search ONLY by start and end date
     try {
         const availableRooms = await availabilityService.checkAvailability(startDate, endDate);
-        console.log('bookings:');
+        console.log('availableRooms:');
         console.log(availableRooms);
         let bookedRooms;
         if (availableRooms.length === 0) {
