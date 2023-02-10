@@ -1495,6 +1495,10 @@ header {
   .catalogHome-cards-container {
     width: 25%;
   }
+  /* Join Page */
+  .main-join-container {
+    width: 75vw;
+  }
 }
 
 @media screen and (max-width: 800px) {
@@ -1656,6 +1660,11 @@ header {
     padding: 0 25px;
   }
 
+  /* Join Page */
+  .main-join-container-div-btn {
+    left: 25%;
+  }
+
   /* Footer */
 
   .footer-container-row {
@@ -1699,6 +1708,20 @@ header {
   .fade-text p {
     margin: 20px 50px 0 50px;
     font-size: 18px;
+  }
+
+  /* Join Page */
+  .main-join-card-one {
+    display: none;
+  }
+
+  .main-join-card-two {
+    width: 100%;
+    border-radius: 15px;
+  }
+
+  .main-join-container-div-btn {
+    left: 33%;
   }
 }
 
