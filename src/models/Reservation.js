@@ -2,8 +2,8 @@ const mongoose = require('mongoose')
 
 const reservationSchema = new mongoose.Schema({
     destination: {
-        type: String,
-        required: true
+        type: mongoose.Types.ObjectId,
+        ref: 'Destinations',
     },
     startDate: {
         type: Date,
@@ -13,20 +13,8 @@ const reservationSchema = new mongoose.Schema({
         type: Date,
         required: true,
     },
-    roomsCount: {
-        type: Number,
-        required: true
-    },
     guestsCount: {
         type: Number,
-        required: true
-    },
-    price: {
-        type: Number,
-        required: true
-    },
-    paymentMethod: {
-        type: String,
         required: true
     },
     reservationOwner: {

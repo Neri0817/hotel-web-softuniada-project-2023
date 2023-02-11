@@ -26,7 +26,12 @@ const destinationSchema = new mongoose.Schema({
      destinationOwner : {
         type: mongoose.Types.ObjectId,
         ref: 'User',
+    },
+    dateAdded: {
+        type: Date,
+        default: Date.now,
     }
+
 });
 
 
