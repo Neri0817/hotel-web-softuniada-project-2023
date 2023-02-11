@@ -19,7 +19,7 @@ exports.postSearchDestinations = async (req, res) => {
         return res.render('sign-in', { message });
     }
 
-    const { destination, startDate, endDate, guests } = req.body;
+    const { destination, startDate, endDate, guestsCount } = req.body;
 
     //we need to check wich are the search criterias and 
 
@@ -29,7 +29,7 @@ exports.postSearchDestinations = async (req, res) => {
     console.log(searchResultDestination);
 
     //search ONLY by guests
-    const searchResultGuests = await Destination.find({ guestCapacity: { $gte: guests } }).lean();
+    const searchResultGuests = await Destination.find({ guestCapacity: { $gte: guestsCount } }).lean();
     console.log('searchResultGuests:');
     console.log(searchResultGuests);
 
