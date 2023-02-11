@@ -6,7 +6,7 @@ const upload = require('../util/uploadFile');
 //TO DO: import controllers
 const homeController = require('../controllers/homeController');
 const userController = require('../controllers/userController');
-const roomController = require('../controllers/roomController');
+const destinationController = require('../controllers/destinationController');
 const adminController = require('../controllers/adminController');
 //TO DO: Endpoints and actions 
 
@@ -26,12 +26,12 @@ router.post('/users/register', userController.postRegister);
 //Logout
 router.get('/users/logout', userController.logout);
 
-router.get('/rooms/book', roomController.getReservePage);
-router.post('/rooms/book', roomController.postSearchRooms);
+router.get('/rooms/book', destinationController.getReservePage);
+router.post('/rooms/book', destinationController.postSearchDestinations);
 
-router.get('/test', roomController.getBookRoom);
+router.get('/test', destinationController.postBookDestination);
 
-router.post('/test', roomController.postBookRoom);
+router.post('/test', destinationController.postBookDestination);
 
 router.get('/auth/admin', adminController.getAdminPage);
 
