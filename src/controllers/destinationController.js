@@ -11,22 +11,27 @@ exports.getReservePage = (req, res) => {
 exports.postSearchDestinations = async (req, res) => {
 
     console.log('Try post---------');
-    console.log(req.session.username);
   
     // user gets redirected to log in page if not logged in
     if(!req.session.username) {
-        const message = 'Please sign in to proceed!'
-        return res.render('sign-in', { message });
+        // const message = 'Please sign in to proceed!'
+        //  res.render('sign-in', { message });
+        //  let message = 'User must be signed in'
+
+         res.locals.message = 'Please sign in to proceed!';
+        req.session.message = res.locals.message;
+         return res.redirect('/users/login');
     }
 
-    const { destination, startDate, endDate, guestsCount } = req.body;
+    const { name, startDate, endDate, guestsCount } = req.body;
 
     //we need to check wich are the search criterias and 
 
     //serch ONLY by destination
-    const searchResultDestination = await Destination.find({ destination }).lean();
+    const searchResultDestination = await Destination.find({ name }).lean();
     console.log('searchResultDestination:');
-    console.log(searchResultDestination);
+    console.log(name);
+    console.log(searchResultDestination); 
 
     //search ONLY by guests
     const searchResultGuests = await Destination.find({ guestCapacity: { $gte: guestsCount } }).lean();
@@ -37,9 +42,9 @@ exports.postSearchDestinations = async (req, res) => {
     try {
         const availableDestinations = await availabilityService.checkAvailability(startDate, endDate);
         console.log('availableRooms:');
-        console.log(availableRooms);
+        console.log(availableDestinations);
         let bookedDestinations;
-        if (availableRooms.length === 0) {
+        if (availableDestinations.length === 0) {
             //there are no bookings for these dates, so we show all the rooms
             bookedDestinations = await Destination.find().lean();
             console.log('bookedDestinations');
@@ -56,23 +61,6 @@ exports.postSearchDestinations = async (req, res) => {
     }
 }
 
-exports.getBookDestination= (req, res) => {
-    res.send(`
-    <h2>Login</h2>
-    <form action="" method="POST">
-    <label for="startDate">startDate</label>
-    <input type="date" name="startDate" id="startDate">
-
-    <label for="endDate">endDate</label>
-    <input type="date" name="endDate" id="startDate">
-
-    <label for="status">Status</label>
-    <input type="text" name="status" id="status">
-
-    <input type="submit" value="Submit Request">
-</form>
-    `)
-};
 
 exports.postBookDestination = async (req, res) => {
     const { startDate, endDate, status } = req.body;

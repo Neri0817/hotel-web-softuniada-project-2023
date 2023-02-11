@@ -6,6 +6,7 @@ const Destination = require('../models/Destination');
 
 exports.getLogin = (req, res) => {
     const sessionBeforeLogin = req.session;
+    res.locals.message = req.session.message;
     res.render('sign-in');
 }
 
