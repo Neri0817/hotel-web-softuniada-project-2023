@@ -1,5 +1,6 @@
 const userService = require('../services/userService');
 const session = require('../util/session');
+const { getErrorMessage } = require('../utils/errorUtils');
 
 exports.getLogin = (req, res) => {
     const sessionBeforeLogin = req.session;
@@ -59,7 +60,7 @@ exports.postRegister = async (req, res) => {
         await userService.register(username, email, password);
     } catch (error) {
         console.log(`Error trying to POST register: ${error}`);
-        return res.render('join', {error: error.message});
+        return res.render('join', {error: getErrorMessage(error)});
 
     }
     res.redirect('/users/login');
