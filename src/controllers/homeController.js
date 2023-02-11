@@ -1,26 +1,16 @@
 const Destination = require('../models/Destination');
 
 exports.getHomePage = async (req, res) => {
-    // console.log('This prints from home-----');
-    // console.log(req.session);
-    // console.log(req.session.username);
+
+    let result = await Destination.find({}).sort({ dateAdded: -1 }).lean();
+          // console.log(result);
 
 
-    // const destinationFilter = await Destination.find({}).sort({ dateAdded: -1 }).exec();
-    //     console.log('Destination result--------');
-    //       console.log(destinationFilter);
+          if(result.length > 3) {
+            result = result.slice(0, 3);
+          }
 
-    //       const result = await Destination.find({}).lean();
-
-    //       if(result.length > 3) {
-    //         result = result.splice(3, result.length - 3);
-    //       }
-         
-    //       console.log('Result---');
-    //      console.log(result[0].name);
-
-    // res.render('home', {name: result[0].name, imageUrl: result[0].imageUrl, price: result[0].price});
-    res.render('home');
+    res.render('home', {result});
 };
 
 exports.getAboutPage = (req, res) => {
