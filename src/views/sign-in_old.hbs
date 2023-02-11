@@ -1,0 +1,30 @@
+<main class="main-sign-in">
+
+    <div class="main-sign-in-container">
+
+        <div class="main-sign-in-container-div main-sign-in-card-one">
+            {{#if message}}
+            <h2>{{message}}</h2>
+            {{else}}
+            <h1>Sign in</h1>
+            {{/if}}
+
+            <form action="/users/login" method="POST" class="main-sign-in-container-div-form">
+                <div class="main-sign-in-container-div-form-input">
+                    <input type="text" placeholder="USERNAME" name="username" required>
+                </div>
+
+                <div class="main-sign-in-container-div-form-input">
+                    <input type="password" placeholder="PASSWORD" name="password" required>
+                </div>
+                <!-- Button moved inside of form -->
+                <button type="submit" class="main-sign-in-container-div-btn">Let's go</button>
+            </form>
+            <!-- Button moved inside of form FROM HERE -->
+        </div>
+        <div class="main-sign-in-container-div main-sign-in-card-two">
+            <h1>Welcome back!</h1>
+        </div>
+    </div>
+
+</main>
