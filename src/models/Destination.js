@@ -7,30 +7,33 @@ const destinationSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    rooms: {
-        type: Number,
-        required: true,
-        min: 1,
-        max: 8,
-    },
     guestCapacity: {
         type: Number,
         required: true,
     },
-    beds: {
-        type: Number,
-        required: true,
-        min: 1,
-        max: 8,
-    },
     imageUrl: {
         type: String,
+        required: true,
+    },
+     amenities: {
+        type: String,  //we need to think if this should be an array 
         required: true,
     },
     price: {
         type: Number,
         required: true,
     },
+     destinationOwner : {
+        type: mongoose.Types.ObjectId,
+        ref: 'User',
+    }
+
+       // beds: {
+    //     type: Number,
+    //     required: true,
+    //     min: 1,
+    //     max: 8,
+    // },
       // amenities: {
     //     type: String,  //we need to think if this should be an array 
     //     required: true,
@@ -42,6 +45,13 @@ const destinationSchema = new mongoose.Schema({
     // guestCapacity: {
     //     type: Number,
     //     required: true,
+    // },
+
+       // rooms: {
+    //     type: Number,
+    //     required: true,
+    //     min: 1,
+    //     max: 8,
     // },
 
     //reference to User database
