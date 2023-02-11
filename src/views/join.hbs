@@ -1,44 +1,50 @@
 
+  <!-- In case of error, you should display div with class "error-box" -->
+        {{!-- 
+        <div class="error-box">
+            
+            <p>error message</p>
+            
+        </div>
+         --}}
 
-    <main class="main-join">
-        <div class="main-join-container">
-            <div class="main-join-container-div main-join-card-one">
 
+<main class="main-join">
+    <div class="main-join-container">
+        <div class="main-join-container-div main-join-card-one">
+
+        </div>
+        <div class="main-join-container-div main-join-card-two">
+            <h1>Create Account</h1>
+
+            <div class="main-join-container-div-icons">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-google"></i></a>
             </div>
-            <div class="main-join-container-div main-join-card-two">
-                <h1>Create Account</h1>
 
-                <div class="main-join-container-div-icons">
-                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-google"></i></a>
+            <p>or use email for registration</p>
+
+            <form action="" method="" class="main-join-container-div-form">
+                <div class="main-join-container-div-form-input">
+                    <input type="text" placeholder="Username" name="uname" required>
                 </div>
 
-                <p>or use email for registration</p>
+                <div class="main-join-container-div-form-input">
+                    <input type="email" placeholder="Email" name="email" required>
+                </div>
 
-                <form action="/users/register" method="POST" class="main-join-container-div-form">
-                    <div class="main-join-container-div-form-input">
-                        <input type="text" placeholder="Username" name="username" required>
-                    </div>
+                <div class="main-join-container-div-form-input">
+                    <input type="password" placeholder="Password" name="psw" required>
+                </div>
 
-                    <div class="main-join-container-div-form-input">
-                        <input type="email" placeholder="Email" name="email" required>
-                    </div>
+                <div class="main-join-container-div-form-input">
+                    <input type="repeat-password" placeholder="Repeat password" name="rpsw" required>
+                </div>
 
-                    <div class="main-join-container-div-form-input">
-                        <input type="password" placeholder="Password" name="password" required>
-                    </div>
-
-                    <div class="main-join-container-div-form-input">
-                        <input type="password" placeholder="Repeat password" name="repeatPassword" required>
-                    </div>
-                    <!-- Button moved inside of form -->
-                    <button type="submit" class="main-join-container-div-btn">Join us</button>
-                </form>
-                <!-- Button moved inside of form FROM HERE -->
-                
-            </div>
+                <button type="submit" class="main-join-container-div-btn">Join us</button>
+            </form>
         </div>
+    </div>
 
-    </main>
-
+</main>
