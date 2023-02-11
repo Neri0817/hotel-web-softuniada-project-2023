@@ -1,12 +1,12 @@
 const availabilityService = require('../services/availabilityService');
 
-exports.getAvailableRooms = async(req, res) => {
+exports.getAvailableDestinations = async(req, res) => {
     const { startDate, endDate } = req.body;
     console.log(`startDate: ${startDate}`);
     console.log(`endDate: ${endDate}`);
     try {
-        const availableRoomsArray = await availabilityService.checkAvailability(startDate, endDate);
-        console.log(`availableRoomsArray: ${availableRoomsArray}`);
+        const availableDestinationsArray = await availabilityService.checkAvailability(startDate, endDate);
+        console.log(`availableDestinationsArray: ${availableDestinationsArray}`);
     } catch (error) {
         console.log(error);
     }

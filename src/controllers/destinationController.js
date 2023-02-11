@@ -49,7 +49,7 @@ exports.postSearchDestinations = async (req, res) => {
         }
         // add check in the template if there are rooms available - show each room, if no rooms available show message 'Unfortunately we are fully booked for your dates!' or similar
 
-        res.render('reserve', { availableDestinations, bookedRooms });
+        res.render('reserve', { availableDestinations, bookedDestinations });
     } catch (error) {
         console.log(error);
     }
@@ -128,3 +128,13 @@ exports.postCreateDestination = async (req, res) => {
         throw new Error(error);
     }
 };
+
+
+//This function we can use to sort by date added in descending order
+// Destination.find({}).sort({ dateAdded: -1 }).exec(function (err, posts) {
+//     if (err) {
+//       console.error(err);
+//     } else {
+//       console.log(posts);
+//     }
+//   });

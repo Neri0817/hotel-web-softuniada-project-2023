@@ -22,6 +22,10 @@ const reservationSchema = new mongoose.Schema({
     reservationOwner: {
         type: mongoose.Types.ObjectId,
         ref: 'User',
+    },
+    dateAdded: {
+        type: Date,
+        default: Date.now,
     }
 })
 

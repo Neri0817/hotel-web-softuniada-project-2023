@@ -25,8 +25,8 @@ router.post('/users/register', userController.postRegister);
 //Logout
 router.get('/users/logout', userController.logout);
 
-router.get('/rooms/book', destinationController.getReservePage);
-router.post('/rooms/book', destinationController.postSearchDestinations);
+router.get('/destinations/book', destinationController.getReservePage);
+router.post('/destinations/book', destinationController.postSearchDestinations);
 
 router.get('/test', destinationController.postBookDestination);
 
@@ -34,10 +34,10 @@ router.post('/test', destinationController.postBookDestination);
 
 
 
-//Rooms
+//Rooms - Destinations
 //Add
-router.get('/rooms/add', roomController.getCreateRoom);
-router.post('/rooms/add', upload.single('imageUrl') , roomController.postCreateRoom);
+router.get('/destinations/add', destinationController.getCreateDestination);
+router.post('/destinations/add', upload.single('imageUrl') , destinationController.postCreateDestination);
 //Details
 /*Example
 router.get('/hotels/:id/details', hotelController.getDetails);
