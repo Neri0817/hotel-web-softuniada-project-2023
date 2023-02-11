@@ -1,6 +1,10 @@
 const mongoose = require('mongoose')
 
 const reservationSchema = new mongoose.Schema({
+    destination: {
+        type: String,
+        required: true
+    },
     startDate: {
         type: Date,
         required: true,
@@ -9,15 +13,21 @@ const reservationSchema = new mongoose.Schema({
         type: Date,
         required: true,
     },
-    status: {
-        type: String,
-        required: true,
-        default: 'available',
-        enum: ['available', 'approved', 'requested', 'cancelled']
+    roomsCount: {
+        type: Number,
+        required: true
     },
-    roomId: {
-        type: mongoose.Types.ObjectId,
-        ref: 'Destination'
+    guestsCount: {
+        type: Number,
+        required: true
+    },
+    price: {
+        type: Number,
+        required: true
+    },
+    paymentMethod: {
+        type: String,
+        required: true
     },
     reservationOwner: {
         type: mongoose.Types.ObjectId,
@@ -27,6 +37,16 @@ const reservationSchema = new mongoose.Schema({
         type: Date,
         default: Date.now,
     }
+    // status: {
+    //     type: String,
+    //     required: true,
+    //     default: 'available',
+    //     enum: ['available', 'approved', 'requested', 'cancelled']
+    // },
+    // roomId: {
+    //     type: mongoose.Types.ObjectId,
+    //     ref: 'Destination'
+    // }
 })
 
 const Reservation = mongoose.model('Reservation', reservationSchema);
