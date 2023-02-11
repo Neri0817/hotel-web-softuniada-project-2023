@@ -8,6 +8,15 @@
         </div>
          --}}
 
+         
+            {{#if error}}
+          <div class="error-box">
+            
+            <p>{{error}}</p>
+            
+        </div>
+        {{/if}}
+
 
 <main class="main-join">
     <div class="main-join-container">
@@ -25,9 +34,9 @@
 
             <p>or use email for registration</p>
 
-            <form action="" method="" class="main-join-container-div-form">
+            <form action="" method="POST" class="main-join-container-div-form">
                 <div class="main-join-container-div-form-input">
-                    <input type="text" placeholder="Username" name="uname" required>
+                    <input type="text" placeholder="Username" name="username" required>
                 </div>
 
                 <div class="main-join-container-div-form-input">
@@ -35,11 +44,11 @@
                 </div>
 
                 <div class="main-join-container-div-form-input">
-                    <input type="password" placeholder="Password" name="psw" required>
+                    <input type="password" placeholder="Password" name="password" required>
                 </div>
 
                 <div class="main-join-container-div-form-input">
-                    <input type="repeat-password" placeholder="Repeat password" name="rpsw" required>
+                    <input type="password" placeholder="Repeat password" name="repeatPassword" required>
                 </div>
 
                 <button type="submit" class="main-join-container-div-btn">Join us</button>
