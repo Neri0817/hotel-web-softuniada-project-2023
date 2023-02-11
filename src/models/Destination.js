@@ -37,4 +37,5 @@ const destinationSchema = new mongoose.Schema({
 
 const Destination = mongoose.model('Destination', destinationSchema);
 
+
 module.exports = Destination;
