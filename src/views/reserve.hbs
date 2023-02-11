@@ -5,27 +5,27 @@
             <h1 class="main-rh-div-title">Reservation</h1>
             <div class="main-rh-div-container">
                 <h2 class="main-rh-div-container-title">Make your reservation now</h2>
-                <form action="" method="">
+                <form action="" method="POST">
                     <div class="main-rh-div-container-form">
                         <section>
                             <label for="destinations">Destinations</label> <br>
-                            <input type="text" id="destinations" name="destinations"
+                            <input type="text" id="destinations" name="destination"
                                 placeholder="Country, city, airport..." required>
                         </section>
 
                         <section>
                             <label for="checkIn">Check in date</label> <br>
-                            <input type="date" id="checkIn" name="destinations" placeholder="Check in" required>
+                            <input type="date" id="checkIn" name="startDate" placeholder="Check in" required>
                         </section>
 
                         <section>
                             <label for="checkOut">Check out date</label> <br>
-                            <input type="date" id="checkOut" name="destinations" placeholder="Check out" required>
+                            <input type="date" id="checkOut" name="endDate" placeholder="Check out" required>
                         </section>
 
                         <section>
                             <label for="guest">Guests</label> <br>
-                            <input type="text" id="guest" name="destinations" placeholder="The count of the guests" required>
+                            <input type="text" id="guest" name="guestsCount" placeholder="The count of the guests" required>
                         </section>
                         <!-- INFO FOR THE BACKEND -->
                         <!-- When public user click book now button, redirect it to register page -->

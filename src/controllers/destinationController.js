@@ -11,6 +11,7 @@ exports.getReservePage = (req, res) => {
 exports.postSearchDestinations = async (req, res) => {
 
     console.log('Try post---------');
+    console.log(req.session.username);
   
     // user gets redirected to log in page if not logged in
     if(!req.session.username) {
