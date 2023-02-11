@@ -96,38 +96,39 @@ exports.postBookDestination = async (req, res) => {
 
 };
 
-exports.getCreateDestination = (req, res) => {
-    res.render('createRoom');
-};
+// exports.getCreateDestination = (req, res) => {
+//     res.render('createRoom');
+// };
 
-exports.postCreateDestination = async (req, res) => {
-    const { name, rooms, guestCapacity, beds, price } = req.body;
+// exports.postCreateDestination = async (req, res) => {
+//     const { name, guestCapacity, amenities, price } = req.body;
+//     console.log('LOG AT POST DESTINATION')
+//     let imageUrl = '/static/images/' + req.body.imageUrl;
+//     console.log(amenities)
+//     console.log(req.body);
+//     console.log(req.file); //returns undefinied
 
-    let imageUrl = '/static/images/' + req.body.imageUrl;
-    console.log(req.body);
-    console.log(req.file); //returns undefinied
-
-    // console.log(req.file.path); //returns undefinied
-    // const imageUrl = req.file;
-
-
-    const destination = new Destination({
-        name,
-        rooms,
-        guestCapacity,
-        beds,
-        imageUrl,
-        price
-    });
+//     // console.log(req.file.path); //returns undefinied
+//     // const imageUrl = req.file;
 
 
-    try {
-        await destination.save();
-        res.redirect('/');
-    } catch (error) {
-        throw new Error(error);
-    }
-};
+//     const destination = new Destination({
+//         name,
+//         guestCapacity,
+//         amenities: amenities.toString(),
+//         imageUrl,
+//         price,
+//         destinationOwner: req.session.user._id
+//     });
+
+
+//     try {
+//         await destination.save();
+//         res.redirect('/');
+//     } catch (error) {
+//         throw new Error(error);
+//     }
+// };
 
 
 //This function we can use to sort by date added in descending order

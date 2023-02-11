@@ -1,16 +1,11 @@
 const userService = require('../services/userService');
 const session = require('../util/session');
 const { getErrorMessage } = require('../utils/errorUtils');
+const destinationService = require('../services/destinationService');
+const Destination = require('../models/Destination');
 
 exports.getLogin = (req, res) => {
     const sessionBeforeLogin = req.session;
-    console.log('GET login')
-    console.log('sessionBeforeLogin');
-    console.log(sessionBeforeLogin);
-    console.log('res.locals.isAuthenticated')
-    console.log(res.locals.isAuthenticated)
-    console.log('req.isAuthenticated')
-    console.log(req.isAuthenticated)
     res.render('sign-in');
 }
 
@@ -26,8 +21,6 @@ exports.postLogin = async (req, res) => {
     } catch (error) {
        
         console.log(`Error: ${error}`)
-        //not sure if we need to destroy the session
-        //req.session.destroy();
     }
 }
 
@@ -73,4 +66,34 @@ exports.logout = async (req, res) => {
         }
         res.redirect('/');
     });
+};
+
+exports.getProfile = async(req, res) => {
+    const userId = req.session.user._id;
+    const username = req.session.username;
+
+    const createdDestinations = await destinationService.findAllByUserId(userId).lean();
+    
+    res.render('profile', { username ,createdDestinations } );
+};
+
+//user can recomend destination
+exports.postProfile = async(req,res) => {
+    const { name, guestCapacity, amenities, price, imageUrl } = req.body;
+
+    const destination = new Destination({
+        name,
+        guestCapacity,
+        amenities,
+        imageUrl,
+        price,
+        destinationOwner: req.session.user._id
+    });
+
+    try {
+        await destination.save();
+        res.redirect('/users/profiles');
+    } catch (error) {
+        throw new Error(error);
+    }
 };
