@@ -69,11 +69,18 @@
 
         <section class="main-rh-second-section">
             <h1 class="main-rh-second-section-title">Your booking overview</h1>
+            {{!-- {{#if searchResultDestination}}
+            {{#each searchResultDestination}}
+            <h1>{{name}}</h1>
+            <h1>This is HBS</h1>
+            <h1>{{amenities}}</h1>
+            {{/each}}
+            {{/if}}> --}}
             <div class="main-rh-second-section-container">
 
 
-            {{#if bookings}}
-            {{#each bookings}}
+            {{#if searchResultDestination}}
+            {{#each searchResultDestination}}
             {{>booking}}
             {{/each}}
             <div class="main-rh-second-section-total-price">
@@ -88,7 +95,7 @@
          </div>
 
                 <!-- the room card template, when user confirm reservation, here will be added the room -->
-                <div class="main-rh-second-section-container-destination">
+                {{!-- <div class="main-rh-second-section-container-destination">
                     <div class="main-rh-second-section-container-destination-img">
                         <img src="./images/thailand.jpg" alt="destination">
                     </div>
@@ -130,7 +137,7 @@
             <div class="main-rh-second-section-total-price">
                 <h3>Total Price:</h3>
                 <h1>299$</h1>
-            </div>
+            </div> --}}
         </section>
 
         <section class="main-rh-third-section">
@@ -142,7 +149,7 @@
                 {{/each}}
             </div> 
             <!-- Orlin: Check if the above functionality is working and the div closing tag is correct -->
-                <div class="main-rh-third-section-container-destination">
+                {{!-- <div class="main-rh-third-section-container-destination">
                     <div class="main-rh-third-section-container-destination-img">
                         <img src="./images/carribean.jpg" alt="destination">
                     </div>
@@ -221,7 +228,7 @@
                             numquam quod unde ullam cumque quos adipisci earum sed molestias temporibus doloremque
                             porro! Soluta aliquam praesentium commodi!</p>
                     </div>
-                </div>
+                </div> --}}
 
 
             </div>

@@ -32,11 +32,20 @@ exports.postSearchDestinations = async (req, res) => {
     console.log('searchResultDestination:');
     console.log(name);
     console.log(searchResultDestination); 
+    console.log('Guest count--------');
+
+    const destinationGuestCapacity = searchResultDestination[0].guestCapacity
+
+
+    if(destinationGuestCapacity >= guestsCount){
+    console.log(searchResultDestination); // this is an array with our destination - it is filtered by destination and guest count
+        // return res.render('reserve', { searchResultDestination })
+}
 
     //search ONLY by guests
-    const searchResultGuests = await Destination.find({ guestCapacity: { $gte: guestsCount } }).lean();
-    console.log('searchResultGuests:');
-    console.log(searchResultGuests);
+    // const searchResultGuests = await Destination.find({ guestCapacity: { $gte: guestsCount } }).lean();
+    // console.log('searchResultGuests:');
+    // console.log(searchResultGuests);
 
     //search ONLY by start and end date
     try {
@@ -54,8 +63,8 @@ exports.postSearchDestinations = async (req, res) => {
             //if there are some rooms we need to find all the rest in rooms 
         }
         // add check in the template if there are rooms available - show each room, if no rooms available show message 'Unfortunately we are fully booked for your dates!' or similar
-
-        res.render('reserve', { availableDestinations, bookedDestinations });
+            //We need to pass the number of the guests to the hbs file, see below
+        return res.render('reserve', { searchResultDestination, bookedDestinations });
     } catch (error) {
         console.log(error);
     }
