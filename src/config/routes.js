@@ -43,5 +43,5 @@ router.get('/hotels/:id/details', hotelController.getDetails);
 router.get('/test', destinationController.postBookDestination);
 
 router.post('/test', destinationController.postBookDestination);
-
+router.get('*', homeController.notFoundPage)
 module.exports = router;
