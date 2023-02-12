@@ -927,7 +927,7 @@ header {
 
 /* preloader*/
 #preloader {
-  background: #ffffff url(./images/Preloader.gif) no-repeat center center;
+  background: #ffffff url(../images/Preloader.gif) no-repeat center center;
   background-size: 40%;
   height: 98vh;
   width: 100%;
