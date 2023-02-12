@@ -45,7 +45,7 @@ exports.postReservePage = async (req, res) => {
     
             res.render('reserve', { searchDestination , destinations, guestsCount, totalPrice });
         } catch (err) {
-            console.log(`Error booking destination:${error}`);
+            console.log(`Error booking destination:${err}`);
              const error = mapErrors(err)
             res.render('reserve', { error })
         }
