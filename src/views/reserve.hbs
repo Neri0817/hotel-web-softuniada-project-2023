@@ -1,3 +1,11 @@
+
+  {{#if error}}
+          <div class="error-box">
+            {{#each error}}
+            <p>{{msg}}</p>
+            {{/each}}
+        </div>
+        {{/if}}
 <main class="main-rh">
     <div class="main-rh-div">
         <h1 class="main-rh-div-title">Reservation</h1>
