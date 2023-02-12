@@ -43,22 +43,23 @@ exports.postRegister = async (req, res) => {
 
     //TO DO: think of validator function to validate the data in each field
 
-    const existingUser = await userService.checkUserExistence(username);
-
+    const existingUser = await userService.checkUserExistence(username, email).lean();
+    
     if (existingUser) {
         //TODO: Error handling
         // return res.redirect('/404')
-        res.render('join', {error: 'User already exists'});
+        return res.render('join', {error: 'User already exists'});
     }
 
     try {
         await userService.register(username, email, password);
+        res.redirect('/users/login');
     } catch (error) {
         console.log(`Error trying to POST register: ${error}`);
         return res.render('join', {error: getErrorMessage(error)});
 
     }
-    res.redirect('/users/login');
+    
 };
 
 exports.logout = async (req, res) => {
