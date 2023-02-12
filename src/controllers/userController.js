@@ -1,6 +1,6 @@
 const userService = require('../services/userService');
 const session = require('../utils/session');
-const { getErrorMessage } = require('../utils/errorUtils');
+const { getErrorMessage, mapErrors } = require('../utils/errorUtils');
 const destinationService = require('../services/destinationService');
 const Destination = require('../models/Destination');
 
