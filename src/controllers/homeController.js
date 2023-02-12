@@ -29,3 +29,9 @@ exports.postContactPage = async(req, res) => {
 
     res.render('contact', {info});
 }
+exports.notFoundPage = async (req, res) => {
+
+
+
+    res.render('404')
+}
