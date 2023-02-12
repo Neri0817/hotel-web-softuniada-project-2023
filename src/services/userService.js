@@ -14,13 +14,13 @@ exports.login = async(username, password) => {
     try {
         const user = await authService.validateUser(username, password);
         if (!user) {
-            throw 'Invalid username or password!';
+            throw new Error('Invalid username or password!');
         }
         
         return user;
 
     } catch (error) {
         console.log(`Error validating user: ${error}`);
-        return
+         throw new Error('Invalid username or password!');
     }
 };
