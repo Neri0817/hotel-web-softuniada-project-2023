@@ -8,11 +8,11 @@
             
         </div> -->
          --}}
-       {{#if error}}
+        {{#if error}}
           <div class="error-box">
-            
-            <p>{{error}}</p>
-            
+            {{#each error}}
+            <p>{{msg}}</p>
+            {{/each}}
         </div>
         {{/if}}
     <main class="main-sign-in">
