@@ -97,6 +97,6 @@ exports.postProfile = async(req,res) => {
         await destination.save();
         res.redirect('/users/profile');
     } catch (error) {
-        throw new Error(error);
+ res.render('profile', {error})
     }
 };
