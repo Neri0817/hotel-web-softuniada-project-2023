@@ -14,7 +14,7 @@ const destinationSchema = new mongoose.Schema({
     imageUrl: {
         type: String,
         required: true,
-        match: [/^http[s]?:\/\//g, 'Invalid URL, it should start with http://!']
+        match: [/^http[s]?:\/\//g, 'Invalid URL, it should start with "http://" !']
     },
     amenities: {
         type: String, 
