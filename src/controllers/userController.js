@@ -22,6 +22,7 @@ exports.postLogin = async (req, res) => {
     } catch (error) {
        
         console.log(`Error: ${error}`)
+         res.render('sign-in', {error})
     }
 }
 
