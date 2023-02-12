@@ -33,4 +33,7 @@ router.post('/users/profile', userController.postProfile);
 router.get('/destinations/book', destinationController.getReservePage);
 router.post('/destinations/book', destinationController.postReservePage);
 
+//Invalid Paths
+router.get('*', homeController.notFoundPage)
+
 module.exports = router;
