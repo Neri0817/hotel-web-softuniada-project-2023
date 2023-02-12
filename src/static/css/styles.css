@@ -4,38 +4,40 @@
 /*======================
     404 page
 =======================*/
-.page_404{ padding:40px 0; background:#fff; font-family: 'Arvo', serif;
+.page_404 {
+  padding: 40px 0;
+  background: #fff;
+  font-family: "Arvo", serif;
 }
 
-.page_404  img{ width:100%;}
+.page_404 img {
+  width: 100%;
+}
 
-.four_zero_four_bg{
- 
- background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
-    height: 400px;
-    background-position: center;
- }
- 
- 
- .four_zero_four_bg h1{
- font-size:80px;
- }
- 
-  .four_zero_four_bg h3{
-       font-size:80px;
-       }
-       
-       .link_404{      
-  color: #fff!important;
-    padding: 10px 20px;
-    background: #39ac31;
-    margin: 20px 0;
-    display: inline-block;}
-  .contant_box_404{ margin-top:-50px;}
+.four_zero_four_bg {
+  background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
+  height: 400px;
+  background-position: center;
+}
 
+.four_zero_four_bg h1 {
+  font-size: 80px;
+}
 
+.four_zero_four_bg h3 {
+  font-size: 80px;
+}
 
-
+.link_404 {
+  color: #fff !important;
+  padding: 10px 20px;
+  background: #39ac31;
+  margin: 20px 0;
+  display: inline-block;
+}
+.contant_box_404 {
+  margin-top: -50px;
+}
 
 .error-box {
   position: fixed;
@@ -66,10 +68,10 @@
   animation-fill-mode: forwards;
 }
 
-.error-box>p {
+.error-box > p {
   font-size: 24px;
   font-weight: bold;
-  font-family: 'Barlow', sans-serif;
+  font-family: "Barlow", sans-serif;
   padding: 14px;
   height: auto;
 }
@@ -194,7 +196,7 @@ header {
 .about-us-main-article {
   width: 100%;
   height: 100%;
-  background: url("/src/images/aboutUs.jpg") no-repeat center;
+  background: url("/images/aboutUs.jpg") no-repeat center;
   background-size: cover;
   box-shadow: 0px 0px 0px 1200px rgba(0, 0, 0, 0.688) inset;
   color: #fff;
@@ -267,7 +269,7 @@ header {
 }
 
 .main-about-us-div {
-  background: url("../src/images/travel.jpg") no-repeat center;
+  background: url("/images/travel.jpg") no-repeat center;
   background-size: cover;
   box-shadow: 0px 0px 0px 1200px rgba(0, 0, 0, 0.647) inset;
   width: 100%;
@@ -433,7 +435,7 @@ header {
 .main-sign-in-card-two {
   width: 60%;
   height: 100%;
-  background: url("/src/images/forum-img.jpg") no-repeat center;
+  background: url("/images/forum-img.jpg") no-repeat center;
   background-size: cover;
   box-shadow: 0px 0px 0px 1200px rgba(255, 87, 87, 0.603) inset;
   display: flex;
@@ -452,7 +454,7 @@ header {
 
 .main-join-card-one {
   width: 40%;
-  background: url("/src/images/join-img.jpg") no-repeat center;
+  background: url("/images/join-img.jpg") no-repeat center;
   background-size: cover;
   box-shadow: 0px 0px 0px 1200px rgba(255, 87, 87, 0.603) inset;
   border-radius: 15px 0 0 15px;
@@ -629,7 +631,7 @@ header {
 
 .section-article-one {
   width: 60%;
-  background-image: url("./images/main-home-section-article-one-img.jpg");
+  background-image: url("/images/main-home-section-article-one-img.jpg");
   background-size: cover;
   text-align: center;
   color: #24262b;
@@ -927,7 +929,7 @@ header {
 
 /* preloader*/
 #preloader {
-  background: #ffffff url(../images/Preloader.gif) no-repeat center center;
+  background: #ffffff url("/images/Preloader.gif") no-repeat center center;
   background-size: 40%;
   height: 98vh;
   width: 100%;
@@ -941,7 +943,7 @@ header {
 .main-rh-div {
   width: 100%;
   height: 85vh;
-  background: url("/src/images/rs-bgr-img.jpg") no-repeat center;
+  background: url("/images/rs-bgr-img.jpg") no-repeat center;
   background-size: cover;
   box-shadow: 0px 0px 0px 1200px rgba(0, 0, 0, 0.76) inset;
   text-align: center;
@@ -1233,7 +1235,7 @@ header {
 
 .main-pf-section-div-img {
   width: 60%;
-  background: url("/src/images/pf-img.jpg") no-repeat center;
+  background: url("/images/pf-img.jpg") no-repeat center;
   background-size: cover;
 }
 
@@ -1253,7 +1255,7 @@ header {
 .main-pf-div-icon-one {
   width: 350px;
   height: 350px;
-  background: url(../src/images/plane-pf-png.png) no-repeat;
+  background: url("/images/plane-pf-png.png") no-repeat;
   background-size: cover;
   left: 25px;
 }
@@ -1261,7 +1263,7 @@ header {
 .main-pf-div-icon-second {
   width: 250px;
   height: 250px;
-  background: url(../src/images/pf-summer-img.png) no-repeat;
+  background: url("/images/pf-summer-img.png") no-repeat;
   background-size: cover;
   right: 50px;
   bottom: 50px;
@@ -1297,7 +1299,7 @@ header {
 .main-contact-section {
   width: 100%;
   height: 85vh;
-  background: url("/src/images/contact-us-img.jpg") no-repeat center;
+  background: url("/images/contact-us-img.jpg") no-repeat center;
   background-size: cover;
   box-shadow: 0px 0px 0px 1200px rgba(0, 0, 0, 0.718) inset;
   color: #fff;
