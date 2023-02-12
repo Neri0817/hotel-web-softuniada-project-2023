@@ -86,7 +86,7 @@
                 <div class="main-rh-second-section-container-destination-info">
                     <div class="main-rh-second-section-container-destination-info-stuff">
                         <p>Includes: {{searchDestination.amenities}}</p>
-                         <p>Recommended by: {{searchDestination.destinationOwner.username}}</p> 
+                        <p>Recommended by: {{searchDestination.destinationOwner.username}}</p>
                         {{!-- fix the above to {{rooms}} --}}
                         <p>Payment: At hotel</p>
                         <p>Guests:{{guestsCount}} </p>
@@ -94,14 +94,14 @@
                     </div>
                     <div class="main-rh-second-section-container-destination-info-price">
                         <h1>{{searchDestination.price}}$</h1>
-                        <h3>Price</h1>
+                        <h3>Price per night</h1>
                     </div>
                 </div>
             </div>
-            <!--    <div class="main-rh-second-section-total-price">
+            <div class="main-rh-second-section-total-price">
                 <h3>Total Price:</h3>
-                <h1>299$</h1>
-            </div>  -->
+                <h1>{{totalPrice}} $</h1>
+            </div>
             {{else}}
             <div class="main-rh-second-section-total-price">
                 <h1>You dont have any bookings yet!</h1>

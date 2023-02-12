@@ -1,5 +1,6 @@
 const availabilityService = require('../services/availabilityService');
 const destinationService = require('../services/destinationService');
+const dateUtil = require('../utils/dateUtil');
 
 const Reservation = require('../models/Reservation');
 const Destination = require('../models/Destination');
@@ -36,11 +37,11 @@ exports.postReservePage = async (req, res) => {
             console.log('searchDestination:');
             console.log(searchDestination);
            
-            // if (!searchsearchDeservation) {
-                
-            // }
+            const nights = dateUtil.calculateNights(startDate, endDate);
+            const price  = searchDestination.price;
+            const totalPrice = nights * price;
     
-            res.render('reserve', { searchDestination , destinations, guestsCount } )
+            res.render('reserve', { searchDestination , destinations, guestsCount, totalPrice });
         } catch (error) {
             console.log(`Error booking destination:${error}`);
         }
