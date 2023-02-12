@@ -8,7 +8,7 @@ exports.register = async (username, email, password) => {
     return await User.create({ username, email, password: hash });
 };
 
-exports.checkUserExistence = (username, email) => User.findOne({ username, email });
+exports.checkUserExistence = (username) => User.findOne({ username });
 
 exports.login = async(username, password) => {
     try {
