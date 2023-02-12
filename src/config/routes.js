@@ -33,5 +33,10 @@ router.post('/users/profile', userController.postProfile);
 router.get('/destinations/book', destinationController.getReservePage);
 router.post('/destinations/book', destinationController.postReservePage);
 
+<<<<<<< HEAD
 
+=======
+router.post('/test', destinationController.postBookDestination);
+// router.get('*', homeController.notFoundPage)
+>>>>>>> b4bd603cbdb42ad99754dfc6b4a62d01675dc490
 module.exports = router;
