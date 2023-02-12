@@ -1,46 +1,83 @@
 const availabilityService = require('../services/availabilityService');
+const destinationService = require('../services/destinationService');
 
 const Reservation = require('../models/Reservation');
 const Destination = require('../models/Destination');
 
 
-exports.getReservePage = (req, res) => {
-    res.render('reserve');
+exports.getReservePage = async (req, res) => {
+    try {
+        const destinations = await Destination.find().lean();
+        res.render('reserve', { destinations });
+    } catch (error) {
+        console.log(`Error at GET Reserve page:${error}`);
+    }
 };
 
-exports.postSearchDestinations = async (req, res) => {
+exports.postReservePage = async (req, res) => {
 
     console.log('Try post---------');
-  
-    // user gets redirected to log in page if not logged in
-    if(!req.session.username) {
-        // const message = 'Please sign in to proceed!'
-        //  res.render('sign-in', { message });
-        //  let message = 'User must be signed in'
 
-         res.locals.message = 'Please sign in to proceed!';
+    // user gets redirected to log in page if not logged in
+    if (!req.session.username) {
+        res.locals.message = 'Please sign in to proceed!';
         req.session.message = res.locals.message;
-         return res.redirect('/users/login');
+        return res.redirect('/users/login');
     }
 
     const { name, startDate, endDate, guestsCount } = req.body;
 
-    //we need to check wich are the search criterias and 
+    //serch by destination and guestCount in destinations
+    try {
+            const destinations = await Destination.find().lean();
+            const searchDestination = await destinationService.findOneDestinationByNameAndGuests(name,guestsCount)
+            .populate('destinationOwner').lean();
 
-    //serch ONLY by destination
-    const searchResultDestination = await Destination.find({ name }).lean();
-    console.log('searchResultDestination:');
-    console.log(name);
-    console.log(searchResultDestination); 
-    console.log('Guest count--------');
-
-    const destinationGuestCapacity = searchResultDestination[0].guestCapacity
-
-
-    if(destinationGuestCapacity >= guestsCount){
-    console.log(searchResultDestination); // this is an array with our destination - it is filtered by destination and guest count
-        // return res.render('reserve', { searchResultDestination })
+            console.log('searchDestination:');
+            console.log(searchDestination);
+           
+            // if (!searchsearchDeservation) {
+                
+            // }
+    
+            res.render('reserve', { searchDestination , destinations, guestsCount } )
+        } catch (error) {
+            console.log(`Error booking destination:${error}`);
+        }
 }
+    
+    //serch by destination, startDate, endDate and guestCount in reservations
+    // try {
+    //     const destinationId =  await destinationService.findDestinationIdByName(name);
+    //     console.log('destinationId')
+    //     console.log(destinationId)
+    //     const searchReservation = await Reservation.findOne({
+    //         destination: destinationId,
+    //         guestsCount: {
+    //             $gte: guestsCount},
+    //             satrtDate: { $gte: startDate},
+    //             endDate: {$lte: endDate }
+    //     }).lean();
+    //     console.log('searchReservation:');
+    //     console.log(typeof searchReservation);
+       
+    //     if (!searchReservation) {
+    //         await Reservation.create ({ destination: destinationId , startDate, endDate, guestsCount });
+    //     }
+
+    //     res.render('reserve',  )
+    // } catch (error) {
+    //     console.log(`Error booking destination:${error}`);
+    // }
+
+
+    //     const destinationGuestCapacity = searchResultDestination[0].guestCapacity
+
+
+    //     if(destinationGuestCapacity >= guestsCount){
+    //     console.log(searchResultDestination); // this is an array with our destination - it is filtered by destination and guest count
+    //         // return res.render('reserve', { searchResultDestination })
+    // }
 
     //search ONLY by guests
     // const searchResultGuests = await Destination.find({ guestCapacity: { $gte: guestsCount } }).lean();
@@ -48,85 +85,27 @@ exports.postSearchDestinations = async (req, res) => {
     // console.log(searchResultGuests);
 
     //search ONLY by start and end date
-    try {
-        const availableDestinations = await availabilityService.checkAvailability(startDate, endDate);
-        console.log('availableRooms:');
-        console.log(availableDestinations);
-        let bookedDestinations;
-        if (availableDestinations.length === 0) {
-            //there are no bookings for these dates, so we show all the rooms
-            bookedDestinations = await Destination.find().lean();
-            console.log('bookedDestinations');
-            console.log(bookedDestinations);
-            
-        } else {
-            //if there are some rooms we need to find all the rest in rooms 
-        }
-        // add check in the template if there are rooms available - show each room, if no rooms available show message 'Unfortunately we are fully booked for your dates!' or similar
-            //We need to pass the number of the guests to the hbs file, see below
-        return res.render('reserve', { searchResultDestination, bookedDestinations });
-    } catch (error) {
-        console.log(error);
-    }
-}
+    // try {
+    //     const availableDestinations = await availabilityService.checkAvailability(startDate, endDate);
+    //     console.log('availableRooms:');
+    //     console.log(availableDestinations);
+    //     let bookedDestinations;
+    //     if (availableDestinations.length === 0) {
+    //         //there are no bookings for these dates, so we show all the rooms
+    //         bookedDestinations = await Destination.find().lean();
+    //         console.log('bookedDestinations');
+    //         console.log(bookedDestinations);
 
-
-exports.postBookDestination = async (req, res) => {
-    const { startDate, endDate, status } = req.body;
-
-    console.log(startDate);
-    console.log(endDate);
-    console.log(status);
-
-
-    //get roomId from req.params.roomId;
-    //const roomId = req.body.roomId;
-    console.log('Log at POST bookRoom')
-    console.log('req.body:')
-    console.log(req.body)
-    console.log('req.session.username:')
-    console.log(req.session.username)
-    //const room = await Room.findById(roomId);
-    //const userId = 
-
-    //await Reservation.create( {startDate, endDate, status})
-
-
-};
-
-// exports.getCreateDestination = (req, res) => {
-//     res.render('createRoom');
-// };
-
-// exports.postCreateDestination = async (req, res) => {
-//     const { name, guestCapacity, amenities, price } = req.body;
-//     console.log('LOG AT POST DESTINATION')
-//     let imageUrl = '/static/images/' + req.body.imageUrl;
-//     console.log(amenities)
-//     console.log(req.body);
-//     console.log(req.file); //returns undefinied
-
-//     // console.log(req.file.path); //returns undefinied
-//     // const imageUrl = req.file;
-
-
-//     const destination = new Destination({
-//         name,
-//         guestCapacity,
-//         amenities: amenities.toString(),
-//         imageUrl,
-//         price,
-//         destinationOwner: req.session.user._id
-//     });
-
-
-//     try {
-//         await destination.save();
-//         res.redirect('/');
-//     } catch (error) {
-//         throw new Error(error);
-//     }
-// };
+    //     } else {
+    //         //if there are some rooms we need to find all the rest in rooms 
+    //     }
+    //     // add check in the template if there are rooms available - show each room, if no rooms available show message 'Unfortunately we are fully booked for your dates!' or similar
+    //     //We need to pass the number of the guests to the hbs file, see below
+    //     return res.render('reserve', { searchResultDestination, bookedDestinations });
+    // } catch (error) {
+    //     console.log(error);
+    // }
+//}
 
 
 //This function we can use to sort by date added in descending order

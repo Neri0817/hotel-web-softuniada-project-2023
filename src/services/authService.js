@@ -12,12 +12,6 @@ exports.validateUser = async (username, password) => {
     if (!isPasswordValid) {
         return null;
     } 
-    
-    // console.log('validateUser');
-    // console.log('user:');
-    // console.log(user);
-
-    //const isValidUser = true;
 
     return user;
 };

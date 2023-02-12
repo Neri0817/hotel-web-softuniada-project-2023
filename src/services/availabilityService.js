@@ -1,18 +1,18 @@
-const Reservation = require('../models/Reservation')
+// const Reservation = require('../models/Reservation')
 
-exports.checkAvailability = async (startDate, endDate) => {
-    try {
-      let results =  await Reservation.find({
-        date: { $gte: startDate, $lte: endDate },
-        status: { $ne: "approved" }
-      });
-      console.log(results);
-      return results;
+// exports.checkAvailability = async (startDate, endDate) => {
+//     try {
+//       let results =  await Reservation.find({
+//         date: { $gte: startDate, $lte: endDate },
+//         status: { $ne: "approved" }
+//       });
+//       console.log(results);
+//       return results;
 
-    } catch (error) {
-      console.log(error.message);
-      throw error;
-    }
-  };
+//     } catch (error) {
+//       console.log(error.message);
+//       throw error;
+//     }
+//   };
 
 

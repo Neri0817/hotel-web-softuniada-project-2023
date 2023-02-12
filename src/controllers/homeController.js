@@ -3,8 +3,6 @@ const Destination = require('../models/Destination');
 exports.getHomePage = async (req, res) => {
 
     let result = await Destination.find({}).sort({ dateAdded: -1 }).lean();
-          // console.log(result);
-
 
           if(result.length > 3) {
             result = result.slice(0, 3);

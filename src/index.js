@@ -19,8 +19,6 @@ app.use(express.urlencoded({
     extended: false
 }));
 
-//cookie-parser middleware
-//app.use(cookieParser());
 //global auth middleware
 app.use(authMiddleware.authentication);
 
