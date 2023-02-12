@@ -33,7 +33,9 @@ exports.postReservePage = async (req, res) => {
             const destinations = await Destination.find().lean();
             const searchDestination = await destinationService.findOneDestinationByNameAndGuests(name,guestsCount)
             .populate('destinationOwner').lean();
-
+            if (!searchDestination) {
+                throw new Error('There are no destination available yet!');
+            }
             console.log('searchDestination:');
             console.log(searchDestination);
            
