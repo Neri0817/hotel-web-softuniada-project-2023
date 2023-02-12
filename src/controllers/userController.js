@@ -19,8 +19,8 @@ exports.postLogin = async (req, res) => {
         console.log('sesseionAfterLogin');
         console.log(req.session);
         res.redirect('/');
-    } catch (error) {
-       
+    } catch (err) {
+              const error = mapErrors(err)
         console.log(`Error: ${error}`)
          res.render('sign-in', {error})
     }
