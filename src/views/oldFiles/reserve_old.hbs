@@ -1,0 +1,75 @@
+<main class="main-rh">
+    <div class="main-rh-div">
+        <h1 class="main-rh-div-title">Reservation</h1>
+        <div class="main-rh-div-container">
+            <h2 class="main-rh-div-container-title">Make your reservation now</h2>
+            <form action="" method="POST">
+                <div class="main-rh-div-container-form">
+                    <section>
+                        <label for="destinations">Destinations</label> <br>
+                        <input type="text" id="destination" name="destination"
+                            placeholder="Country, city, airport...">
+                    </section>
+
+                    <section>
+                        <label for="checkIn">Check in date</label> <br>
+                        <input type="date" id="checkIn" name="startDate" placeholder="Check in">
+                    </section>
+
+                    <section>
+                        <label for="checkOut">Check out date</label> <br>
+                        <input type="date" id="checkOut" name="endDate" placeholder="Check out">
+                    </section>
+
+                    <section>
+                        <label for="guest">Guests</label> <br>
+                        <input type="text" id="guest" name="guests" placeholder="Guest count">
+                    </section>
+                    <!-- INFO FOR THE BACKEND -->
+                    <!-- When public user click book now button, redirect it to register page -->
+                    <!-- When loget user click book now button, show him the confirm reservation section and other sections-->
+                    <!-- delete those comments after :D -->
+                    {{!-- Orlin: Should we just redirect ro register page before selecting 'Book now'?
+                    This way the user won't have to enter the information twice.
+                    User clicks on Reserve a Hotel and if not logged in we send him/her to Register page --}}
+                    <button type="submit" class="main-rh-div-container-form-btn">Find now</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!--confirmation section comes here -->
+
+    <section class="main-rh-second-section">
+        <h1 class="main-rh-second-section-title">Your booking overview</h1>
+        <div class="main-rh-second-section-container">
+
+            <!-- the room card template, when user confirm reservation, here will be added the room -->
+
+            {{#if bookings}}
+            {{#each bookings}}
+            {{>booking}}
+            {{/each}}
+            <div class="main-rh-second-section-total-price">
+                <h3>Total Price:</h3>
+                <h1>299$</h1>
+            </div>
+            {{else}}
+            <div class="main-rh-second-section-total-price">
+                <h1>You dont have any bookings yet!</h1>
+            </div>
+            {{/if}}
+        </div>
+
+    </section>
+
+    <section class="main-rh-third-section">
+        <h1 class="main-rh-third-secton-title">Destinations available for you</h1>
+        <div class="main-rh-third-section-container">
+            <!-- the room card template, when there more rooms from DB, here will be added the rooms -->
+            {{#each bookedRooms}}
+            {{>room}}
+            {{/each}}
+        </div>
+    </section>
+</main>

@@ -1,0 +1,58 @@
+
+  {{#if error}}
+          <div class="error-box">
+            {{#each error}}
+            <p>{{msg}}</p>
+            {{/each}}
+        </div>
+        {{/if}}
+<main class="main-pf">
+
+        <section class="main-pf-section">
+            <h1 class="main-pf-section-title">{{username}} be a part of F.O.U.R! <br> Add your favourite destination and we
+                will
+                offer it
+                to our customers!</h1>
+            <div class="main-pf-section-div">
+                <form action="/users/profile" method="POST">
+                    <input type="text" placeholder="Destination Name" name="name" required>
+                    <br>
+                    <input type="number" min="0" placeholder="Destination Price" name="price" required>
+                    <br>
+                    <input type="number" min="0" placeholder="Guest Capacity" name="guestCapacity" required>
+                    <br>
+                 <!--   <input type="text" placeholder="Date To" name="to" required>
+                    <br> -->
+                    <input type="text" placeholder="Includes: Breakfast, Lunch, Diner" name="amenities" required>
+                    <br>
+                    <input name="imageUrl" placeholder="Image URL" type="text" required>
+                    <div class="main-pf-section-div-file">
+                        <button id="btn" type="submit">Recommend</button>
+                        <!--  <input type="file" id="input" name="image" style="display:none"> -->
+                    </div>
+                </form>
+                <div class="main-pf-section-div-img">
+
+                </div>
+            </div>
+        </section>
+
+        <div class="main-pf-div">
+            <div class="main-pf-div-icon-one"></div>
+            <div class="main-pf-div-icon-second"></div>
+
+            <h1 class="main-pf-div-title">My recommended destinations</h1>
+
+                {{#if createdDestinations}}
+                {{#each createdDestinations}}
+                {{>destination}}
+                {{/each}}
+                {{else}}
+                <div class="main-pf-div-info">
+                    <div class="main-rh-third-section-container-destination-info destination-card">
+                        <h1>You don't have any yet!</h1> 
+                    </div>
+                </div>
+                {{/if}}
+            </div>
+    </main>

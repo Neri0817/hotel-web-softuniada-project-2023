@@ -1,0 +1,59 @@
+
+  <!-- In case of error, you should display div with class "error-box" -->
+        {{!-- 
+        <div class="error-box">
+            
+            <p>error message</p>
+            
+        </div>
+         --}}
+
+         
+            {{#if error}}
+          <div class="error-box">
+            
+            <p>{{error}}</p>
+            
+        </div>
+        {{/if}}
+
+
+<main class="main-join">
+    <div class="main-join-container">
+        <div class="main-join-container-div main-join-card-one">
+
+        </div>
+        <div class="main-join-container-div main-join-card-two">
+            <h1>Create Account</h1>
+
+            <div class="main-join-container-div-icons">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-google"></i></a>
+            </div>
+
+            <p>or use email for registration</p>
+
+            <form action="" method="POST" class="main-join-container-div-form">
+                <div class="main-join-container-div-form-input">
+                    <input type="text" placeholder="Username" name="username" required>
+                </div>
+
+                <div class="main-join-container-div-form-input">
+                    <input type="email" placeholder="Email" name="email" required>
+                </div>
+
+                <div class="main-join-container-div-form-input">
+                    <input type="password" placeholder="Password" name="password" required>
+                </div>
+
+                <div class="main-join-container-div-form-input">
+                    <input type="password" placeholder="Repeat password" name="repeatPassword" required>
+                </div>
+
+                <button type="submit" class="main-join-container-div-btn">Join us</button>
+            </form>
+        </div>
+    </div>
+
+</main>

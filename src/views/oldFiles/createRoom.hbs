@@ -1,0 +1,44 @@
+<main class="main-join">
+    <div class="main-join-container">
+        <div class="main-join-container-div main-join-card-two">
+            <form action="/destinations/add" method="POST" class="main-join-container-div-form" enctype="multipart/form-data">
+                <h1>Add Accommodation</h1>
+
+                <div class="main-join-container-div-form-input">
+                    <label for="name">Destination</label>
+                    <input name="name" required></input>
+                </div>
+
+                <div class="main-join-container-div-form-input">
+                    <label for="guestCapacity">How many guests</label>
+                    <input name="guestCapacity" required></input>
+                </div>
+
+                <div class="main-join-container-div-form-input">
+                    <h4 for="amenities">Amenities</h4>
+                    <select name="amenities" id="amenities" multiple required>
+                        <option value="Coffee Kit ">Coffee Kit </option>
+                        <option value="Bathrobes and slippers">Bathrobes and slippers</option>
+                        <option value="Toiletries">Toiletries</option>
+                        <option value="Free breakfast">Free breakfast</option>
+                        <option value="Free WiFi">Free WiFi</option>
+                        <option value="Free parking">Free parking</option>
+                        <option value="Gym">Gym</option>
+                        <option value="Air conditioning">Air conditioning</option>
+                    </select>
+                </div>
+
+                <div class="main-join-container-div-form-input">
+                    <label for="price">Price per nigth</label>
+                    <input name="price" required></input>
+                </div>
+
+                <div class="main-join-container-div-form-input">
+                    <label for="image">imageUrl</label>
+                    <input name="imageUrl" type="file" required>
+                </div>
+                <button type="submit" class="main-join-container-div-btn">Add Accommodation</button>
+            </form>
+        </div>
+    </div>
+</main>
