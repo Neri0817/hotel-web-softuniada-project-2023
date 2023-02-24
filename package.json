@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node_env=production&& node ./src/index.js",
+    "dev": "nodemon ./src/index.js"
   },
   "repository": {
     "type": "git",
@@ -19,10 +21,12 @@
   "homepage": "https://github.com/Neri0817/hotel-web-softuniada-project-2023#readme",
   "dependencies": {
     "bcrypt": "^5.1.0",
+    "cookie-parser": "^1.4.6",
     "express": "^4.18.2",
     "express-handlebars": "^6.0.7",
     "express-session": "^1.17.3",
     "mongoose": "^6.9.0",
+    "multer": "^1.4.5-lts.1",
     "nodemon": "^2.0.20"
   }
 }
