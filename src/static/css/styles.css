@@ -674,6 +674,10 @@ header {
   outline: none;
   margin: 35px auto;
 }
+.main-home-section-article-btn a {
+  text-decoration: none;
+  color: white;
+}
 
 .section-article-two {
   width: 40%;
@@ -1475,7 +1479,6 @@ header {
   border-radius: 50%;
   color: #ffffff;
   transition: all 0.5s ease;
-
 }
 .footer-col .social-links a:hover {
   color: #24262b;
@@ -1614,7 +1617,7 @@ header {
   }
   .main-rh-div-container-title {
     font-size: 20px;
-    height: 25%;
+    height: 8%;
   }
 
   .main-rh-div-container-form {
@@ -1765,6 +1768,10 @@ header {
     height: 14%;
   }
 
+  .no-bookings-title h1 {
+    font-size: 30px;
+  }
+
   .main-rh-section-title {
     font-size: 35px;
   }
@@ -1912,6 +1919,10 @@ header {
 
   .main-rh-third-section-container {
     width: 75%;
+  }
+
+  .no-bookings-title h1 {
+    font-size: 20px;
   }
 
   /* Footer */
@@ -2090,4 +2101,9 @@ header {
   .main-rh-third-secton-title {
     font-size: 25px;
   }
+
+  .no-bookings-title h1 {
+    font-size: 15px;
+  }
 }
+
