@@ -7,7 +7,7 @@ const config = {
     },
     development: {
         PORT: 3000,
-        DB_URI: 'mongodb://localhost:27017/hotelApp',
+        DB_URI: 'mongodb://127.0.0.1:27017/hotelApp',
         SECRET: 'F.O.U.R.secret',
         ONE_DAY: 1000 * 60 * 60 * 24
     }
