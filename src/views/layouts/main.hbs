@@ -93,5 +93,100 @@
     <script src="/assets/counter.js"></script>
     <script src="/assets/dataAsset.js"></script>
   </body>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+
+    <title>Home</title>
+
+  </head>
+
+  <body>
+    <header>
+      <nav class="header-nav">
+        <div class="header-nav-logo">
+          <img src="/images/logo.jpg" alt="Logo" style="cursor: pointer" />
+        </div>
+        <ul class="header-nav-list">
+          <!-- All users -->
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About us</a></li>
+          <li><a href="/destinations/book">Reserve</a></li>
+          <li><a href="/contacts">Contact us</a></li>
+          {{#if isAuthenticated}}
+            <!-- Logged in users -->
+            <li><a href="/users/logout">Sign out</a></li>
+            <!-- <li><a href="/destinations/add">Add Accommodation</a></li> -->
+            <li><a href="/users/profile">Profile Page</a></li>
+          {{else}}
+            <!-- Not logged in users -->
+            <li><a href="/users/login">Sign in</a></li>
+            <li><a href="/users/register">Join</a></li>
+          {{/if}}
+        </ul>
+      </nav>
+    </header>
+
+    {{{body}}}
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-container-row">
+          <div class="footer-col">
+            <h4>company</h4>
+            <ul>
+              <li><a href="/about">about us</a></li>
+              <li><a href="#">our services</a></li>
+              <li><a href="#">privacy policy</a></li>
+              <li><a href="#">affiliate program</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>get help</h4>
+            <ul>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">contact us</a></li>
+              <li><a href="#">returns</a></li>
+              <li><a href="#">order status</a></li>
+              <li><a href="#">payment options</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>We offer</h4>
+            <ul>
+              <li><a href="#">hotel</a></li>
+              <li><a href="#">transport</a></li>
+              <li><a href="#">affordable prices</a></li>
+              <li><a href="#">simplified options</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>follow us</h4>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+        <p class="footer-container-row-p">
+          © F.O.U.R - 2023 All Rights Reserved
+        </p>
+      </div>
+    </footer>
+    <script src="/assets/preloader.js"></script>
+    <script src="/assets/slideShow.js"></script>
+    <script src="/assets/counter.js"></script>
+    <script src="/assets/dataAsset.js"></script>
+  </body>
 
 </html>
