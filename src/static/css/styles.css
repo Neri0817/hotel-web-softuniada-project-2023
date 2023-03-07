@@ -21,6 +21,13 @@
   background-position: center;
 }
 
+.h2 {
+  font-size: 40px;
+}
+.container p {
+  font-size: 20px;
+}
+
 .four_zero_four_bg h1 {
   font-size: 80px;
 }
@@ -35,6 +42,7 @@
   background: #39ac31;
   margin: 20px 0;
   display: inline-block;
+  cursor: pointer;
 }
 .contant_box_404 {
   margin-top: -50px;
@@ -95,11 +103,6 @@ html {
   margin: 0;
   font-family: "Catamaran", sans-serif;
   background-color: rgb(221, 221, 221);
-}
-
-body {
-  display: flex;
-  flex-direction: column;
 }
 
 main {
@@ -475,6 +478,7 @@ header {
 
 .main-join-card-two h1 {
   font-size: 28px;
+  padding-bottom: 30px;
 }
 
 .main-join-card-two p {
@@ -492,7 +496,7 @@ header {
   text-align: center;
   display: flex;
   justify-content: space-evenly;
-  padding: 10px 65px;
+  padding: 10px 65px 30px 65px;
 }
 .main-join-container-div-icons i {
   font-size: 30px;
@@ -512,8 +516,8 @@ header {
 }
 
 .slideshow-container {
-  /* width: 667;
-  height: 271; */
+  width: 667;
+  height: 271;
   position: relative;
   margin: auto;
 }
@@ -673,10 +677,6 @@ header {
   transition: all 0.3s ease 0s;
   outline: none;
   margin: 35px auto;
-}
-.main-home-section-article-btn a {
-  text-decoration: none;
-  color: white;
 }
 
 .section-article-two {
@@ -1046,6 +1046,10 @@ header {
   color: rgb(0, 0, 0);
   margin-bottom: 50px;
 }
+.main-rh-second-section-title,
+.main-rh-third-secton-title {
+  padding-top: 30px;
+}
 
 .main-rh-section-container,
 .main-rh-second-section-container,
@@ -1407,8 +1411,8 @@ header {
 }
 
 .main-contact-us-section-div-btn {
-  bottom: 30px;
-  left: 185px;
+  bottom: 180px;
+  left: 280px;
 }
 
 /* Footer */
@@ -1466,10 +1470,7 @@ header {
   padding-left: 8px;
 }
 .footer-col .social-links a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
+  display: inline-block;
   height: 40px;
   width: 40px;
   background-color: rgba(255, 255, 255, 0.2);
@@ -1617,7 +1618,7 @@ header {
   }
   .main-rh-div-container-title {
     font-size: 20px;
-    height: 8%;
+    height: 25%;
   }
 
   .main-rh-div-container-form {
@@ -1768,10 +1769,6 @@ header {
     height: 14%;
   }
 
-  .no-bookings-title h1 {
-    font-size: 30px;
-  }
-
   .main-rh-section-title {
     font-size: 35px;
   }
@@ -1871,11 +1868,6 @@ header {
     padding: 0 25px;
   }
 
-  /* Join Page */
-  .main-join-container-div-btn {
-    left: 25%;
-  }
-
   /* Sign-in Page */
   .main-sign-in-card-two h1 {
     font-size: 28px;
@@ -1919,10 +1911,6 @@ header {
 
   .main-rh-third-section-container {
     width: 75%;
-  }
-
-  .no-bookings-title h1 {
-    font-size: 20px;
   }
 
   /* Footer */
@@ -2101,9 +2089,4 @@ header {
   .main-rh-third-secton-title {
     font-size: 25px;
   }
-
-  .no-bookings-title h1 {
-    font-size: 15px;
-  }
 }
-
