@@ -14,5 +14,3 @@ const config = {
 };
 
 module.exports = config[process.env.node_env || "development"];
-
-module.exports = config[process.env.node_env || 'development'];
