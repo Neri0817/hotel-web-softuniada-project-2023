@@ -29,6 +29,72 @@
         {{else}}
 
         <section class="main-contact-us-section">
+            <div class="main-contact-us-section-div contact-us-div-first">
+                <img src="/images/contact-img.jpg" alt="Image">
+            </div>
+            <div class="main-contact-us-section-div contact-us-div-second">
+                <form action="" method="POST">
+
+                    <div class="main-contact-us-section-div-info">
+                        <label for="name">Name</label> <br>
+                        <input type="text" id="" name="name" placeholder="Your Name">
+                    </div>
+
+                    <div class="main-contact-us-section-div-info">
+                        <label for="email">Email</label> <br>
+                        <input type="text" id="" name="email" placeholder="example@email.com">
+                    </div>
+
+                    <div class="main-contact-us-section-div-info">
+                        <label for="subject">Subject</label> <br>
+                        <input type="text" id="" name="subject" placeholder="Your message subject">
+                    </div>
+
+                    <div class="main-contact-us-section-div-info">
+                        <label for="message">Your message</label> <br>
+                        <textarea id="w3review" name="message" rows="4" cols="50"
+                            placeholder="Your message here"></textarea>
+                    </div>
+
+                    <button type="submit" class="main-contact-us-section-div-btn">Send Message</button>
+
+                </form>
+            </div>
+        </section>
+        {{/if}}
+
+    </main>
+
+
+    <main class="main-contact">
+        <section class="main-contact-section">
+            <h1>Contact Us</h1>
+            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea praesentium quisquam iure, aspernatur ipsum
+                perferendis adipisci natus excepturi nesciunt cum quos ratione quo asperiores! Rerum modi amet ratione
+                vero praesentium!</h3>
+        </section>
+
+        <article class="main-contact-article">
+            <div class="main-contact-article-info">
+                <h1>Our Location</h1>
+                <p>1523/2, Somewhere OntheEarth.</p>
+            </div>
+            <div class="main-contact-article-info">
+                <h1>Contact</h1>
+                <p>+111 222 333 444</p>
+            </div>
+            <div class="main-contact-article-info">
+                <h1>Gmail</h1>
+                <p>exampleInfo@gmail.com</p>
+            </div>
+        </article>
+      {{#if info}}
+    <div class="error-box">
+         <p>{{info}}</p>
+    </div>
+        {{else}}
+
+        <section class="main-contact-us-section">
             <div class="main-contact-us-section-div">
                 <img src="/images/contact-img.jpg" alt="Image">
             </div>

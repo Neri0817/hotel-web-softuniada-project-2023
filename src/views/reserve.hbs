@@ -1,3 +1,11 @@
+
+  {{#if error}}
+          <div class="error-box">
+            {{#each error}}
+            <p>{{msg}}</p>
+            {{/each}}
+        </div>
+        {{/if}}
 <main class="main-rh">
     <div class="main-rh-div">
         <h1 class="main-rh-div-title">Reservation</h1>
@@ -93,17 +101,17 @@
                         {{!-- We need guest number above --}}
                     </div>
                     <div class="main-rh-second-section-container-destination-info-price">
-                        <h1>{{searchDestination.price}}$</h1>
+                        <h1>${{searchDestination.price}}</h1>
                         <h3>Price per night</h1>
                     </div>
                 </div>
             </div>
             <div class="main-rh-second-section-total-price">
                 <h3>Total Price:</h3>
-                <h1>{{totalPrice}} $</h1>
+                <h1>${{totalPrice}}</h1>
             </div>
             {{else}}
-            <div class="main-rh-second-section-total-price">
+            <div class="main-rh-second-section-total-price no-bookings-title">
                 <h1>You dont have any bookings yet!</h1>
             </div>
             {{/if}}
@@ -245,6 +253,10 @@
             </div>
         </div> --}}
 
+
+        </div>
+    </section>
+</main>
 
         </div>
     </section>

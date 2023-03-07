@@ -1,7 +1,7 @@
 const availabilityService = require('../services/availabilityService');
 const destinationService = require('../services/destinationService');
 const dateUtil = require('../utils/dateUtil');
-
+const { mapErrors } = require('../utils/errorUtils');
 const Reservation = require('../models/Reservation');
 const Destination = require('../models/Destination');
 
@@ -33,7 +33,9 @@ exports.postReservePage = async (req, res) => {
             const destinations = await Destination.find().lean();
             const searchDestination = await destinationService.findOneDestinationByNameAndGuests(name,guestsCount)
             .populate('destinationOwner').lean();
-
+            if (!searchDestination) {
+                throw new Error('There are no destination available yet!');
+            }
             console.log('searchDestination:');
             console.log(searchDestination);
            
@@ -42,8 +44,10 @@ exports.postReservePage = async (req, res) => {
             const totalPrice = nights * price;
     
             res.render('reserve', { searchDestination , destinations, guestsCount, totalPrice });
-        } catch (error) {
-            console.log(`Error booking destination:${error}`);
+        } catch (err) {
+            console.log(`Error booking destination:${err}`);
+             const error = mapErrors(err)
+            res.render('reserve', { error })
         }
 }
     
